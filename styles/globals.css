@@ -14,3 +14,25 @@ a {
 * {
   box-sizing: border-box;
 }
+
+
+.card {
+  margin: 1rem;
+  padding: 1rem;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+}
+
+.card-img {
+  width: 200px;
+}
+
+.card-body {
+  background-color: #eee;
+  padding: 2rem;
+}
+
+.small {
+  font-size: 0.875rem;
+  color: #888;
+}
