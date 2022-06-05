@@ -36,3 +36,11 @@ a {
   font-size: 0.875rem;
   color: #888;
 }
+
+.tag{
+  background-color: #2f2f3c;
+  color: rgb(221, 221, 221);
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 4px;
+}

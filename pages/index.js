@@ -4,7 +4,7 @@ import { client, urlFor } from '../lib/client';
 
 import Card from '../components/Card';
 
-const index = ({ pets, students }) => {
+const index = ({ pets, students, faculties }) => {
 
   return (
     <div>
@@ -13,6 +13,9 @@ const index = ({ pets, students }) => {
       }
       {
         students.map(student => <Card props={student} key={student.slug.current} />)
+      }
+      {
+        faculties.map(faculty => <Card props={faculty} key={faculty.slug.current} />)
       }
     </div>
   )
@@ -26,8 +29,11 @@ export const getServerSideProps = async () => {
   const studentQuery = '*[_type == "student"]';
   const students = await client.fetch(studentQuery);
 
+  const facultyQuery = '*[_type == "faculty"]';
+  const faculties = await client.fetch(facultyQuery);
+
   return {
-    props: { pets, students }
+    props: { pets, students, faculties }
   }
 }
 

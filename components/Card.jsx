@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { urlFor } from '../lib/client';
-const Card = ({ props: { slug, image, name, gender, description } }) => {
+const Card = ({ props: { slug, image, name, gender, description, tags } }) => {
 
 
     return <div key={slug.current} className='card'>
@@ -18,6 +18,9 @@ const Card = ({ props: { slug, image, name, gender, description } }) => {
 
             {
                 description.map(desc => <p key={desc}>{desc}</p>)
+            }
+            {
+                tags && tags.map(tag => <div key={tag} className='tag'>{tag}</div>)
             }
             </div>
         </div>
