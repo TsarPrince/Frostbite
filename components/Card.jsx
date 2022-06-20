@@ -12,7 +12,7 @@ const Card = ({ props: { slug, image, name, gender, description, tags } }) => {
         </div>
 
         <div className='card-body'>
-            <h2 className='card-title'>{name}</h2>
+            <h2 className='bg-red-700 card-title'>{name}</h2>
             <p className='small'>{gender}</p>
             <div className='card-text'>
 

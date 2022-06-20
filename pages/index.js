@@ -6,8 +6,9 @@ import Card from '../components/Card';
 
 const index = ({ pets, students, faculties }) => {
 
+  console.log(students)
   return (
-    <div>
+    <div className='select-none'>
       {
         pets.map(pet => <Card props={pet} key={pet.slug.current} />)
       }
