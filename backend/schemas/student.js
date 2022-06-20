@@ -16,11 +16,13 @@ export default {
             name: 'name',
             title: 'Name',
             type: 'string',
+            validation: Rule => Rule.required(),
         },
         {
             name: 'rollno',
             title: 'Roll Number',
-            type: 'string'
+            type: 'string',
+            validation: Rule => Rule.required(),
         },
         {
             name: 'slug',
@@ -42,11 +44,35 @@ export default {
             type: 'array',
             of: [{ type: 'string' }]
         },
+        { 
+            name: 'phone_number',
+            title: 'Phone Number',
+            type: 'number',
+            validation: Rule => Rule.required().min(1000000000).max(9999999999)
+        },
+        {
+            name: 'email',
+            title: 'Email',
+            type: 'email',
+            validation: (Rule) =>
+                Rule.required().regex(
+                  /[a-z0-9!#$%&'+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'+/=?^_`{|}~-]+)@(?:[a-z0-9](?:[a-z0-9-][a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/,
+                  {
+                    name: "email", 
+                    invert: false, 
+                  }
+                ),
+        },
         {
             name: 'tags',
             title: 'Tags',
             type: 'array',
             of: [{ type: 'string' }]
+        },
+        {
+          name: 'room_no',
+          title: 'Room Number',
+          type: 'number'
         }
     ]
 }
