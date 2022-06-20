@@ -3,12 +3,13 @@ import React from 'react'
 import { client, urlFor } from '../lib/client';
 
 import Card from '../components/Card';
+import Hero from '../components/Hero';
 
 const index = ({ pets, students, faculties }) => {
 
-  console.log(students)
   return (
-    <div className='select-none'>
+    <div>
+      <Hero />
       {
         pets.map(pet => <Card props={pet} key={pet.slug.current} />)
       }
