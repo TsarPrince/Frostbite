@@ -3,7 +3,6 @@ import React from 'react'
 import { client, urlFor } from '../lib/client';
 
 import Card from '../components/Card';
-import Something from '../components/Something';
 const index = ({ pets, students, faculties }) => {
 
   console.log(students)
@@ -18,7 +17,6 @@ const index = ({ pets, students, faculties }) => {
       {
         faculties.map(faculty => <Card props={faculty} key={faculty.slug.current} />)
       }
-      <Something />
     </div>
   )
 }
