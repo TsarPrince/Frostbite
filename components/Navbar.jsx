@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Link from 'next/link'
 
 export default function Navbar() {
   // const [clicked, setClicked] = React.useState(false)
@@ -10,9 +11,6 @@ export default function Navbar() {
     setStyles({visibility: "hidden"})
   }
 
-  // console.log(styles)
-  // const styles = clicked ? {visibility: "visible"} : {visibility: "none"}
-  // const styles = {backgroundColor: "black"}
   return (
     <div>
       <nav className="bg-gray-800">
@@ -39,13 +37,22 @@ export default function Navbar() {
             <div className="hidden sm:block sm:ml-6">
               <div className="flex space-x-4">
                 
-                <a href="#" className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Dashboard</a>
+                <div className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">
+                  <Link href="/" aria-current="page">Home</Link>
+                </div>
 
-                <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Team</a>
+                <div className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                  <Link href="/submitInfo">Submit Information</Link>
+                </div>
 
-                <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Projects</a>
+                <div className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                  <Link href="/aboutUs">About us</Link>
+                
+                </div>
+                <div className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                  <Link href="/login">Login</Link>
+                </div>
 
-                <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Calendar</a>
               </div>
             </div>
           </div>
