@@ -1,4 +1,5 @@
 import React from 'react'
+import Footer from '../components/Footer'
 
 const submitInfo = () => {
   return (
@@ -62,6 +63,18 @@ const submitInfo = () => {
                           placeholder="000-000-0000"
                         />
                       </div>
+                    </div>
+                    <div className=''>
+                      <label htmlFor='Room Number' className='block text-sm font-medium text-gray-700'>
+                        Room Number
+                      </label>
+                      <input
+                        type='text'
+                        className='rounded-md mt-1 shadow border border-gray-300 text-gray-600 w-32 text-sm'
+                        placeholder='000'
+                        id='room'
+                        name='room'
+                      />
                     </div>
                   </div>
                   <div>
@@ -150,18 +163,6 @@ const submitInfo = () => {
                         <p className="text-xs text-gray-500">oWo uWu</p>
                       </div>
                     </div>
-                    <div className=''>
-                      <label htmlFor='Room Number' className='block text-sm font-medium text-gray-700'>
-                        Room Number
-                      </label>
-                      <input
-                        type='text'
-                        className='rounded-md border border-gray-300 text-gray-600 w-14'
-                        placeholder='000'
-                        id='room'
-                        name='room'
-                      />
-                    </div>
                     <div className="col-span-6 mt-5 mx-1 max-w-full sm:col-span-3">
                       <label htmlFor="branch" className="block text-sm font-medium text-gray-700">
                         Branch
@@ -221,7 +222,7 @@ const submitInfo = () => {
           <div className="border-t border-gray-200" />
         </div>
       </div>
-
+      <Footer />
 
     </>
   )
