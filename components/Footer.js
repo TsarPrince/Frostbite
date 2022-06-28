@@ -1,32 +1,36 @@
 import React from 'react'
+import Image from 'next/image'
 
 const Footer = () => {
   return (
     <div>
-        <div className='grid gap-4 grid-cols-4 py-5 bg-gray-200'>
-            <div className='text-center'>
-                Logo goes here...
-            </div>
-            <div className=''>
-                <h1 className=''>About</h1>
-                <p className=''>About us 1</p>
-                <p className=''>About us 2</p>
-                <p className=''>About us 3</p>
-                <p className=''>About us 4</p>
-                <p className=''>About us 5</p>
-            </div>
-            <div className=''>
-            <h1 className=''>Academics</h1>
-                <p className=''>Academics 1</p>
-                <p className=''>Academics 2</p>
-                <p className=''>Academics 3</p>
-                <p className=''>Academics 4</p>
-                <p className=''>Academics 5</p>
-            </div>
-            <div className=''>
-                <h1>Contact Us</h1>
-            </div>
+        <div> 
+        <div className="address"> 
+                <p>IIIT Lucknow</p>
+                <p>Chak Ganjaria</p>
+                <p>Lucknow - 226002</p>
+                <p className="text-white">contact@iiitl.ac.in</p>
         </div>
+        <div>
+                <h1>External Links</p>
+                <p>IIIT Allahabad</p>
+                <p>IIIT Coordination Forum</p>
+                <p>UPIC</p>
+        </div>
+        <div>
+                <h1>Useful Links</h1>
+                <p>Academic Calender</p>
+                <p>Course Structure</p>
+                <p>List of Holidays</p>
+                <p>Official Forms & Formats</p>
+        </div>
+        <div>
+                <h1></h1>
+                <p>Fee Structure</p>
+                <p>Seat Matrix</p>
+                <p>RTI</p>
+        </div>
+</div>
     </div>
   )
 }
