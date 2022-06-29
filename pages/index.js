@@ -6,7 +6,7 @@ import Card from '../components/Card';
 import Hero from '../components/Hero';
 
 const index = ({ pets, students, faculties }) => {
-
+  console.log(pets)
   return (
     <div>
       <Hero />
