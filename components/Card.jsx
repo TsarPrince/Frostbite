@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image';
 import mars from '../public/mars.svg'
 
 import { urlFor } from '../lib/client';
@@ -6,7 +7,7 @@ const Card = ({ props: { slug, image, name, gender, description, tags } }) => {
   return (
     <div className='max-w-sm rounded-xl shadow-md m-4 overflow-hidden shrink-0 md:flex md:max-w-lg'>
       <div className='md:shrink-0'>
-        <img key={image[0]._key} src={urlFor(image[0])} className='h-52 w-full md:w-52 md:h-full object-cover'></img>
+        <img key={image[0]._key} src={urlFor(image[0])} className='h-52 w-full md:w-52 md:h-full object-cover' alt={name}></img>
       </div>
       <div className='p-6 space-y-4'>
         <div>

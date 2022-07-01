@@ -3,8 +3,8 @@ import Footer from '../components/Footer'
 
 const submitInfo = () => {
   return (
-    <>
-      <div>
+    <div>
+      <div className='max-w-7xl mx-auto'>
         <div className="md:grid md:grid-cols-3 md:gap-6">
           <div className="md:col-span-1">
             <div className="px-4 sm:px-0">
@@ -224,7 +224,7 @@ const submitInfo = () => {
       </div>
       <Footer />
 
-    </>
+    </div>
   )
 }
 

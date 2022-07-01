@@ -51,6 +51,8 @@ export const getServerSideProps = async () => {
 
   const studentQuery = '*[_type == "student"]';
   const students = await client.fetch(studentQuery);
+  
+  // console.log(students)
 
   const facultyQuery = '*[_type == "faculty"]';
   const faculties = await client.fetch(facultyQuery);
