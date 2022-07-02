@@ -12,7 +12,7 @@ const Footer = () => {
                 <p className="text-white">contact@iiitl.ac.in</p>
         </div>
         <div>
-                <h1>External Links</p>
+                <h1>External Links</h1>
                 <p>IIIT Allahabad</p>
                 <p>IIIT Coordination Forum</p>
                 <p>UPIC</p>
