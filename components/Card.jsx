@@ -9,7 +9,7 @@ const Card = ({ props: { slug, image, name, gender, description, tags, rollno } 
   linkURL = "/profile/"+rollno.toLowerCase() 
   return (
     <Link href={linkURL || '/'}>
-      <div className='max-w-sm rounded-xl shadow-md m-4 overflow-hidden shrink-0 md:flex md:max-w-lg'>
+      <div className='max-w-sm rounded-xl cursor-pointer shadow-md m-4 overflow-hidden shrink-0 md:flex md:max-w-lg'>
         <div className='md:shrink-0'>
         </div>
         <div className='p-6 space-y-4'>
