@@ -1,15 +1,12 @@
-import React from 'react'
-
+import React, { Profiler } from 'react'
 import { client, urlFor } from '../../lib/client';
-
-
+import Profile from '../../components/Profile'
 const slug = ({ details }) => {
-
+  console.log(details)
+  
   return (
     <div>
-      {
-        JSON.stringify(details)
-      }
+      <Profile name={details.name} tags={details.tags} description={details.description} type={details._type} images={details.image} roomno={details.room_no} gender={details.gender} email={details.email} rollno={details.rollno} phoneno={details.phone_number}></Profile>
     </div>
   )
 }
