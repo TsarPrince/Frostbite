@@ -1,6 +1,38 @@
 import React from 'react'
+import { urlFor } from '../lib/client'
 
-const profile = (props) => {
+const Profile = (props) => {
+  const [firstName, lastName] = props.name.split(' ')
+  const branchSmol = props.rollno.slice(1,3)
+  let branch=""
+  if(branchSmol === "CI")
+  branch = "Computer Science with Artificial Intelligence"
+  else if(branchSmol === "CB")
+  branch = "Computer Science with Business"
+  else if(branchSmol === "CS")
+  branch = "Computer Science"
+  else if(branchSmol === "IT")
+  branch = "Information Technology"
+
+  const allTags = props.tags.map((prev) => {
+    return(
+      <li key={prev}>
+        <div className="dark:text-cyan-500 text-blue-700">{prev}</div>
+        <div className="dark:text-gray-300 text-gray-500 text-xs">Placeholder text</div>
+      </li>
+    )
+  })
+
+  const allDescription = props.description.map((prev) => {
+    return(
+      <li key={prev}>
+        <div className="dark:text-cyan-500 text-blue-700">{prev}</div>
+        <div className="dark:text-gray-300 text-gray-500 text-xs">Placeholder Text</div>
+      </li>
+    )
+  })
+
+  // console.log(branchSmol)
   return (
     <div className='dark:bg-slate-800 bg-slate-200'>
       <div className="container mx-auto p-5 dark:bg-slate-800">
@@ -9,12 +41,13 @@ const profile = (props) => {
 
             <div className="bg-white dark:bg-slate-700 rounded-md p-3 border-t-4 border-blue-700">
               <div className="image overflow-hidden">
-                <img className="h-auto w-full mx-auto border-blue-700 border-solid border-spacing-11 border-4 rounded-xl shadow-md"
+                {/* <img className="h-auto w-full mx-auto border-blue-700 border-solid border-spacing-11 border-4 rounded-xl shadow-md"
                   src="https://lavinephotography.com.au/wp-content/uploads/2017/01/PROFILE-Photography-112.jpg"
-                  alt="" />
+                  alt="" /> */}
+                <img key={props.images[0]._key} src={urlFor(props.images[0])} className='w-full md:w-52 md:h-full object-cover h-auto mx-auto border-blue-700 border-solid border-spacing-11 border-4 rounded-xl shadow-md' alt={props.name}></img>
               </div>
-              <h1 className="text-gray-900 dark:text-white font-bold text-xl leading-8 my-1">Primce Singh</h1>
-              <h3 className="text-gray-600 dark:text-gray-400 font-lg text-semibold leading-6">Does something</h3>
+              <h1 className="text-gray-900 dark:text-white font-bold text-xl leading-8 my-1">{props.name}</h1>
+              <h3 className="text-gray-600 dark:text-gray-400 font-lg text-semibold leading-6">{props.type[0].toUpperCase() + props.type.substring(1)}</h3>
               <p className="text-sm text-gray-500 dark:text-gray-100  leading-6">Lorem ipsum dolor sit amet
                 consectetur adipisicing elit.
                 Reprehenderit, eligendi dolorum sequi illum qui unde aspernatur non deserunt</p>
@@ -26,8 +59,8 @@ const profile = (props) => {
                     className="bg-blue-700 py-1 px-2 rounded text-white text-sm">Active</span></span>
                 </li>
                 <li className="flex items-center py-3">
-                  <span>Member since</span>
-                  <span className="ml-auto">Dec 12, 2021</span>
+                  <span>Roll Number</span>
+                  <span className="ml-auto">{props.rollno}</span>
                 </li>
               </ul>
             </div>
@@ -92,32 +125,32 @@ const profile = (props) => {
                 <div className="grid md:grid-cols-2 text-sm">
                   <div className="grid grid-cols-2">
                     <div className="px-4 py-2 font-semibold">First Name</div>
-                    <div className="px-4 py-2">Primce</div>
+                    <div className="px-4 py-2">{firstName}</div>
                   </div>
                   <div className="grid grid-cols-2">
                     <div className="px-4 py-2 font-semibold">Last Name</div>
-                    <div className="px-4 py-2">Singh</div>
+                    <div className="px-4 py-2">{lastName}</div>
                   </div>
                   <div className="grid grid-cols-2">
                     <div className="px-4 py-2 font-semibold">Gender</div>
-                    <div className="px-4 py-2">Male</div>
+                    <div className="px-4 py-2">{props.gender}</div>
                   </div>
                   <div className="grid grid-cols-2">
                     <div className="px-4 py-2 font-semibold">Contact No.</div>
-                    <div className="px-4 py-2">+11 998001001</div>
+                    <div className="px-4 py-2">+91 {props.phoneno}</div>
                   </div>
                   <div className="grid grid-cols-2">
                     <div className="px-4 py-2 font-semibold">Branch</div>
-                    <div className="px-4 py-2">Information Technology</div>
+                    <div className="px-4 py-2">{branch}</div>
                   </div>
                   <div className="grid grid-cols-2">
                     <div className="px-4 py-2 font-semibold">Room Number</div>
-                    <div className="px-4 py-2">510</div>
+                    <div className="px-4 py-2">{props.roomno || 'NA'}</div>
                   </div>
                   <div className="grid grid-cols-2">
                     <div className="px-4 py-2 font-semibold">Email.</div>
                     <div className="px-4 py-2">
-                      <a className=" underline hover:text-gray-200" href="mailto:lit2021024@iiitl.ac.in">lit2021024@iiitl.ac.in</a>
+                      <a className=" underline hover:text-gray-200" href="mailto:{props.email}">{props.email}</a>
                     </div>
                   </div>
                   <div className="grid grid-cols-2">
@@ -150,22 +183,7 @@ const profile = (props) => {
                     <span className="tracking-wide">Experience</span>
                   </div>
                   <ul className="list-inside space-y-2">
-                    <li>
-                      <div className="dark:text-cyan-500 text-blue-700">Owner at Her Company Inc.</div>
-                      <div className="dark:text-gray-300 text-gray-500 text-xs">March 2020 - Now</div>
-                    </li>
-                    <li>
-                      <div className="dark:text-cyan-500 text-blue-700">Owner at Her Company Inc.</div>
-                      <div className="dark:text-gray-300 text-gray-500 text-xs">March 2020 - Now</div>
-                    </li>
-                    <li>
-                      <div className="dark:text-cyan-500 text-blue-700">Owner at Her Company Inc.</div>
-                      <div className="dark:text-gray-300 text-gray-500 text-xs">March 2020 - Now</div>
-                    </li>
-                    <li>
-                      <div className="dark:text-cyan-500 text-blue-700">Owner at Her Company Inc.</div>
-                      <div className="dark:text-gray-300 text-gray-500 text-xs">March 2020 - Now</div>
-                    </li>
+                    {allTags}
                   </ul>
                 </div>
                 <div>
@@ -180,17 +198,10 @@ const profile = (props) => {
                           d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
                       </svg>
                     </span>
-                    <span className="tracking-wide dark:text-white">Education</span>
+                    <span className="tracking-wide dark:text-white">Description</span>
                   </div>
                   <ul className="list-inside space-y-2">
-                    <li>
-                      <div className="dark:text-cyan-500 text-blue-700">Masters Degree in Oxford</div>
-                      <div className="dark:text-gray-300 text-gray-500 text-xs">March 2020 - Now</div>
-                    </li>
-                    <li>
-                      <div className="dark:text-cyan-500 text-blue-700">Bachelors Degreen in LPU</div>
-                      <div className="dark:text-gray-300 text-gray-500 text-xs">March 2020 - Now</div>
-                    </li>
+                    {allDescription}
                   </ul>
                 </div>
               </div>
@@ -204,4 +215,4 @@ const profile = (props) => {
   )
 }
 
-export default profile
+export default Profile
