@@ -2,6 +2,17 @@ import React from 'react'
 import Footer from '../components/Footer'
 
 const submitInfo = () => {
+  const submitForm = (event) => {
+    event.preventDefault();
+    let { firstName, lastName, rollNumber, phoneNumber, roomNumber, about, linkedinProfile, profilePhoto, fileUpload, branch, year } = event.target.form
+    const data = {
+      name: firstName.value + " " + lastName.value,
+      rollNumber: rollNumber.value,
+      phoneNumber: phoneNumber.value,
+      roomNumber: roomNumber.value,
+    };
+    console.log(data)
+  }
   return (
     <div>
       <div className='max-w-7xl mx-auto'>
@@ -15,40 +26,41 @@ const submitInfo = () => {
             </div>
           </div>
           <div className="mt-5 md:mt-5 mr-5 md:col-span-2">
-            <form action="#" method="POST">
-              <div className="shadow sm:rounded-md sm:overflow-hidden">
+            <form action="http://localhost:3000/api/submitInfo" method="POST">
+              <div className="shadow-md sm:rounded-md sm:overflow-hidden">
                 <div className="px-4 py-5 bg-white space-y-6 sm:p-6">
-                  <label htmlFor="First Name" className="block text-sm font-medium text-gray-700">
+                  <label htmlFor="firstName" className="block text-sm font-medium text-gray-700">
                     Name
                   </label>
                   <div className='grid grid-cols-2 gap-6'>
                     <input
                       type="text"
-                      id='First Name'
-                      name="First Name"
+                      id='firstName'
+                      name="firstName"
                       placeholder='First Name'
                       className="inline-flex items-center px-3 rounded-md border border-gray-300 text-gray-500 text-sm w-full"
                     />
                     <input
                       type="text"
-                      name="Last Name"
+                      id="lastName"
+                      name="lastName"
                       placeholder='Last Name'
                       className="inline-flex items-center px-3 rounded-md border border-gray-300 text-gray-500 text-sm w-full"
                     />
                   </div>
-                  <label htmlFor="Roll Number" className="block text-sm font-medium text-gray-700">
+                  <label htmlFor="rollNumber" className="block text-sm font-medium text-gray-700">
                     Roll Number
                   </label>
                   <input
                     type="text"
-                    id='Roll Number'
-                    name="Roll Number"
-                    placeholder='LXX20XX0XX'
+                    id="rollNumber"
+                    name="rollNumber"
+                    placeholder="LXX20XX0XX"
                     className="inline-flex items-center px-3 rounded-md border border-gray-300 text-gray-500 text-sm w-full"
                   />
                   <div className="grid grid-cols-3 gap-6">
                     <div className="col-span-3 sm:col-span-2">
-                      <label htmlFor="Phone Number" className="block text-sm font-medium text-gray-700">
+                      <label htmlFor="phoneNumber" className="block text-sm font-medium text-gray-700">
                         Phone Number
                       </label>
                       <div className="mt-1 flex rounded-md shadow-sm">
@@ -57,23 +69,23 @@ const submitInfo = () => {
                         </span>
                         <input
                           type="text"
-                          name="Phone Number"
-                          id="Phone Number"
+                          name="phoneNumber"
+                          id="phoneNumber"
                           className="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-1 rounded-none rounded-r-md sm:text-sm border-gray-300"
                           placeholder="000-000-0000"
                         />
                       </div>
                     </div>
                     <div className=''>
-                      <label htmlFor='Room Number' className='block text-sm font-medium text-gray-700'>
+                      <label htmlFor='roomNumber' className='block text-sm font-medium text-gray-700'>
                         Room Number
                       </label>
                       <input
                         type='text'
                         className='rounded-md mt-1 shadow border border-gray-300 text-gray-600 w-32 text-sm'
                         placeholder='000'
-                        id='room'
-                        name='room'
+                        id='roomNumber'
+                        name='roomNumber'
                       />
                     </div>
                   </div>
@@ -97,7 +109,7 @@ const submitInfo = () => {
                   </div>
                   <div className="grid grid-cols-3 gap-6">
                     <div className="col-span-3 sm:col-span-2">
-                      <label htmlFor="company-website" className="block text-sm font-medium text-gray-700">
+                      <label htmlFor="linkedinProfile" className="block text-sm font-medium text-gray-700">
                         LinkedIn Profile
                       </label>
                       <div className="mt-1 flex rounded-md shadow-sm">
@@ -106,8 +118,8 @@ const submitInfo = () => {
                         </span>
                         <input
                           type="text"
-                          name="company-website"
-                          id="company-website"
+                          name="linkedinProfile"
+                          id="linkedinProfile"
                           className="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-1 rounded-none rounded-r-md sm:text-sm border-gray-300"
                           placeholder="first-last-12345"
                         />
@@ -116,7 +128,7 @@ const submitInfo = () => {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700">Photo</label>
+                    <label htmlFor="profilePhoto" className="block text-sm font-medium text-gray-700">Profile Photo</label>
                     <div className="mt-1 flex items-center">
                       <span className="inline-block h-12 w-12 rounded-full overflow-hidden bg-gray-100">
                         <svg className="h-full w-full text-gray-300" fill="currentColor" viewBox="0 0 24 24">
@@ -133,8 +145,8 @@ const submitInfo = () => {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700">Cover photo</label>
-                    <div htmlFor="file-upload" className="my-4 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+                    <label className="block text-sm font-medium text-gray-700">Your photos gallery</label>
+                    <div className="my-4 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
                       <div className="space-y-1 text-center">
                         <svg
                           className="mx-auto h-12 w-12 text-gray-400"
@@ -150,17 +162,16 @@ const submitInfo = () => {
                             strokeLinejoin="round"
                           />
                         </svg>
-                        <div className="flex text-sm max-w-full text-gray-600">
+                        <div className="text-sm max-w-full text-gray-600">
                           <label
                             htmlFor="file-upload"
                             className="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500"
                           >
-                            <span>Upload a photo UwU</span>
+                            <span>Upload photos</span>
                             <input id="file-upload" name="file-upload" type="file" className="sr-only" />
                           </label>
-                          <p className="pl-1">T_T UwU OwO</p>
                         </div>
-                        <p className="text-xs text-gray-500">oWo uWu</p>
+                        <p className="text-xs text-gray-500">Photos don&apos;t need to be formal, but keep in mind that they are <strong>public</strong></p>
                       </div>
                     </div>
                     <div className="col-span-6 mt-5 mx-1 max-w-full sm:col-span-3">
@@ -173,10 +184,10 @@ const submitInfo = () => {
                         autoComplete="branch-name"
                         className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                       >
-                        <option>Computer Science with Artificial Intelligence</option>
-                        <option>Computer Science and Business</option>
-                        <option>Computer Science</option>
                         <option>Information Technology</option>
+                        <option>Computer Science</option>
+                        <option>Computer Science & Artificial Intelligence</option>
+                        <option>Computer Science & Business</option>
                       </select>
                     </div>
                     <div className='col-span-6 mt-5 mx-1 mb-2 max-w-full sm:col-span-3'>
@@ -206,6 +217,7 @@ const submitInfo = () => {
               <div className="px-4 py-5 bg-gray-50 border rounded-b-xl text-right sm:px-6">
                 <button
                   type="submit"
+                  onClick={submitForm}
                   className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                 >
                   Save
