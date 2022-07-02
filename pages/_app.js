@@ -1,6 +1,9 @@
 import '../styles/globals.css'
 import Navbar from '../components/Navbar'
 import Head from 'next/head'
+import NextNProgress from 'nextjs-progressbar'
+
+
 function MyApp({ Component, pageProps }) {
   return (
     <div>
@@ -10,6 +13,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
       
       <Navbar />
+      <NextNProgress height={2} color="#06b4ff" />
       <Component {...pageProps} />
     </div>
   )
