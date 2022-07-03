@@ -13,24 +13,24 @@ const Profile = (props) => {
   branch = "Computer Science"
   else if(branchSmol === "IT")
   branch = "Information Technology"
-
-  const allTags = props.tags.map((prev) => {
+  
+  const allTags = props.tags? props.tags.map((prev) => {
     return(
       <li key={prev}>
         <div className="dark:text-cyan-500 text-blue-700">{prev}</div>
         <div className="dark:text-gray-300 text-gray-500 text-xs">Placeholder text</div>
       </li>
     )
-  })
+  }) : ['No tag available']
 
-  const allDescription = props.description.map((prev) => {
+  const allDescription = props.description? props.description.map((prev) => {
     return(
       <li key={prev}>
         <div className="dark:text-cyan-500 text-blue-700">{prev}</div>
         <div className="dark:text-gray-300 text-gray-500 text-xs">Placeholder Text</div>
       </li>
     )
-  })
+  }) : ['No description available']
 
   // console.log(branchSmol)
   return (
