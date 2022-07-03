@@ -11,7 +11,7 @@ const submitInfo = () => {
       phoneNumber: phoneNumber.value,
       roomNumber: roomNumber.value,
     };
-    console.log(data)
+    // console.log(data)
   }
   return (
     <div>
@@ -234,7 +234,6 @@ const submitInfo = () => {
           <div className="border-t border-gray-200" />
         </div>
       </div>
-      <Footer />
 
     </div>
   )
