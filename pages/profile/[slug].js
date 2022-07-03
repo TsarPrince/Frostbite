@@ -6,7 +6,7 @@ const slug = ({ details }) => {
   
   return (
     <div>
-      <Profile name={details.name} tags={details.tags} description={details.description} type={details._type} images={details.image} roomno={details.room_no} gender={details.gender} email={details.email} rollno={details.rollno} phoneno={details.phone_number}></Profile>
+      <Profile name={details.name} tags={details.tags} description={details.description} type={details._type} images={details.image} roomno={details.room_no} gender={details.gender} email={details.email} rollno={details.rollno} phoneno={details.phone_number} dob={details.DOB}></Profile>
     </div>
   )
 }

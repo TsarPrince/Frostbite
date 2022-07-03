@@ -73,6 +73,11 @@ export default {
           name: 'room_no',
           title: 'Room Number',
           type: 'number'
+        },
+        {
+            name: 'DOB',
+            title: 'Date of Birth',
+            type: 'date'
         }
     ]
 }
