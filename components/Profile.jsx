@@ -34,25 +34,26 @@ const Profile = (props) => {
 
   // console.log(branchSmol)
   return (
-    <div className='dark:bg-slate-800 bg-slate-200'>
+    <div className='dark:bg-slate-800'>
       <div className="container mx-auto p-5 dark:bg-slate-800">
+        <div className="image overflow-hidden shadow-md mb-28">
+          {/* <img className="h-auto w-full mx-auto border-blue-700 border-solid border-spacing-11 border-4 rounded-xl shadow-md"
+            src="https://lavinephotography.com.au/wp-content/uploads/2017/01/PROFILE-Photography-112.jpg"
+            alt="" /> */}
+          <img src='https://images.unsplash.com/photo-1612646561843-f7641ae5a4ef?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80' className='w-full h-72 shadow-md rounded-xl object-right-bottom -z-10 opacity-75'/>
+          <img key={props.images[0]._key} src={urlFor(props.images[0])} className='ml-5 h-48 w-48 -mt-24 z-10 object-cover border-white border-solid border-spacing-11 border-2 rounded-full absolute shadow-md' alt={props.name}></img>
+        </div>
         <div className="md:flex no-wrap md:-mx-2">
           <div className="w-full md:w-3/12 md:mx-2">
 
-            <div className="bg-white dark:bg-slate-700 rounded-md p-3 border-t-4 border-blue-700">
-              <div className="image overflow-hidden">
-                {/* <img className="h-auto w-full mx-auto border-blue-700 border-solid border-spacing-11 border-4 rounded-xl shadow-md"
-                  src="https://lavinephotography.com.au/wp-content/uploads/2017/01/PROFILE-Photography-112.jpg"
-                  alt="" /> */}
-                <img key={props.images[0]._key} src={urlFor(props.images[0])} className='w-full md:w-52 md:h-full object-cover h-auto mx-auto border-blue-700 border-solid border-spacing-11 border-4 rounded-xl shadow-md' alt={props.name}></img>
-              </div>
+            <div className="shadow-xl dark:bg-slate-700 rounded-md p-3 border-t-4 ">
               <h1 className="text-gray-900 dark:text-white font-bold text-xl leading-8 my-1">{props.name}</h1>
               <h3 className="text-gray-600 dark:text-gray-400 font-lg text-semibold leading-6">{props.type[0].toUpperCase() + props.type.substring(1)}</h3>
               <p className="text-sm text-gray-500 dark:text-gray-100  leading-6">Lorem ipsum dolor sit amet
                 consectetur adipisicing elit.
                 Reprehenderit, eligendi dolorum sequi illum qui unde aspernatur non deserunt</p>
               <ul
-                className="dark:bg-slate-800  dark:text-white hover:dark:text-gray-300 text-gray-500 hover:cursor-pointer hover:shadow py-2 px-3 mt-3 divide-y rounded shadow-sm">
+                className="dark:bg-slate-800  dark:text-white hover:dark:text-gray-300 text-gray-500 hover:cursor-pointer hover:shadow py-2 px-3 mt-3 divide-y rounded dark:shadow-sm">
                 <li className="flex items-center py-3">
                   <span>Status</span>
                   <span className="ml-auto"><span
@@ -65,9 +66,9 @@ const Profile = (props) => {
               </ul>
             </div>
 
-            <div className="my-4"></div>
+            <div className="my-4 "></div>
 
-            <div className="bg-white dark:bg-slate-700 p-3 rounded-md hover:shadow">
+            <div className="shadow-xl dark:bg-slate-700 p-3 rounded-md hover:shadow">
               <div className="flex items-center space-x-3 font-semibold text-gray-900 dark:text-white text-xl leading-8">
                 <span className="text-blue-700">
                   <svg className="h-5 fill-current" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -110,7 +111,7 @@ const Profile = (props) => {
           <div className="w-full md:w-9/12 mx-2 h-64">
 
 
-            <div className="bg-white dark:text-white dark:bg-slate-700 p-3 shadow-sm rounded-md">
+            <div className="shadow-xl dark:text-white dark:bg-slate-700 p-3 dark:shadow-sm rounded-md">
               <div className="flex items-center space-x-2 font-semibold text-gray-900 leading-8">
                 <span clas="text-blue-700">
                   <svg className="h-5 dark:text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -154,13 +155,13 @@ const Profile = (props) => {
                     </div>
                   </div>
                   <div className="grid grid-cols-2">
-                    <div className="px-4 py-2 font-semibold">Birthday</div>
-                    <div className="px-4 py-2">Feb 06, 1998</div>
+                    <div className="px-4 py-2 font-semibold">Date of Birth</div>
+                    <div className="px-4 py-2">{props.dob || 'NA'}</div>
                   </div>
                 </div>
               </div>
               <button
-                className="block w-1/4 mx-auto dark:text-white dark:bg-blue-700 transition-all dark:hover:text-blue-700 text-blue-800 text-sm font-semibold rounded-lg hover:bg-gray-100 focus:outline-none focus:shadow-outline focus:bg-gray-100 hover:shadow-xs p-3 my-4">
+                className="block w-1/4 mx-auto dark:text-white dark:bg-blue-700 transition-all dark:hover:text-blue-700 text-blue-800 text-sm font-semibold rounded-lg bg-gray-100 hover:bg-gray-200 focus:outline-none focus:shadow-outline focus:bg-gray-100 hover:shadow-xs p-3 my-4">
                 Contact</button>
             </div>
 
@@ -168,7 +169,7 @@ const Profile = (props) => {
             <div className="my-4"></div>
 
 
-            <div className="bg-white dark:bg-slate-700 p-3 shadow-sm rounded-md">
+            <div className="shadow-xl dark:bg-slate-700 p-3 dark:shadow-sm rounded-md">
 
               <div className="grid grid-cols-2">
                 <div>
