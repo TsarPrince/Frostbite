@@ -58,7 +58,7 @@ const index = ({ pets, students, faculties }) => {
         </InstantSearch>
       </div>
 
-       {/* <div className='flex flex-col items-center md:items-start 2xl:flex-row'>
+       <div className='flex flex-col items-center md:items-start 2xl:flex-row'>
         <div>
           <p className='text-purple-600 font-bold text-3xl text-center uppercase py-4'># Furry Companions</p>
           <div className='md:flex 2xl:flex-col flex-wrap'>
@@ -83,7 +83,7 @@ const index = ({ pets, students, faculties }) => {
             }
           </div>
         </div>
-      </div>  */}
+      </div> 
     </div>
   )
 }
