@@ -39,7 +39,7 @@ export default function fetchDataFromDatabase(req,res1){
       
       
       index.saveObjects(fetchedData, { autoGenerateObjectIDIfNotExist: true });
-      console.log("helluu")
+      // console.log("helluu")
       }
     )
     .catch((err) => console.error(err));
