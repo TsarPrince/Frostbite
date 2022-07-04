@@ -2,11 +2,11 @@ import React, { Profiler } from 'react'
 import { client, urlFor } from '../../lib/client';
 import Profile from '../../components/Profile'
 const slug = ({ details }) => {
-  console.log(details)
-  
+
+  const { name, tags, description, _type, image, room_no, gender, email, rollno, phone_number, DOB } = details;
   return (
     <div>
-      <Profile name={details.name} tags={details.tags} description={details.description} type={details._type} images={details.image} roomno={details.room_no} gender={details.gender} email={details.email} rollno={details.rollno} phoneno={details.phone_number} dob={details.DOB}></Profile>
+      <Profile name={name} tags={tags} description={description} type={_type} images={image} roomno={room_no} gender={gender} email={email} rollno={rollno} phoneno={phone_number} dob={DOB}></Profile>
     </div>
   )
 }
