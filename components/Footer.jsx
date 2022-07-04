@@ -8,7 +8,7 @@ const Footer = () => {
       <div className='w-full bg-slate-100 h-1 dark:hidden'></div>
       <div className="md:flex justify-around py-16 dark:text-white">
         {/* <img className="block  h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="Workflow" /> */}
-        <img className="hidden lg:block h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg" alt="Workflow" />
+        <Image width='300px' height='200px' className="hidden lg:block h-8 w-auto" src="/Frostbite.svg" alt="Workflow" />
         <div className="address">
           <p className='mb-2 text-lg font-bold'>IIIT Lucknow</p>
           <p className='my-2'>Chak Ganjaria</p>
