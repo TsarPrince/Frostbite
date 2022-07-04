@@ -369,7 +369,6 @@ const SubmitInfo = () => {
           <div className="border-t border-gray-200" />
         </div>
       </div>
-      <Footer />
 
     </div>
   )
