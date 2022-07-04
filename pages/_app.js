@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps }) {
     <div>
       <Head>
         <title>FrostBite: College Website</title>
-        <link rel="icon" type="image/x-icon" href="/Frostbite.ico"></link>
+        <link rel="icon" type="image/x-icon" href="/Snow.svg"></link>
       </Head>
       
       <Navbar />

@@ -4,12 +4,51 @@ import { client, urlFor } from '../lib/client';
 
 import Card from '../components/Card';
 import Hero from '../components/Hero';
+	
+import Hit from '../components/Hit';
+import algoliasearch from 'algoliasearch/lite';
+import {
+  InstantSearch,
+  Hits,
+  SearchBox,
+  Pagination,
+  Highlight,
+  ClearRefinements,
+  RefinementList,
+  Configure,
+} from 'react-instantsearch-dom';
+import PropTypes from 'prop-types';
+import Head from 'next/head';
+
+
+
+
 
 const index = ({ pets, students, faculties }) => {
-  console.log(pets)
+  const searchClient = algoliasearch(
+    'JQL15WD72T',
+    '5af633b8fe05e08d22f181ade7aee679'
+  );
+
+  
   return (
     <div>
-      <Hero />
+      <div className="ais-InstantSearch">
+        {/* <h1>React InstantSearch e-commerce demo</h1> */}
+        <InstantSearch indexName="name" searchClient={searchClient}>
+          <div className="left-panel">
+            {/* <ClearRefinements /> */}
+            {/* <h2>Brands</h2> */}
+            <RefinementList attribute="name" />
+            <Configure hitsPerPage={8} />
+          </div>
+          <div className="right-panel grid-cols-4">
+            <SearchBox />
+            <Hits hitComponent={Hit} />
+            <Pagination />
+          </div>
+        </InstantSearch>
+      </div>
 
       <div className='flex flex-col items-center md:items-start 2xl:flex-row'>
         {/* Pets */}

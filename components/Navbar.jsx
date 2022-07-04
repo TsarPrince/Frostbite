@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Navbar() {
   // const [clicked, setClicked] = React.useState(false)
@@ -30,11 +31,9 @@ export default function Navbar() {
             </button>
           </div>
           <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-            <div className="flex-shrink-0 flex items-center">
-              <img className="block lg:hidden h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="Workflow" />
-              <img className="hidden lg:block h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg" alt="Workflow" />
-            </div>
-            <div className="hidden sm:block sm:ml-6">
+
+              <Image width='300px' height='250px' className="hidden md:inline h-8 w-auto" src="/Frostbite.svg" alt="Workflow" />
+            <div className="hidden sm:flex sm:ml-6 items-center">
               <div className="flex space-x-4">
                 
                 <div className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">
