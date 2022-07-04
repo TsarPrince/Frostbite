@@ -30,6 +30,10 @@ const fetchDataFromDatabase = () => {
     .then(({ result }) => {
       // get the list element, and the first item
       const fetchedData = result
+      fetchedData.forEach(data => {
+        data.objectID = data.slug.current;
+      });
+
       // console.log(fetchedData) 
       
       
