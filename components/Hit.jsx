@@ -41,7 +41,7 @@ export default function Hit(props) {
           </div>
           <div>
           <Highlight attribute="name" hit={props.hit} />
-          <Highlight attribute="description" hit={props.hit} />
+          {/* <Highlight attribute="description" hit={props.hit} /> */}
             <p className='text-sm text-emerald-400'>{props.hit.gender}</p>
           {/* </div>
           <ul className='marker:text-sky-400 list-disc ml-6 text-slate-500'>

@@ -50,35 +50,32 @@ const index = ({ pets, students, faculties }) => {
         </InstantSearch>
       </div>
 
-      <div className='flex flex-col items-center md:items-start 2xl:flex-row'>
-        {/* Pets */}
+       {/* <div className='flex flex-col items-center md:items-start 2xl:flex-row'>
         <div>
-          {/* <p className='text-purple-600 font-bold text-3xl text-center uppercase py-4'># Furry Companions</p> */}
+          <p className='text-purple-600 font-bold text-3xl text-center uppercase py-4'># Furry Companions</p>
           <div className='md:flex 2xl:flex-col flex-wrap'>
             {
               pets.map(pet => <Card props={pet} key={pet.slug.current} />)
             }
           </div>
         </div>
-        {/* Students */}
         <div>
-          {/* <p className='text-emerald-400 font-bold text-3xl text-center uppercase py-4'># Students</p> */}
+          <p className='text-emerald-400 font-bold text-3xl text-center uppercase py-4'># Students</p>
           <div className='md:flex 2xl:flex-col flex-wrap'>
             {
               students.map(student => <Card props={student} key={student.slug.current} />)
             }
           </div>
         </div>
-        {/* Faculties */}
         <div>
-          {/* <p className='text-pink-600 font-bold text-3xl text-center uppercase py-4'># Faculties</p> */}
+          <p className='text-pink-600 font-bold text-3xl text-center uppercase py-4'># Faculties</p>
           <div className='md:flex 2xl:flex-col flex-wrap'>
             {
               faculties.map(faculty => <Card props={faculty} key={faculty.slug.current} />)
             }
           </div>
         </div>
-      </div>
+      </div>  */}
     </div>
   )
 }
