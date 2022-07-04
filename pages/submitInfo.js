@@ -1,17 +1,161 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Footer from '../components/Footer'
 
-const submitInfo = () => {
-  const submitForm = (event) => {
+import { client } from '../lib/client';
+
+const SubmitInfo = () => {
+
+  useEffect(() => {
+
+    if (typeof window == 'undefined') return;
+
+    const dropbox = document.querySelector('.dropbox');
+    const handleFiles = files => {
+      // empty the dropbox
+      while (dropbox.firstChild) {
+        dropbox.removeChild(dropbox.firstChild);
+      }
+
+      for (let i = 0; i < files.length; i++) {
+        const file = files[i];
+        if (!file.type.startsWith('image')) {
+          alert(`${file.name} is not supported because it is of type ${file.type}.`);
+          continue;
+        }
+        const imgElement = document.createElement('img');
+        imgElement.file = file;
+        imgElement.className = 'h-24 m-2 inline';
+        dropbox.appendChild(imgElement);
+
+        let reader = new FileReader();
+
+        // reader.onload = () => {
+        //   imgElement.src = reader.result;
+        // }
+
+        reader.onload = (function (aImg) {
+          return function (e) {
+            aImg.src = e.target.result;
+          };
+        })(imgElement);
+
+        reader.readAsDataURL(file);
+      }
+    }
+
+    dropbox.addEventListener('dragenter', (event) => {
+      event.target.classList.add('border-indigo-500');
+    })
+    dropbox.addEventListener('dragover', (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+    })
+    dropbox.addEventListener('dragleave', (event) => {
+      event.target.classList.remove('border-indigo-500');
+    })
+    dropbox.addEventListener('drop', (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      const files = event.dataTransfer.files;
+      handleFiles(files);
+    })
+
+    const fileUpload = document.querySelector('#file-upload');
+    fileUpload.addEventListener('change', (event) => {
+      const files = event.target.files;
+      handleFiles(files);
+    })
+
+
+  }, [])
+
+
+  const submitForm = async (event) => {
     event.preventDefault();
-    let { firstName, lastName, rollNumber, phoneNumber, roomNumber, about, linkedinProfile, profilePhoto, fileUpload, branch, year } = event.target.form
-    const data = {
-      name: firstName.value + " " + lastName.value,
-      rollNumber: rollNumber.value,
-      phoneNumber: phoneNumber.value,
-      roomNumber: roomNumber.value,
+
+    let imgAssetsArray = [];
+
+    const images = document.querySelector('.dropbox').childNodes;
+    for (const img of images) {
+
+      const imgAsset = await client.assets.upload('image', img.file, {
+        filename: img.file.name
+      });
+      imgAssetsArray.push({
+        _type: 'image',
+        _key: imgAsset._id,      // not a good way, but it works
+        asset: {
+          _type: 'reference',
+          _ref: imgAsset._id
+        }
+      })
+    }
+
+
+    let image = imgAssetsArray;
+    let name = document.querySelector('#firstName').value + " " + document.querySelector('#lastName').value;
+    let rollno = document.querySelector('#rollNumber').value;
+    let slug = {
+      _type: 'slug',
+      current: rollno.toLowerCase()
+    }
+    let description = document.querySelector('#about').value.split('\n');
+    // let gender = '';
+    let phone_number = parseInt(document.querySelector('#phoneNumber').value);
+    // let email = '';
+    // let tags = '';
+    let room_no = parseInt(document.querySelector('#roomNumber').value);
+    let linkedinProfile = document.querySelector('#linkedinProfile').value;
+    let branch = document.querySelector('#branch').value;
+    let year = document.querySelector('#year').value;
+
+
+    const student = {
+      _type: 'student',
+      image, name, rollno, slug, phone_number, room_no, description
     };
-    console.log(data)
+    console.log(student)
+
+
+    // const file = new File(['foo'], 'foo.txt', {
+    //   type: 'text/plain'
+    // })
+    // client.assets
+    // .upload('file', file)
+    // .then(document => {
+    //   console.log(`${document} uploaded successfully :)`);
+    // })
+    // .catch (error => {
+    //   console.log('Upload failed: ', error);
+    // })
+    // console.log(data)
+
+
+    // CREATE DOCUMENT
+    client
+      .create(student)
+      .then((res) => {
+        console.log(`Student was created, document ID is ${res._id}`)
+      })
+      .catch(error => {
+        console.log('Error creating doccument:', error);
+      })
+
+    // // UPDATE DOCUMENT
+    // client
+    // .patch('ua2B64HnO6Bb4Ci1L1803v')
+    // .set({
+    //   slug: 'lit2021024',
+    //   gender: 'Male',
+    //   phone_number: '9305680096',
+    // })
+    // .commit()
+    // .then(updatedStudent => {
+    //   console.log('Update successfull', updatedStudent);
+    // })
+    // .catch(error => {
+    //   console.log(error);
+    // })
   }
   return (
     <div>
@@ -27,7 +171,7 @@ const submitInfo = () => {
           </div>
           <div className="mt-5 md:mt-5 mr-5 md:col-span-2">
             <form action="http://localhost:3000/api/submitInfo" method="POST">
-              <div className="shadow-md sm:rounded-md sm:overflow-hidden">
+              <div className="shadow-md rounded-t-md sm:overflow-hidden">
                 <div className="px-4 py-5 bg-white space-y-6 sm:p-6">
                   <label htmlFor="firstName" className="block text-sm font-medium text-gray-700">
                     Name
@@ -39,6 +183,7 @@ const submitInfo = () => {
                       name="firstName"
                       placeholder='First Name'
                       className="inline-flex items-center px-3 rounded-md border border-gray-300 text-gray-500 text-sm w-full"
+                      required
                     />
                     <input
                       type="text"
@@ -146,32 +291,22 @@ const submitInfo = () => {
 
                   <div>
                     <label className="block text-sm font-medium text-gray-700">Your photos gallery</label>
-                    <div className="my-4 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
-                      <div className="space-y-1 text-center">
-                        <svg
-                          className="mx-auto h-12 w-12 text-gray-400"
-                          stroke="currentColor"
-                          fill="none"
-                          viewBox="0 0 48 48"
-                          aria-hidden="true"
-                        >
-                          <path
-                            d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
-                            strokeWidth={2}
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
+
+
+                    {/* DROPBOX */}
+                    <div className="dropbox my-4 px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+                      <div className="dropbox-children space-y-1 text-center">
+                        <svg className="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true" > <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" /> </svg>
                         <div className="text-sm max-w-full text-gray-600">
                           <label
                             htmlFor="file-upload"
                             className="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500"
                           >
                             <span>Upload photos</span>
-                            <input id="file-upload" name="file-upload" type="file" className="sr-only" />
+                            <input id="file-upload" name="file-upload" type="file" className="sr-only" multiple />
                           </label>
+                          <p className="text-xs text-gray-500">Photos don&apos;t need to be formal, but keep in mind that they are <strong>public</strong></p>
                         </div>
-                        <p className="text-xs text-gray-500">Photos don&apos;t need to be formal, but keep in mind that they are <strong>public</strong></p>
                       </div>
                     </div>
                     <div className="col-span-6 mt-5 mx-1 max-w-full sm:col-span-3">
@@ -240,4 +375,4 @@ const submitInfo = () => {
   )
 }
 
-export default submitInfo
+export default SubmitInfo
