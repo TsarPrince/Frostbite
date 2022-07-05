@@ -1,7 +1,21 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
+import Image from 'next/image';
 import Footer from '../components/Footer'
 
 import { client } from '../lib/client';
+
+const RemovableImg = ({ src, file }) => {
+  return (
+    <div className='relative inline-flex group'>
+      <button onClick={(event) => {
+        console.log(event.currentTarget.parentElement.remove())
+      }}>
+        <svg className='w-8 rounded-full bg-white text-red-500 hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 group-hover:block hover:cursor-pointer' fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256zM175 208.1L222.1 255.1L175 303C165.7 312.4 165.7 327.6 175 336.1C184.4 346.3 199.6 346.3 208.1 336.1L255.1 289.9L303 336.1C312.4 346.3 327.6 346.3 336.1 336.1C346.3 327.6 346.3 312.4 336.1 303L289.9 255.1L336.1 208.1C346.3 199.6 346.3 184.4 336.1 175C327.6 165.7 312.4 165.7 303 175L255.1 222.1L208.1 175C199.6 165.7 184.4 165.7 175 175C165.7 184.4 165.7 199.6 175 208.1V208.1z" /></svg>
+      </button>
+      <img src={src} className='h-24 rounded-md group-hover:opacity-80' file={file} />
+    </div>
+  )
+}
 
 const SubmitInfo = () => {
 
@@ -12,8 +26,11 @@ const SubmitInfo = () => {
     const dropbox = document.querySelector('.dropbox');
     const handleFiles = files => {
       // empty the dropbox
-      while (dropbox.firstChild) {
-        dropbox.removeChild(dropbox.firstChild);
+      if (dropbox.firstChild.classList.contains('dropbox-description-container')) {
+
+        while (dropbox.firstChild) {
+          dropbox.removeChild(dropbox.firstChild);
+        }
       }
 
       for (let i = 0; i < files.length; i++) {
@@ -24,7 +41,7 @@ const SubmitInfo = () => {
         }
         const imgElement = document.createElement('img');
         imgElement.file = file;
-        imgElement.className = 'h-24 m-2 inline';
+        imgElement.className = 'h-24 m-2 inline rounded-md hover:opacity-80';
         dropbox.appendChild(imgElement);
 
         let reader = new FileReader();
@@ -73,11 +90,11 @@ const SubmitInfo = () => {
   const submitForm = async (event) => {
     event.preventDefault();
 
+    setProcessing(true);
     let imgAssetsArray = [];
 
     const images = document.querySelector('.dropbox').childNodes;
     for (const img of images) {
-
       const imgAsset = await client.assets.upload('image', img.file, {
         filename: img.file.name
       });
@@ -90,8 +107,6 @@ const SubmitInfo = () => {
         }
       })
     }
-
-
     let image = imgAssetsArray;
     let name = document.querySelector('#firstName').value + " " + document.querySelector('#lastName').value;
     let rollno = document.querySelector('#rollNumber').value;
@@ -156,9 +171,15 @@ const SubmitInfo = () => {
     // .catch(error => {
     //   console.log(error);
     // })
+
+    setProcessing(false);
   }
+
+  const [processing, setProcessing] = useState(false);
+
   return (
     <div>
+      {/* <RemovableImg src={'/sambhav.jpg'} /> */}
       <div className='max-w-7xl mx-auto'>
         <div className="md:grid md:grid-cols-3 md:gap-6">
           <div className="md:col-span-1">
@@ -169,8 +190,8 @@ const SubmitInfo = () => {
               </p>
             </div>
           </div>
-          <div className="mt-5 md:mt-5 mr-5 md:col-span-2">
-            <form action="http://localhost:3000/api/submitInfo" method="POST">
+          <div className="mt-5 mr-5 md:col-span-2">
+            <form action="http://localhost:3000/api/submitInfo">
               <div className="shadow-md rounded-t-md sm:overflow-hidden">
                 <div className="px-4 py-5 bg-white space-y-6 sm:p-6">
                   <label htmlFor="firstName" className="block text-sm font-medium text-gray-700">
@@ -295,7 +316,7 @@ const SubmitInfo = () => {
 
                     {/* DROPBOX */}
                     <div className="dropbox my-4 px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
-                      <div className="dropbox-children space-y-1 text-center">
+                      <div className="dropbox-description-container space-y-1 text-center">
                         <svg className="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true" > <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" /> </svg>
                         <div className="text-sm max-w-full text-gray-600">
                           <label
@@ -350,17 +371,21 @@ const SubmitInfo = () => {
                 </div>
               </div>
               <div className="px-4 py-5 bg-gray-50 border rounded-b-xl text-right sm:px-6">
-                <button
+                {!processing && <button
                   type="submit"
                   onClick={submitForm}
                   className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                 >
                   Save
-                </button>
-                <button type="button" className="bg-indigo-500 ..." disabled>
+                </button>}
+                {processing && <button
+                  type="button"
+                  className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 hover:cursor-not-allowed"
+                  disabled
+                >
                   <svg className="motion-reduce:hidden animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"> <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle> <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path> </svg>
                   Processing...
-                </button>
+                </button>}
               </div>
 
             </form>
