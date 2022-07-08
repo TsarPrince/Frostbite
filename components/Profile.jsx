@@ -87,9 +87,9 @@ const Profile = (props) => {
                   <a href="#" className="text-main-color dark:text-white">Kojstantin</a>
                 </div>
                 <div className="text-center my-2">
-                  {/* <img className="h-16 w-16 rounded-full mx-auto"
+                  <img className="h-16 w-16 rounded-full mx-auto"
                     src="https://widgetwhats.com/app/uploads/2019/11/free-profile-photo-whatsapp-4.png"
-                    alt="" /> */}
+                    alt="" />
                   <a href="#" className="text-main-color dark:text-white">James</a>
                 </div>
                 <div className="text-center my-2">
