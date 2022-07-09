@@ -115,10 +115,10 @@ const SubmitInfo = () => {
       current: rollno.toLowerCase()
     }
     let description = document.querySelector('#about').value.split('\n');
-    // let gender = '';
+    let gender = document.querySelector('#gender').value;
     let phone_number = parseInt(document.querySelector('#phoneNumber').value);
-    // let email = '';
-    // let tags = '';
+    let email = document.querySelector('#email').value;
+    let tags = document.querySelector('#tags').value.split('\n');
     let room_no = parseInt(document.querySelector('#roomNumber').value);
     let linkedinProfile = document.querySelector('#linkedinProfile').value;
     let branch = document.querySelector('#branch').value;
@@ -127,7 +127,7 @@ const SubmitInfo = () => {
 
     const student = {
       _type: 'student',
-      image, name, rollno, slug, phone_number, room_no, description
+      image, name, rollno, slug, phone_number, room_no, description, tags, email, gender, linkedinProfile, branch, year
     };
     console.log(student)
 
@@ -194,38 +194,65 @@ const SubmitInfo = () => {
             <form action="http://localhost:3000/api/submitInfo">
               <div className="shadow-md rounded-t-md sm:overflow-hidden">
                 <div className="px-4 py-5 bg-white space-y-6 sm:p-6">
-                  <label htmlFor="firstName" className="block text-sm font-medium text-gray-700">
-                    Name
-                  </label>
-                  <div className='grid grid-cols-2 gap-6'>
-                    <input
-                      type="text"
-                      id='firstName'
-                      name="firstName"
-                      placeholder='First Name'
-                      className="inline-flex items-center px-3 rounded-md border border-gray-300 text-gray-500 text-sm w-full"
-                      required
-                    />
-                    <input
-                      type="text"
-                      id="lastName"
-                      name="lastName"
-                      placeholder='Last Name'
-                      className="inline-flex items-center px-3 rounded-md border border-gray-300 text-gray-500 text-sm w-full"
-                    />
+                  <div>
+                    <label htmlFor="firstName" className="block text-sm font-medium text-gray-700">
+                      Name
+                    </label>
+                    <div className='mt-1 grid grid-cols-2 gap-6'>
+                      <input
+                        type="text"
+                        id='firstName'
+                        name="firstName"
+                        placeholder='First Name'
+                        className="inline-flex items-center px-3 rounded-md border border-gray-300 text-gray-500 text-sm w-full"
+                        required
+                      />
+                      <input
+                        type="text"
+                        id="lastName"
+                        name="lastName"
+                        placeholder='Last Name'
+                        className="inline-flex items-center px-3 rounded-md border border-gray-300 text-gray-500 text-sm w-full"
+                      />
+                    </div>
                   </div>
-                  <label htmlFor="rollNumber" className="block text-sm font-medium text-gray-700">
-                    Roll Number
-                  </label>
-                  <input
-                    type="text"
-                    id="rollNumber"
-                    name="rollNumber"
-                    placeholder="LXX20XX0XX"
-                    className="inline-flex items-center px-3 rounded-md border border-gray-300 text-gray-500 text-sm w-full"
-                  />
+
+
+                  <div className="mt-1 grid grid-cols-2 gap-6">
+
+
+
+                    <div className='mb-2 max-w-full sm:col-span-1'>
+                      <label htmlFor="gender" className="block text-sm font-medium text-gray-700">
+                        Gender
+                      </label>
+                      <select
+                        id="gender"
+                        name="gender"
+                        className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                      >
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Prefer not to say</option>
+                        <option>Yet to find out</option>
+                      </select>
+                    </div>
+
+                    <div className='mb-2 max-w-full sm:col-span-1'>
+                      <label htmlFor="rollNumber" className="block text-sm font-medium text-gray-700">
+                        Roll Number
+                      </label>
+                      <input
+                        type="text"
+                        id="rollNumber"
+                        name="rollNumber"
+                        placeholder="LXX20XX0XX"
+                        className="mt-1 inline-flex items-center px-3 rounded-md border border-gray-300 text-gray-500 text-sm w-full"
+                      />
+                    </div>
+                  </div>
                   <div className="grid grid-cols-3 gap-6">
-                    <div className="col-span-3 sm:col-span-2">
+                    <div className="col-span-3 sm:col-span-2 w-full">
                       <label htmlFor="phoneNumber" className="block text-sm font-medium text-gray-700">
                         Phone Number
                       </label>
@@ -242,7 +269,7 @@ const SubmitInfo = () => {
                         />
                       </div>
                     </div>
-                    <div className=''>
+                    <div className='col-span-3 sm:col-span-1'>
                       <label htmlFor='roomNumber' className='block text-sm font-medium text-gray-700'>
                         Room Number
                       </label>
@@ -273,6 +300,40 @@ const SubmitInfo = () => {
                       Brief description for your profile. Do list your achievements here.
                     </p>
                   </div>
+                  <div>
+                    <label htmlFor="tags" className="block text-sm font-medium text-gray-700">
+                      Tags
+                    </label>
+                    <div className="mt-1">
+                      <textarea
+                        id="tags"
+                        name="tags"
+                        rows={5}
+                        className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"
+                        placeholder={`5⭐ codechef\nGSOC 2020 participant\nAxios Coordiantor\n...`}
+                        defaultValue={''}
+                      />
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-3 gap-6">
+                    <div className="col-span-3 sm:col-span-2">
+                      <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                        Email
+                      </label>
+                      <div className="mt-1 flex rounded-md shadow-sm">
+                        <span className="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 text-sm">
+                          @
+                        </span>
+                        <input
+                          type="email"
+                          name="email"
+                          id="email"
+                          className="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-1 rounded-none rounded-r-md sm:text-sm border-gray-300"
+                          placeholder="ecstatic@gravy.com"
+                        />
+                      </div>
+                    </div>
+                  </div>
                   <div className="grid grid-cols-3 gap-6">
                     <div className="col-span-3 sm:col-span-2">
                       <label htmlFor="linkedinProfile" className="block text-sm font-medium text-gray-700">
@@ -290,23 +351,6 @@ const SubmitInfo = () => {
                           placeholder="first-last-12345"
                         />
                       </div>
-                    </div>
-                  </div>
-
-                  <div>
-                    <label htmlFor="profilePhoto" className="block text-sm font-medium text-gray-700">Profile Photo</label>
-                    <div className="mt-1 flex items-center">
-                      <span className="inline-block h-12 w-12 rounded-full overflow-hidden bg-gray-100">
-                        <svg className="h-full w-full text-gray-300" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
-                        </svg>
-                      </span>
-                      <button
-                        type="button"
-                        className="ml-5 bg-white py-2 px-3 border border-gray-300 rounded-md shadow-sm text-sm leading-4 font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                      >
-                        Change
-                      </button>
                     </div>
                   </div>
 

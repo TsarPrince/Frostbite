@@ -1,4 +1,4 @@
-import React, { Profiler } from 'react'
+import React from 'react'
 import { client, urlFor } from '../../lib/client';
 import Profile from '../../components/Profile'
 const slug = ({ details }) => {
@@ -35,6 +35,6 @@ export const getStaticPaths = async () => {
   // console.log(paths)
   return {
     paths: paths,
-    fallback: true
+    fallback: false
   }
 }
