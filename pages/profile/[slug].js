@@ -13,28 +13,37 @@ const slug = ({ details }) => {
 export default slug
 
 
-export const getStaticProps = async (context) => {
+// export const getStaticProps = async (context) => {
+//   const slug = context.params.slug;
+//   const details = await client.fetch(`*[_type == "student" && slug.current == "${slug}"][0]`);
+//   // console.log(details)
+//   return {
+//     props: {
+//       details
+//     }
+//   }
+// }
+// export const getStaticPaths = async () => {
+//   const studentQuery = '*[_type == "student"]{ slug }';
+//   const students = await client.fetch(studentQuery);
+//   const paths = students.map(student => ({
+//     params: {
+//       slug: student.slug.current
+//     }
+//   }))
+
+//   return {
+//     paths: paths,
+//     fallback: false
+//   }
+// }
+
+export const getServerSideProps = async (context) => {
   const slug = context.params.slug;
   const details = await client.fetch(`*[_type == "student" && slug.current == "${slug}"][0]`);
-  // console.log(details)
   return {
     props: {
       details
     }
-  }
-}
-
-export const getStaticPaths = async () => {
-  const studentQuery = '*[_type == "student"]{ slug }';
-  const students = await client.fetch(studentQuery);
-  const paths = students.map(student => ({
-    params: {
-      slug: student.slug.current
-    }
-  }))
-
-  return {
-    paths: paths,
-    fallback: false
   }
 }
