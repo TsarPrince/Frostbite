@@ -32,7 +32,7 @@ export const getStaticPaths = async () => {
       slug: student.slug.current
     }
   }))
-  // console.log(paths)
+
   return {
     paths: paths,
     fallback: false

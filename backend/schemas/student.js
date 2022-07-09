@@ -75,7 +75,22 @@ export default {
           type: 'number'
         },
         {
-            name: 'DOB',
+          name: 'branch',
+          title: 'Branch',
+          type: 'string'
+        },
+        {
+          name: 'linkedinProfile',
+          title: 'Linkedin Profile',
+          type: 'string'
+        },
+        {
+          name: 'year',
+          title: 'Year',
+          type: 'number'
+        },
+        {
+            name: 'dob',
             title: 'Date of Birth',
             type: 'date'
         }
