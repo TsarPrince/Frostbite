@@ -474,6 +474,7 @@ const SubmitInfo = () => {
         </div>
       </div>
 
+      <Footer />
     </div >
   )
 }

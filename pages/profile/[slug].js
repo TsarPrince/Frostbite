@@ -1,12 +1,14 @@
 import React from 'react'
 import { client, urlFor } from '../../lib/client';
 import Profile from '../../components/Profile'
+import Footer from '../../components/Footer';
 const slug = ({ details }) => {
 
   const { name, tags, description, _type, image, room_no, gender, email, rollno, phone_number, DOB } = details;
   return (
     <div>
       <Profile name={name} tags={tags} description={description} type={_type} images={image} roomno={room_no} gender={gender} email={email} rollno={rollno} phoneno={phone_number} dob={DOB}></Profile>
+      <Footer />
     </div>
   )
 }

@@ -4,7 +4,8 @@ import { client, urlFor } from '../lib/client';
 
 import Card from '../components/Card';
 import Hero from '../components/Hero';
-	
+import Footer from '../components/Footer';
+
 
 
 const index = ({ pets, students, faculties }) => {
@@ -12,7 +13,7 @@ const index = ({ pets, students, faculties }) => {
   return (
     <div>
       <Hero />
-       <div className='flex flex-col items-center md:items-start 2xl:flex-row'>
+      <div className='flex flex-col items-center md:items-start 2xl:flex-row'>
         <div>
           <div className='md:flex 2xl:flex-col flex-wrap'>
             {
@@ -34,8 +35,10 @@ const index = ({ pets, students, faculties }) => {
             }
           </div>
         </div>
-      </div> 
+      </div>
+      <Footer />
     </div>
+
   )
 }
 
@@ -46,7 +49,7 @@ export const getServerSideProps = async () => {
 
   const studentQuery = '*[_type == "student"]';
   const students = await client.fetch(studentQuery);
-  
+
   // console.log(students)
 
   const facultyQuery = '*[_type == "faculty"]';

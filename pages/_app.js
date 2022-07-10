@@ -4,6 +4,7 @@ import Head from 'next/head'
 import NextNProgress from 'nextjs-progressbar'
 import Footer from '../components/Footer'
 
+import '../styles/chat.css'
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -12,11 +13,9 @@ function MyApp({ Component, pageProps }) {
         <title>FrostBite: College Website</title>
         <link rel="icon" type="image/x-icon" href="/Snow.svg"></link>
       </Head>
-      
       <Navbar />
       <NextNProgress height={2} color="#06b4ff" />
       <Component {...pageProps} />
-      <Footer />
     </div>
   )
 }
