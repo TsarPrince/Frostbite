@@ -1,11 +1,10 @@
 import { useEffect } from 'react'
 import io from 'socket.io-client'
 
-export default function Socket () {
+export default function Chat () {
 
   useEffect(() => {
     window.$ = window.jQuery = require('jquery')
-    fetch('/api/socketio').finally(() => {
       const socket = io("https://frostbite-iiitl.herokuapp.com/")
 
       $(function() {
@@ -286,8 +285,6 @@ export default function Socket () {
         });
       
       });
-      
-    })
   }, []) // Added [] as useEffect filter so it will be executed only once, when component is mounted
 
 
