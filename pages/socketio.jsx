@@ -6,7 +6,7 @@ export default function Socket () {
   useEffect(() => {
     window.$ = window.jQuery = require('jquery')
     fetch('/api/socketio').finally(() => {
-      const socket = io()
+      const socket = io("http://localhost:8722")
 
       $(function() {
         const FADE_TIME = 150; // ms
