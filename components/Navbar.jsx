@@ -22,9 +22,12 @@ export default function Navbar() {
               <button type="button" className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
                 <span className="sr-only">Open main menu</span>
 
+                {/* Hamburger menu */}
                 <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
+                
+                {/* Close button */}
                 <svg className="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
@@ -32,7 +35,8 @@ export default function Navbar() {
             </div>
             <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
 
-              <Image width='300px' height='250px' className="hidden md:inline h-8 w-auto" src="/Frostbite.svg" alt="Workflow" />
+              <img className="hidden md:inline h-8 w-auto" src="/Frostbite.svg" alt="Workflow" />
+              
               <div className="hidden sm:flex sm:ml-6 items-center">
                 <div className="flex space-x-4">
 
