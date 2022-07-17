@@ -61,6 +61,7 @@ export default function Profiles() {
           <div className='md:grid md:grid-cols-3 md:gap-x-24 lg:gap-x-48 mt-8'>
 
             <div className='md:col-span-2 space-y-12'>
+              {/* About me */}
               <div className='max-w-3xl space-y-2'>
                 <p className='text-slate-800 text-xl font-semibold'>About Me</p>
                 <p className='text-slate-600 text-lg'>
@@ -70,6 +71,7 @@ export default function Profiles() {
                 </p>
               </div>
 
+              {/* Departments */}
               <div className='space-y-2'>
                 <p className='text-slate-800 text-xl font-semibold'>Departments</p>
                 {/* Card container */}
@@ -126,7 +128,7 @@ export default function Profiles() {
               {/* Work History */}
               <div className='max-w-3xl space-y-2'>
                 <p className='text-slate-800 text-xl font-semibold'>Work History</p>
-                <div className='border rounded-md p-2 md:py-6 md:px-8 space-y-8'>
+                <div className='border rounded-md p-4 md:py-6 md:px-8 space-y-8'>
 
                   <div className='space-y-2 md:flex md:justify-between md:items-center'>
                     <div className='flex items-center space-x-4'>
@@ -159,7 +161,7 @@ export default function Profiles() {
                       <span className='border rounded-full px-2 py-1 shadow-sm hover:text-slate-600 hover:border-slate-300'>+4</span>
                     </div>
                   </div>
- 
+
                   <div className='space-y-2 md:flex md:justify-between md:items-center'>
                     <div className='flex items-center space-x-4'>
                       <div className='w-8 h-8 bg-indigo-500 text-white rounded-full'>
