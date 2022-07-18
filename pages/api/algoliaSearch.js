@@ -44,7 +44,7 @@ export default function fetchDataFromDatabase(req,res1){
     )
     .catch((err) => console.error(err));
     console.log("Successfully updated the search database")
-    res1.redirect('/')
+    res1.redirect('/search')
     // res1.status(200).json({ Result: "Successfully updated the search database" })
 }
 // fetchDataFromDatabase()
