@@ -3,6 +3,27 @@ import Image from 'next/image';
 import Footer from '../components/Footer'
 
 import { client } from '../lib/client';
+import toast, { Toaster } from 'react-hot-toast';
+
+const notify = () => toast('Successfully submitted information', {
+  duration: 4000,
+  position: 'top-center',
+
+  style: {},
+  className: '',
+  
+  icon: '✅'
+});
+
+const notifyFail = () => toast('Error submitting information', {
+  duration: 4000,
+  position: 'top-center',
+
+  style: {},
+  className: '',
+  
+  icon: '❌'
+});
 
 const RemovableImg = ({ src, file }) => {
   return (
@@ -155,10 +176,12 @@ const SubmitInfo = () => {
       .create(student)
       .then((res) => {
         console.log(`Student was created, document ID is ${res._id}`);
+        notify();
         setProcessing(false);
         document.forms[0].reset();
       })
       .catch(error => {
+        notifyFail();
         console.log('Error creating doccument:', error);
       })
 
@@ -473,7 +496,8 @@ const SubmitInfo = () => {
           <div className="border-t border-gray-200" />
         </div>
       </div>
-
+      {/* <button onClick={notifyFail}>Make me a toast</button> */}
+      <Toaster />
       <Footer />
     </div >
   )
