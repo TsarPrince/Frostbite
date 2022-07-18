@@ -5,25 +5,9 @@ import Footer from '../components/Footer'
 import { client } from '../lib/client';
 import toast, { Toaster } from 'react-hot-toast';
 
-const notify = () => toast('Successfully submitted information', {
-  duration: 4000,
-  position: 'top-center',
+const notify = () => toast.success('Successfully submitted information');
 
-  style: {},
-  className: '',
-  
-  icon: '✅'
-});
-
-const notifyFail = () => toast('Error submitting information', {
-  duration: 4000,
-  position: 'top-center',
-
-  style: {},
-  className: '',
-  
-  icon: '❌'
-});
+const notifyFail = () => toast.error('Error submitting information');
 
 const RemovableImg = ({ src, file }) => {
   return (
@@ -496,7 +480,6 @@ const SubmitInfo = () => {
           <div className="border-t border-gray-200" />
         </div>
       </div>
-      {/* <button onClick={notifyFail}>Make me a toast</button> */}
       <Toaster />
       <Footer />
     </div >
