@@ -31,9 +31,12 @@ export default function Search() {
           <Configure hitsPerPage={8} />
         </div>
         <div className="right-panel grid-cols-4">
-          <div>
+          <div className='flex flex-col'>
             <SearchBox />
-            <PoweredBy />
+            <div className="ml-auto mr-auto">
+              <PoweredBy />
+
+            </div>
           </div>
           <div className="ais-PoweredBy ais-PoweredBy--light">
             <a href="..." target="_blank" className="ais-PoweredBy-link" aria-label="Search by Algolia" rel="noopener noreferrer">

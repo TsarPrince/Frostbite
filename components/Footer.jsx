@@ -10,7 +10,7 @@ import Link from 'next/link'
 const Footer = () => {
   return (
     <div className='dark:bg-gray-900'>
-      <div className='w-full bg-slate-100 h-1 dark:hidden'></div>
+      {/* <div className='w-full bg-slate-100 h-1 dark:hidden'></div> */}
       <div className="bg-slate-800 grid text-center  grid-cols-2 place-items-center lg:flex items-center justify-around py-16 dark:text-white">
         <div>
           <img className="block h-10 ml-5 mt-[-5px] w-auto" src="/frostbite.svg" alt="Workflow" />
