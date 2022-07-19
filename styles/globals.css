@@ -2,6 +2,98 @@
 @tailwind components;
 @tailwind utilities;
 
+.custom_background {
+  background: url('/header.png') ;
+}
+
+.Axios{
+  background: url('/image.jpg');
+}
+.Afterdark{
+  background: url('/image.jpg');
+}
+.Ecell{
+  background: url('/image.jpg');
+}
+.Crotonia{
+  background: url('/image.jpg');
+}
+.Estrella{
+  background: url('/image.jpg');
+}
+.Zephyr{
+  background: url('/image.jpg');
+}
+.Goonj{
+  background: url('/image.jpg');
+}
+.Utkrisht{
+  background: url('/image.jpg');
+}
+.Eifer{
+  background: url('/image.jpg');
+}
+
+
+.Axios-text{
+  
+  position: relative;
+  width: 432px;
+  height: 10vh;
+  left: 35vw;
+  top: 30vh;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 800;
+font-size: 128px;
+line-height: 155px;
+}
+
+.Afterdark-text{
+  
+  position: relative;
+  width: 432px;
+  height: 10vh;
+  left: 35vw;
+  top: 30vh;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 800;
+font-size: 128px;
+line-height: 155px;
+}
+
+.Crotonia-text{
+  
+  position: relative;
+  width: 432px;
+  height: 10vh;
+  left: 35vw;
+  top: 30vh;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 800;
+font-size: 128px;
+line-height: 155px;
+}
+
+.Estrella-text{
+  
+  position: relative;
+  width: 432px;
+  height: 10vh;
+  left: 45vw;
+  top: 30vh;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 800;
+font-size: 128px;
+line-height: 155px;
+}
 .ais-SearchBox {
   margin: 1em 0;
   border-radius: 10px;
@@ -9,6 +101,89 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+.Zephyr-text{
+  
+  position: relative;
+  width: 432px;
+  height: 10vh;
+  left: 35vw;
+  top: 30vh;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 800;
+font-size: 128px;
+line-height: 155px;
+}
+
+.Goonj-text{
+  
+  position: relative;
+  width: 432px;
+  height: 10vh;
+  left: 35vw;
+  top: 30vh;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 800;
+font-size: 128px;
+line-height: 155px;
+}
+
+.Utkrisht-text{
+  position: relative;
+  width: 432px;
+  height: 10vh;
+  left: 35vw;
+  top: 30vh;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 800;
+font-size: 128px;
+line-height: 155px;
+}
+
+.Ecell-text{
+  
+  position: relative;
+  width: 432px;
+  height: 10vh;
+  left: 35vw;
+  top: 30vh;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 800;
+font-size: 128px;
+line-height: 155px;
+}
+
+.Eifer-text{
+  
+  position: relative;
+  width: 432px;
+  height: 10vh;
+  left: 35vw;
+  top: 30vh;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 800;
+font-size: 128px;
+line-height: 155px;
+}
+
+.ais-SearchBox {
+  margin: 1em 0;
+  border-radius: 10px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .ais-Hits-list{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px,1fr));
