@@ -25,6 +25,9 @@ const Login = () => {
       redirect: 'follow',
       referrerPolicy: 'no-referrer',
       body: JSON.stringify(data)
+    })
+    .catch(err => {
+      toast.error("Some error occured, Please try again.");
     });
     const json = await response.json();
     if (response.status == 400) {
