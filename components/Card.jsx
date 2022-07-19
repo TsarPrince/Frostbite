@@ -1,6 +1,5 @@
 import React from 'react'
 import Image from 'next/image';
-import mars from '../public/mars.svg'
 import Link from 'next/link'
 import { urlFor } from '../lib/client';
 const Card = ({ props: { slug, image, name, gender, description, tags, rollno } }) => {

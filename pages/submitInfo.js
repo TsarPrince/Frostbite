@@ -6,7 +6,6 @@ import { client } from '../lib/client';
 import toast, { Toaster } from 'react-hot-toast';
 
 const notify = () => toast.success('Successfully submitted information');
-
 const notifyFail = () => toast.error('Error submitting information');
 
 const RemovableImg = ({ src, file }) => {

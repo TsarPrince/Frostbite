@@ -1,42 +1,45 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { client, urlFor } from '../lib/client';
 import Footer from '../components/Footer'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import toast, { Toaster } from 'react-hot-toast';
 
-const login = () => {
-  const notify = () => toast.custom((t) => (
-    <div className={`${t.visible?'animate-enter':'animate-leave'} max-w-md w-full bg-white shadow-lg rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5`}>
-      <div className="flex-1 w-0 p-4">
-        <div className="flex items-start">
-          <div className="flex-shrink-0 pt-0.5">
-            <img
-              className="h-10 w-10 rounded-full"
-              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixqx=6GHAjsWpt9&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.2&w=160&h=160&q=80"
-              alt=""
-            />
-          </div>
-          <div className="ml-3 flex-1">
-            <p className="text-sm font-medium text-gray-900">
-              Emilia Gates
-            </p>
-            <p className="mt-1 text-sm text-gray-500">
-              Sure! 8:30pm works great!
-            </p>
-          </div>
-        </div>
-      </div>
-      <div className="flex border-l border-gray-200">
-        <button
-          onClick={() => toast.dismiss(t.id)}
-          className="w-full border border-transparent rounded-none rounded-r-lg p-4 flex items-center justify-center text-sm font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-        >
-          Close
-        </button>
-      </div>
-    </div>
-  ))
+const Login = () => {
+  const router = useRouter();
+  // const notify = () => toast.custom((t) => (
+  //   <div className={`${t.visible?'animate-enter':'animate-leave'} max-w-md w-full bg-white shadow-lg rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5`}>
+  //     <div className="flex-1 w-0 p-4">
+  //       <div className="flex items-start">
+  //         <div className="flex-shrink-0 pt-0.5">
+  //           <img
+  //             className="h-10 w-10 rounded-full"
+  //             src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixqx=6GHAjsWpt9&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.2&w=160&h=160&q=80"
+  //             alt=""
+  //           />
+  //         </div>
+  //         <div className="ml-3 flex-1">
+  //           <p className="text-sm font-medium text-gray-900">
+  //             Emilia Gates
+  //           </p>
+  //           <p className="mt-1 text-sm text-gray-500">
+  //             Sure! 8:30pm works great!
+  //           </p>
+  //         </div>
+  //       </div>
+  //     </div>
+  //     <div className="flex border-l border-gray-200">
+  //       <button
+  //         onClick={() => toast.dismiss(t.id)}
+  //         className="w-full border border-transparent rounded-none rounded-r-lg p-4 flex items-center justify-center text-sm font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+  //       >
+  //         Close
+  //       </button>
+  //     </div>
+  //   </div>
+  // ))
 
-  const url = 'http://localhost:3000/api/login';
+  const url = '/api/login';
   const onSubmit = async (e) => {
     e.preventDefault();
 
@@ -60,8 +63,17 @@ const login = () => {
     if (response.status == 400) {
       toast.error(json.error);
     } else if (response.status == 200) {
-      toast.success(`Welcome back, ${json.name.split(" ")[0]}`);
-      localStorage.setItem('user', json.rollno);
+      
+      const details = await client.fetch(`*[_type == "student" && slug.current == "${json.rollno}"][0]`);
+      if (details) {
+        localStorage.setItem('user', JSON.stringify(details));
+        toast.success(`Welcome back, ${json.name.split(" ")[0]}`);
+        router.push('/')
+      } else {
+        toast.success(`Welcome back, ${json.name.split(" ")[0]}`);
+        toast.error(`Unfortunately, we don't have your information yet`);
+        router.push('/submitInfo')
+      }
     }
   }
   return (
@@ -98,9 +110,9 @@ const login = () => {
                 <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-900"> Remember me </label>
               </div>
 
-              <div className="text-sm">
+              {/* <div className="text-sm">
                 <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500 hover:underline"> Forgot your password? </a>
-              </div>
+              </div> */}
             </div>
 
             <div>
@@ -122,4 +134,4 @@ const login = () => {
   )
 }
 
-export default login
+export default Login
