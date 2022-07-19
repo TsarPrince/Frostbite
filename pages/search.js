@@ -2,6 +2,7 @@ import React from 'react'
 
 import Hit from '../components/Hit';
 import algoliasearch from 'algoliasearch/lite';
+
 import {
   InstantSearch,
   Hits,
@@ -11,6 +12,7 @@ import {
   ClearRefinements,
   RefinementList,
   Configure,
+  PoweredBy
 } from 'react-instantsearch-dom';
 import Link from 'next/link';
 import Footer from '../components/Footer';
@@ -20,7 +22,7 @@ export default function Search() {
     'JQL15WD72T',
     '5af633b8fe05e08d22f181ade7aee679'
   );
-
+ 
   return (
     <div className="ais-InstantSearch">
       <InstantSearch indexName="name" searchClient={searchClient}>
@@ -29,7 +31,14 @@ export default function Search() {
           <Configure hitsPerPage={8} />
         </div>
         <div className="right-panel grid-cols-4">
-          <SearchBox />
+          <div>
+            <SearchBox />
+            <PoweredBy />
+          </div>
+          <div className="ais-PoweredBy ais-PoweredBy--light">
+            <a href="..." target="_blank" className="ais-PoweredBy-link" aria-label="Search by Algolia" rel="noopener noreferrer">
+            </a>
+          </div>
           <Link href='/api/algoliaSearch'>
             <div className='bg-blue-600 w-20 h-20 rounded-full p-6 cursor-pointer fixed bottom-3 right-3 mt-auto'>
               <svg xmlns="http://www.w3.org/2000/svg" className='active:transition-all duration-[10000] active:rotate-180' viewBox="0 0 512 512" fill='white'>
@@ -39,6 +48,7 @@ export default function Search() {
           </Link>
           <Hits hitComponent={Hit} />
           <Pagination />
+          <div className="mb-5"></div>
         </div>
       </InstantSearch>
       <Footer />
