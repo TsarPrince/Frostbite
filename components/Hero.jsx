@@ -140,10 +140,7 @@ const Hero = () => {
                   className="h-12 mr-4 transform hover:scale-125 duration-300 ease-in-out rounded-full"
                 />
               </a>
-              <a
-                href="https://www.instagram.com/goonj_iiitl/"
-                target="_blank"
-              >
+              <a href="https://www.instagram.com/goonj_iiitl/" target="_blank">
                 <img
                   src="data:image/png;base64,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"
                   className="h-12 mr-4 transform hover:scale-125 duration-300 ease-in-out rounded-full"
@@ -168,7 +165,7 @@ const Hero = () => {
                 />
               </a>
               <a
-                href="https://www.instagram.com/_axiosiiitl_/?hl=en"
+                href="https://www.instagram.com/estrella_iiitl/?hl=en"
                 target="_blank"
               >
                 <img
@@ -189,251 +186,255 @@ const Hero = () => {
       </div>
       {/* end */}
       <div className="Clubs">
-      <div className="Axios">
-      <div className="Axios-text">
-      <img src="/axios.svg"/>
-      </div>
-        <img
-          src="/abhinaysir-modified.png"
-          style={{
-            position: "relative",
-            width: "320px",
-            height: "320px",
-            left: "70vw",
-            top: "0vh",
-          }}
-        />
-        <img
-          src="/tejassir-modified.png"
-          style={{
-            position: "relative",
-            width: "320px",
-            height: "320px",
-            left: "10vw",
-            top: "-5vh",
-          }}
-        />
-      </div>
+        <div className="Axios">
+          <div className="Axios-text">
+            <img src="/home/axios.svg" />
+          </div>
+          <img
+            src="/home/abhinaysir-modified.png"
+            style={{
+              position: "relative",
+              width: "320px",
+              height: "320px",
+              left: "70vw",
+              top: "0vh",
+            }}
+          />
+          <img
+            src="/home/tejassir-modified.png"
+            style={{
+              position: "relative",
+              width: "320px",
+              height: "320px",
+              left: "10vw",
+              top: "-5vh",
+            }}
+          />
+        </div>
 
-      <div className="Afterdark">
-      <div className="Afterdark-text">
-      <img src="/afterdark.svg"/>
-      </div>
-        <img
-          src="/ritum-modified.png"
-          style={{
-            position: "relative",
-            width: "320px",
-            height: "320px",
-            left: "10vw",
-            top: "0vh",
-          }}
-        />
-        <img
-          src="/mohit-modified.png"
-          style={{
-            position: "relative",
-            width: "320px",
-            height: "320px",
-            left: "70vw",
-            top: "-5vh",
-          }}
-        />
-      </div>
+        <div className="Afterdark">
+          <div className="Afterdark-text">
+            <img src="/home/afterdark.svg" />
+          </div>
+          <img
+            src="/home/ritum-modified.png"
+            style={{
+              position: "relative",
+              width: "320px",
+              height: "320px",
+              left: "10vw",
+              top: "0vh",
+            }}
+          />
+          <img
+            src="/home/mohit-modified.png"
+            style={{
+              position: "relative",
+              width: "320px",
+              height: "320px",
+              left: "70vw",
+              top: "-5vh",
+            }}
+          />
+        </div>
 
-      <div className="Crotonia">
-      <div className="Crotonia-text">
-      <img src="/crotonia.svg"/>
-      </div>
-        <img
-          src="/shreya-modified.png"
-          style={{
-            position: "relative",
-            width: "320px",
-            height: "320px",
-            left: "70vw",
-            top: "0vh",
-          }}
-        />
-        <img
-          src="/priyanshu-modified.png"
-          style={{
-            position: "relative",
-            width: "320px",
-            height: "320px",
-            left: "10vw",
-            top: "-5vh",
-          }}
-        />
-      </div>
+        <div className="Crotonia">
+          <div className="Crotonia-text">
+            <img src="/home/crotonia.svg" />
+          </div>
+          <img
+            src="/home/shreya-modified.png"
+            style={{
+              position: "relative",
+              width: "320px",
+              height: "320px",
+              left: "70vw",
+              top: "0vh",
+            }}
+          />
+          <img
+            src="/home/priyanshu-modified.png"
+            style={{
+              position: "relative",
+              width: "320px",
+              height: "320px",
+              left: "10vw",
+              top: "-5vh",
+            }}
+          />
+        </div>
 
-      <div className="Estrella">
-      <div className="Estrella-text">
-      <img src="/estrella.svg"/>
-      </div>
-        <img
-          src="/ashleysha.png"
-          style={{
-            borderRadius: "50%",
-            position: "relative",
-            width: "320px",
-            height: "320px",
-            left: "10vw",
-            top: "0vh",
-          }}
-        />
-        <img
-          src="/akshay.png"
-          style={{
-            borderRadius: "50%",
-            position: "relative",
-            width: "320px",
-            height: "320px",
-            left: "70vw",
-            top: "-5vh",
-          }}
-        />
-      </div>
+        <div className="Estrella">
+          <div className="Estrella-text">
+            <img src="/home/estrella.svg" />
+          </div>
+          <img
+            src="/home/ashleysha.png"
+            style={{
+              borderRadius: "50%",
+              position: "relative",
+              width: "320px",
+              height: "320px",
+              left: "10vw",
+              top: "0vh",
+            }}
+          />
+          <img
+            src="/home/akshay.png"
+            style={{
+              borderRadius: "50%",
+              position: "relative",
+              width: "320px",
+              height: "320px",
+              left: "70vw",
+              top: "-5vh",
+            }}
+          />
+        </div>
 
-      <div className="Zephyr">
-      <div className="Zephyr-text">
-      <img src="/zephyr.svg"/>
-      </div>
-        <img
-          src="/pallavi.png"
-          style={{
-            borderRadius: "50%",
-            position: "relative",
-            width: "320px",
-            height: "320px",
-            left: "70vw",
-            top: "0vh",
-          }}
-        />
-        <img
-          src="/jatin.jpg"
-          style={{
-            borderRadius: "50%",
-            position: "relative",
-            width: "320px",
-            height: "320px",
-            left: "10vw",
-            top: "-5vh",
-          }}
-        />
-      </div>
+        <div className="Zephyr">
+          <div className="Zephyr-text">
+            <img src="/home/zephyr.svg" />
+          </div>
+          <img
+            src="/home/pallavi.png"
+            style={{
+              borderRadius: "50%",
+              position: "relative",
+              width: "320px",
+              height: "320px",
+              left: "70vw",
+              top: "0vh",
+            }}
+          />
+          <img
+            src="/home/jatin.jpg"
+            style={{
+              borderRadius: "50%",
+              position: "relative",
+              width: "320px",
+              height: "320px",
+              left: "10vw",
+              top: "-5vh",
+            }}
+          />
+        </div>
 
-      <div className="Goonj">
-      <div className="Goonj-text">
-      <img src="/goonj.svg"/>
-      </div>
-        <img
-          src="/ashutosh.png"
-          style={{
-            borderRadius: "50%",
-            position: "relative",
-            width: "320px",
-            height: "320px",
-            left: "10vw",
-            top: "0vh",
-          }}
-        />
-        <img
-          src="/ramanuj.png"
-          style={{
-            borderRadius: "50%",
-            position: "relative",
-            width: "320px",
-            height: "320px",
-            left: "70vw",
-            top: "-5vh",
-          }}
-        />
-      </div>
+        <div className="Goonj">
+          <div className="Goonj-text">
+            <img src="/home/goonj.svg" />
+          </div>
+          <img
+            src="/home/ashutosh.png"
+            style={{
+              borderRadius: "50%",
+              position: "relative",
+              width: "320px",
+              height: "320px",
+              left: "10vw",
+              top: "0vh",
+            }}
+          />
+          <img
+            src="/home/ramanuj.png"
+            style={{
+              borderRadius: "50%",
+              position: "relative",
+              width: "320px",
+              height: "320px",
+              left: "70vw",
+              top: "-5vh",
+            }}
+          />
+        </div>
 
-      <div className="Utkrisht">
-      <div className="Utkrisht-text">
-      <img src="/utkrisht.svg"/>
-      </div>
-        <img
-          src="" alt="Saniya Maheshwar"
-          style={{
-            borderRadius: "50%",
-            position: "relative",
-            width: "320px",
-            height: "320px",
-            left: "70vw",
-            top: "0vh",
-          }}
-        />
-        <img
-          src="" alt="Akshay Lavate"
-          style={{
-            borderRadius: "50%",
-            position: "relative",
-            width: "320px",
-            height: "320px",
-            left: "10vw",
-            top: "-5vh",
-          }}
-        />
-      </div>
+        <div className="Utkrisht">
+          <div className="Utkrisht-text">
+            <img src="/home/utkrisht.svg" />
+          </div>
+          <img
+            src=""
+            alt="Saniya Maheshwar"
+            style={{
+              borderRadius: "50%",
+              position: "relative",
+              width: "320px",
+              height: "320px",
+              left: "70vw",
+              top: "0vh",
+            }}
+          />
+          <img
+            src=""
+            alt="Akshay Lavate"
+            style={{
+              borderRadius: "50%",
+              position: "relative",
+              width: "320px",
+              height: "320px",
+              left: "10vw",
+              top: "-5vh",
+            }}
+          />
+        </div>
 
-      <div className="Ecell">
-      <div className="Ecell-text">
-      <img src="/ecell.svg"/>
-      </div>
-        <img
-          src="/surbhi.png"
-          style={{
-            borderRadius: "50%",
-            position: "relative",
-            width: "320px",
-            height: "320px",
-            left: "10vw",
-            top: "0vh",
-          }}
-        />
-        <img
-          src="/vivek.png"
-          style={{
-            borderRadius: "50%",
-            position: "relative",
-            width: "320px",
-            height: "320px",
-            left: "70vw",
-            top: "-5vh",
-          }}
-        />
-      </div>
+        <div className="Ecell">
+          <div className="Ecell-text">
+            <img src="/home/ecell.svg" />
+          </div>
+          <img
+            src="/home/surbhi.png"
+            style={{
+              borderRadius: "50%",
+              position: "relative",
+              width: "320px",
+              height: "320px",
+              left: "10vw",
+              top: "0vh",
+            }}
+          />
+          <img
+            src="/home/vivek.png"
+            style={{
+              borderRadius: "50%",
+              position: "relative",
+              width: "320px",
+              height: "320px",
+              left: "70vw",
+              top: "-5vh",
+            }}
+          />
+        </div>
 
-      <div className="Eifer">
-      <div className="Eifer-text">
-      <img src="/eifer.svg"/>
-      </div>
-        <img
-          src="" alt="cordi1"
-          style={{
-            borderRadius: "50%",
-            position: "relative",
-            width: "320px",
-            height: "320px",
-            left: "70vw",
-            top: "0vh",
-          }}
-        />
-        <img
-          src="" alt="cordi2"
-          style={{
-            borderRadius: "50%",
-            position: "relative",
-            width: "320px",
-            height: "320px",
-            left: "10vw",
-            top: "-5vh",
-          }}
-        />
-      </div>
+        <div className="Eifer">
+          <div className="Eifer-text">
+            <img src="/home/eifer.svg" />
+          </div>
+          <img
+            src=""
+            alt="cordi1"
+            style={{
+              borderRadius: "50%",
+              position: "relative",
+              width: "320px",
+              height: "320px",
+              left: "70vw",
+              top: "0vh",
+            }}
+          />
+          <img
+            src=""
+            alt="cordi2"
+            style={{
+              borderRadius: "50%",
+              position: "relative",
+              width: "320px",
+              height: "320px",
+              left: "10vw",
+              top: "-5vh",
+            }}
+          />
+        </div>
       </div>
 
       <div className="pt-16 pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48 ">
