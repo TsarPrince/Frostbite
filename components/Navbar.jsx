@@ -6,8 +6,8 @@ export default function Navbar() {
   // const [clicked, setClicked] = React.useState(false)
   const [styles, setStyles] = useState({ visibility: "hidden" })
   const [active, setActive] = useState('home')
-  const activeLinkStyle = 'bg-gray-800 text-white px-3 py-2 rounded-md text-sm font-medium cursor-pointer'
-  const activeLinkStyleMobile = 'bg-gray-800 text-white block px-3 py-2 rounded-md text-base font-medium'
+  const activeLinkStyle = 'bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium cursor-pointer'
+  const activeLinkStyleMobile = 'bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium'
   const inactiveLinkStyle = 'text-gray-300 hover:bg-gray-800 hover:text-white px-3 py-2 rounded-md text-sm font-medium cursor-pointer'
   const inactiveLinkStyleMobile = 'text-gray-300 hover:bg-gray-800 hover:text-white block px-3 py-2 rounded-md text-base font-medium'
 
@@ -18,8 +18,7 @@ export default function Navbar() {
     setStyles({ visibility: "hidden" })
   }
 
-  const toggleMobileMenu = (event) => {
-    console.log(event)
+  const toggleMobileMenu = () => {
     document.querySelector('#mobile-menu').classList.toggle('hidden');
     document.querySelector('#hamburger-icon').classList.toggle('hidden');
     document.querySelector('#close-icon').classList.toggle('hidden');
