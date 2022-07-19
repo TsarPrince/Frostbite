@@ -31,10 +31,10 @@ export default function Hit(props) {
     //   <div className="hit-price">{props.hit.rollno}</div>
     // </div>
     <Link href={linkURL || '/'}>
-      <div className='max-w-sm rounded-xl cursor-pointer shadow-md m-4 overflow-hidden shrink-0 md:flex md:max-w-lg'>
+      <div className='max-w-sm rounded-xl cursor-pointer shadow-md m-4 overflow-hidden shrink-0 md:flex md:max-w-fit'>
         <div className='md:shrink-0'>
         </div>
-        <div className='p-6 space-y-4'>
+        <div className='p-6 space-y-4 flex flex-col justify-center'>
           <div className='h-96 w-72 overflow-hidden cursor-pointer'>
             
             {props.hit.image? <img key={props.hit.image[0]._key} src={urlFor(props.hit.image[0])} className='h-52 w-full md:w-full md:h-full object-cover hover:opacity-70 transition-all hover:scale-125' alt={name}></img>:<div></div>}

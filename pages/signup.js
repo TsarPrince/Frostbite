@@ -1,49 +1,19 @@
 import React from 'react'
+import { useRouter } from 'next/router'
 import Footer from '../components/Footer'
 import Link from 'next/link'
 import toast, { Toaster } from 'react-hot-toast';
 
-const login = () => {
-  const notify = () => toast.custom((t) => (
-    <div className={`${t.visible?'animate-enter':'animate-leave'} max-w-md w-full bg-white shadow-lg rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5`}>
-      <div className="flex-1 w-0 p-4">
-        <div className="flex items-start">
-          <div className="flex-shrink-0 pt-0.5">
-            <img
-              className="h-10 w-10 rounded-full"
-              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixqx=6GHAjsWpt9&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.2&w=160&h=160&q=80"
-              alt=""
-            />
-          </div>
-          <div className="ml-3 flex-1">
-            <p className="text-sm font-medium text-gray-900">
-              Emilia Gates
-            </p>
-            <p className="mt-1 text-sm text-gray-500">
-              Sure! 8:30pm works great!
-            </p>
-          </div>
-        </div>
-      </div>
-      <div className="flex border-l border-gray-200">
-        <button
-          onClick={() => toast.dismiss(t.id)}
-          className="w-full border border-transparent rounded-none rounded-r-lg p-4 flex items-center justify-center text-sm font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-        >
-          Close
-        </button>
-      </div>
-    </div>
-  ))
+const Login = () => {
+  const router = useRouter();
 
-  const url = 'http://localhost:3000/api/login';
+  const url = 'http://localhost:3000/api/signup';
   const onSubmit = async (e) => {
     e.preventDefault();
-
+    let name = document.querySelector('#name').value;
     let rollno = document.querySelector('#rollno').value.toLowerCase();
     let password = document.querySelector('#password').value;
-    const data = { rollno, password }
-    
+    const data = { name, rollno, password }
     const response = await fetch(url, {
       method: 'POST',
       mode: 'cors',
@@ -60,22 +30,23 @@ const login = () => {
     if (response.status == 400) {
       toast.error(json.error);
     } else if (response.status == 200) {
-      toast.success(`Welcome back, ${json.name.split(" ")[0]}`);
-      localStorage.setItem('user', json.rollno);
+      toast.success('User created successfully. Please Login.');
+      router.push('/login');
     }
   }
+
   return (
     <>
-      <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
       <Toaster />
+      <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-md w-full space-y-8">
           <div>
             <img className="mx-auto h-12 w-auto" src="/frostbite-dark.svg" alt="Workflow" />
-            <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Sign in to your account</h2>
+            <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Create your account</h2>
             <p className="mt-2 text-center text-sm text-gray-600">
-              Don&apos;t have one?&nbsp;
-              <Link href='/signup'>
-              <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500 hover:underline">Create Here </a>
+              Already have one?&nbsp;
+              <Link href='/login'>
+                <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500 hover:underline">Login Here </a>
               </Link>
             </p>
           </div>
@@ -83,23 +54,16 @@ const login = () => {
             <input type="hidden" name="remember" value="true" />
             <div className="rounded-md shadow-sm -space-y-px">
               <div>
+                <label htmlFor="name" className="sr-only">Name</label>
+                <input id="name" name="name" type="text" required className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Name" />
+              </div>
+              <div>
                 <label htmlFor="rollno" className="sr-only">Roll Number</label>
-                <input id="rollno" name="rollno" type="text" required className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Roll Number" />
+                <input id="rollno" name="rollno" type="text" required className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Roll Number" />
               </div>
               <div>
                 <label htmlFor="password" className="sr-only">Password</label>
                 <input id="password" name="password" type="password" autoComplete="current-password" required className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Password" />
-              </div>
-            </div>
-
-            <div className="flex items-center justify-between">
-              <div className="flex items-center">
-                <input id="remember-me" name="remember-me" type="checkbox" className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded" />
-                <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-900"> Remember me </label>
-              </div>
-
-              <div className="text-sm">
-                <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500 hover:underline"> Forgot your password? </a>
               </div>
             </div>
 
@@ -110,7 +74,7 @@ const login = () => {
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" className='fill-indigo-500 group-hover:fill-indigo-400'><path d="M80 192V144C80 64.47 144.5 0 224 0C303.5 0 368 64.47 368 144V192H384C419.3 192 448 220.7 448 256V448C448 483.3 419.3 512 384 512H64C28.65 512 0 483.3 0 448V256C0 220.7 28.65 192 64 192H80zM144 192H304V144C304 99.82 268.2 64 224 64C179.8 64 144 99.82 144 144V192z" /></svg>
                   </div>
                 </span>
-                Sign in
+                Sign Up
               </button>
             </div>
           </form>
@@ -122,4 +86,4 @@ const login = () => {
   )
 }
 
-export default login
+export default Login

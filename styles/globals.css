@@ -189,6 +189,7 @@ line-height: 155px;
   grid-template-columns: repeat(auto-fit, minmax(400px,1fr));
   grid-column-gap: 20px;
   grid-row-gap: 20px; 
+  justify-content: space-around;
   justify-content: center;
   align-items: center;
 }
@@ -301,7 +302,10 @@ line-height: 155px;
   -ms-flex-align: center;
   align-items: center
 }
-
+.ais-PoweredBy{
+  margin-left: 69%;
+  margin-bottom: 1em;
+}
 .ais-GeoSearch,
 .ais-GeoSearch-map {
   height: 100%
@@ -890,19 +894,8 @@ line-height: 155px;
 
 .ais-Hits-item,
 .ais-InfiniteHits-item {
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background: #fff;
-  box-shadow: 0 0 0 1px rgba(35, 38, 59, .05), 0 1px 3px 0 rgba(35, 38, 59, .15);
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  font-size: .875rem;
-  font-weight: 400;
-  line-height: 1.25rem;
-  padding: 1.5rem;
-  width: 25rem;
+  justify-content: center;
 }
 
 .ais-Hits-item:first-of-type,
