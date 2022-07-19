@@ -6,7 +6,6 @@ import { client } from '../lib/client';
 import toast, { Toaster } from 'react-hot-toast';
 
 const notify = () => toast.success('Successfully submitted information');
-
 const notifyFail = () => toast.error('Error submitting information');
 
 const RemovableImg = ({ src, file }) => {
@@ -307,7 +306,7 @@ const SubmitInfo = () => {
                         id="about"
                         name="about"
                         rows={5}
-                        className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"
+                        className="placeholder-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"
                         placeholder={`Festival Convener Equinox 2021\n5⭐ codechef\nGSOC 2020 participant\nInfosec Coordiantor\n...`}
                         defaultValue={''}
                         required
@@ -327,7 +326,7 @@ const SubmitInfo = () => {
                         id="tags"
                         name="tags"
                         rows={4}
-                        className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"
+                        className="placeholder-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"
                         placeholder={`star gazer\nhermit\ntensei\n...`}
                         defaultValue={''}
                         required

@@ -9,13 +9,13 @@ import Link from 'next/link'
 
 const Footer = () => {
   return (
-    <div className='dark:bg-gray-900'>
-      <div className='w-full bg-slate-100 h-1 dark:hidden'></div>
-      <div className="bg-slate-800 md:flex justify-around py-16 dark:text-white">
-        <div>
-          <img className="hidden lg:block h-10 ml-5 mt-[-5px] w-auto" src="/frostbite.svg" alt="Workflow" />
-          <div className='ml-5 text-slate-100 w-40'>Lorem ipsum dolor sit amet, consectetur </div>
-          <div className='ml-2 mt-5 text-white flex space-x-1'>
+    <div className='dark:bg-gray-900 max-w-full overflow-x-hidden'>
+      <div className='w-full md:h-full md:w-48 bg-slate-100 h-1 dark:hidden'></div>
+      <div className="grid grid-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 gap-1 max-w-full overflow-hidden bg-slate-800  justify-around dark:text-white p-12 sm:py-10">
+        <div className='mx-5 lg:m-0 md:mx-0 sm:mb-5'>
+          <div className='md:shrink-0'><img className="md:h-full md:w-48 lg:block h-10 w-auto" src="/frostbite.svg" alt="Workflow" /></div>
+          <div className='flex text-slate-100 w-60'>Lorem ipsum dolor sit amet, consectetur </div>
+          <div className='text-white flex space-x-1'>
             <a href="#!" type="button" className="rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 mt-1">
               <svg aria-hidden="true"
                 focusable="false"
@@ -46,23 +46,6 @@ const Footer = () => {
                 <path
                   fill="currentColor"
                   d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"
-                ></path>
-              </svg>
-            </a>
-
-            <a href="#!" type="button" className="rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1">
-              <svg aria-hidden="true"
-                focusable="false"
-                data-prefix="fab"
-                data-icon="google"
-                className="w-3 h-full mx-auto"
-                role="img"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 488 512"
-              >
-                <path
-                  fill="currentColor"
-                  d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"
                 ></path>
               </svg>
             </a>
@@ -124,31 +107,31 @@ const Footer = () => {
         <a href='#'><i class="fa-brands fa-facebook fa-2x mx-2"></i></a>
         <a href='#'><i class="fa-brands fa-twitter fa-2x mx-2"></i></a> */}
         {/* <img className="block  h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="Workflow" /> */}
-        <div className="address">
-          <p className='mb-2 text-slate-100'>IIIT Lucknow</p>
-          <p className='my-2 text-slate-400'>Chak Ganjaria</p>
-          <p className='my-2 text-slate-400'>Lucknow - 226002</p>
+        <div className="address m-5 lg:mt-0 sm:m-0 md:mx-5 md:my-0">
+          <p className='text-slate-100 my-2'>IIIT Lucknow</p>
+          <p className='text-slate-400'>Chak Ganjaria</p>
+          <p className='text-slate-400'>Lucknow - 226002</p>
           <Link href="contact@iiitl.ac.in"><p className="underline dark:text-white dark:hover:text-gray-300 text-blue-800 cursor-pointer ">contact@iiitl.ac.in</p></Link>
         </div>
-        <div className='rounded-lg overflow-hidden'><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3561.2279701453244!2d81.02184131504255!3d26.800868883175877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399be37eb0826741%3A0x34d9dd79cdeac7d8!2sIndian%20Institute%20of%20Information%20Technology%2C%20Lucknow!5e0!3m2!1sen!2sin!4v1656853892123!5m2!1sen!2sin" width="250" height="250" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe></div>
-        <div>
-          <h1 className='mb-2 text-lg text-slate-100 font-bold'>External Links</h1>
-          <Link href='#4'><p className='my-2 cursor-pointer hover:text-gray-600 text-slate-400'>IIIT Allahabad</p></Link>
-          <Link href='#5'><p className='my-2 cursor-pointer hover:text-gray-600 text-slate-400'>IIIT Coordination Forum</p></Link>
-          <Link href='#6'><p className='cursor-pointer hover:text-gray-600 text-slate-400'>UPIC</p></Link>
+        <iframe className='rounded-3xl max-w-full md:mx-5 lg:mx-0' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3561.2279701453244!2d81.02184131504255!3d26.800868883175877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399be37eb0826741%3A0x34d9dd79cdeac7d8!2sIndian%20Institute%20of%20Information%20Technology%2C%20Lucknow!5e0!3m2!1sen!2sin!4v1656853892123!5m2!1sen!2sin" width="220" height="220" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+        <div className='m-5 lg:my-0 lg:mx-5 md:my-5 sm:my-5 sm:mx-0'>
+          <h1 className='text-lg text-slate-100 font-bold mb-2 '>External Links</h1>
+          <Link href='https://www.iiita.ac.in/'><p className='mb-2 cursor-pointer hover:text-gray-600 text-slate-400'>IIIT Allahabad</p></Link>
+          <Link href='https://www.iiits.ac.in/secretariat-of-iiit-ppp-coordination-forum/'><p className='mb-2 cursor-pointer hover:text-gray-600 text-slate-400'>IIIT Coordination Forum</p></Link>
+          <Link href='http://www.uplc.in/'><p className='mb-2 cursor-pointer hover:text-gray-600 text-slate-400'>UPLC</p></Link>
         </div>
-        <div>
-          <h1 className='mb-2 text-lg font-bold text-slate-100'>Useful Links</h1>
-          <Link href='#7'><p className='my-2 cursor-pointer hover:text-gray-600 text-slate-400'>Academic Calender</p></Link>
-          <Link href='#8'><p className='my-2 cursor-pointer hover:text-gray-600 text-slate-400'>Course Structure</p></Link>
-          <Link href='#9'><p className='my-2 cursor-pointer hover:text-gray-600 text-slate-400'>List of Holidays</p></Link>
-          <Link href='#10'><p className='cursor-pointer hover:text-gray-600 text-slate-400'>Official Forms & Formats</p></Link>
+        <div className='mx-5 lg:my-0 md:my-5 sm:my-5'>
+          <h1 className='text-lg font-bold text-slate-100'>Useful Links</h1>
+          <Link href='https://iiitl.ac.in/index.php/academic-calendar/'><p className='mb-2 cursor-pointer hover:text-gray-600 text-slate-400'>Academic Calender</p></Link>
+          <Link href='https://iiitl.ac.in/index.php/course-structure/'><p className='mb-2 cursor-pointer hover:text-gray-600 text-slate-400'>Course Structure</p></Link>
+          <Link href='https://iiitl.ac.in/index.php/list-of-holidays-2/'><p className='mb-2 cursor-pointer hover:text-gray-600 text-slate-400'>List of Holidays</p></Link>
+          <Link href='https://iiitl.ac.in/index.php/official-forms-format/'><p className='mb-2 cursor-pointer hover:text-gray-600 text-slate-400'>Official Forms & Formats</p></Link>
         </div>
-        <div>
+        <div className='m-5 lg:mx-0 lg:w-96 md:mx-5 md:my-5 sm:my-5 xl:my-0'>
           <p className='mb-2 text-lg font-bold text-slate-100'>Additional Resources</p>
-          <Link href='#11'><p className='my-2 cursor-pointer hover:text-gray-600 text-slate-400'>Fee Structure</p></Link>
-          <Link href='#12'><p className='my-2 cursor-pointer hover:text-gray-600 text-slate-400'>Seat Matrix</p></Link>
-          <Link href='#13'><p className='cursor-pointer hover:text-gray-600 text-slate-400'>RTI</p></Link>
+          <Link href='https://iiitl.ac.in/index.php/fee-structure/'><p className='mb-2 cursor-pointer hover:text-gray-600 text-slate-400'>Fee Structure</p></Link>
+          <Link href='https://iiitl.ac.in/index.php/seat-matrix/'><p className='mb-2 cursor-pointer hover:text-gray-600 text-slate-400'>Seat Matrix</p></Link>
+          <Link href='https://iiitl.ac.in/index.php/information-under-rti/'><p className='mb-2 cursor-pointer hover:text-gray-600 text-slate-400'>RTI</p></Link>
         </div>
       </div>
     </div>
