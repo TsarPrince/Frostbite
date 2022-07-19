@@ -7,7 +7,7 @@ import toast, { Toaster } from 'react-hot-toast';
 const Login = () => {
   const router = useRouter();
 
-  const url = 'http://localhost:3000/api/signup';
+  const url = '/api/signup';
   const onSubmit = async (e) => {
     e.preventDefault();
     let name = document.querySelector('#name').value;

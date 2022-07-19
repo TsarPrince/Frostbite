@@ -39,7 +39,7 @@ const Login = () => {
   //   </div>
   // ))
 
-  const url = 'http://localhost:3000/api/login';
+  const url = '/api/login';
   const onSubmit = async (e) => {
     e.preventDefault();
 
