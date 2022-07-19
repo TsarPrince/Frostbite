@@ -116,22 +116,22 @@ const Footer = () => {
         <iframe className='rounded-3xl max-w-full md:mx-5 lg:mx-0' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3561.2279701453244!2d81.02184131504255!3d26.800868883175877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399be37eb0826741%3A0x34d9dd79cdeac7d8!2sIndian%20Institute%20of%20Information%20Technology%2C%20Lucknow!5e0!3m2!1sen!2sin!4v1656853892123!5m2!1sen!2sin" width="220" height="220" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
         <div className='m-5 lg:my-0 lg:mx-5 md:my-5 sm:my-5 sm:mx-0'>
           <h1 className='text-lg text-slate-100 font-bold mb-2 '>External Links</h1>
-          <Link href='#4'><p className='mb-2 cursor-pointer hover:text-gray-600 text-slate-400'>IIIT Allahabad</p></Link>
-          <Link href='#5'><p className='mb-2 cursor-pointer hover:text-gray-600 text-slate-400'>IIIT Coordination Forum</p></Link>
-          <Link href='#6'><p className='mb-2 cursor-pointer hover:text-gray-600 text-slate-400'>UPIC</p></Link>
+          <Link href='https://www.iiita.ac.in/'><p className='mb-2 cursor-pointer hover:text-gray-600 text-slate-400'>IIIT Allahabad</p></Link>
+          <Link href='https://www.iiits.ac.in/secretariat-of-iiit-ppp-coordination-forum/'><p className='mb-2 cursor-pointer hover:text-gray-600 text-slate-400'>IIIT Coordination Forum</p></Link>
+          <Link href='http://www.uplc.in/'><p className='mb-2 cursor-pointer hover:text-gray-600 text-slate-400'>UPLC</p></Link>
         </div>
         <div className='mx-5 lg:my-0 md:my-5 sm:my-5'>
           <h1 className='text-lg font-bold text-slate-100'>Useful Links</h1>
-          <Link href='#7'><p className='mb-2 cursor-pointer hover:text-gray-600 text-slate-400'>Academic Calender</p></Link>
-          <Link href='#8'><p className='mb-2 cursor-pointer hover:text-gray-600 text-slate-400'>Course Structure</p></Link>
-          <Link href='#9'><p className='mb-2 cursor-pointer hover:text-gray-600 text-slate-400'>List of Holidays</p></Link>
-          <Link href='#10'><p className='mb-2 cursor-pointer hover:text-gray-600 text-slate-400'>Official Forms & Formats</p></Link>
+          <Link href='https://iiitl.ac.in/index.php/academic-calendar/'><p className='mb-2 cursor-pointer hover:text-gray-600 text-slate-400'>Academic Calender</p></Link>
+          <Link href='https://iiitl.ac.in/index.php/course-structure/'><p className='mb-2 cursor-pointer hover:text-gray-600 text-slate-400'>Course Structure</p></Link>
+          <Link href='https://iiitl.ac.in/index.php/list-of-holidays-2/'><p className='mb-2 cursor-pointer hover:text-gray-600 text-slate-400'>List of Holidays</p></Link>
+          <Link href='https://iiitl.ac.in/index.php/official-forms-format/'><p className='mb-2 cursor-pointer hover:text-gray-600 text-slate-400'>Official Forms & Formats</p></Link>
         </div>
         <div className='m-5 lg:mx-0 lg:w-96 md:mx-5 md:my-5 sm:my-5 xl:my-0'>
           <p className='mb-2 text-lg font-bold text-slate-100'>Additional Resources</p>
-          <Link href='#11'><p className='mb-2 cursor-pointer hover:text-gray-600 text-slate-400'>Fee Structure</p></Link>
-          <Link href='#12'><p className='mb-2 cursor-pointer hover:text-gray-600 text-slate-400'>Seat Matrix</p></Link>
-          <Link href='#13'><p className='mb-2 cursor-pointer hover:text-gray-600 text-slate-400'>RTI</p></Link>
+          <Link href='https://iiitl.ac.in/index.php/fee-structure/'><p className='mb-2 cursor-pointer hover:text-gray-600 text-slate-400'>Fee Structure</p></Link>
+          <Link href='https://iiitl.ac.in/index.php/seat-matrix/'><p className='mb-2 cursor-pointer hover:text-gray-600 text-slate-400'>Seat Matrix</p></Link>
+          <Link href='https://iiitl.ac.in/index.php/information-under-rti/'><p className='mb-2 cursor-pointer hover:text-gray-600 text-slate-400'>RTI</p></Link>
         </div>
       </div>
     </div>
