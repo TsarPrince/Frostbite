@@ -11,9 +11,9 @@ const Footer = () => {
   return (
     <div className='dark:bg-gray-900'>
       <div className='w-full bg-slate-100 h-1 dark:hidden'></div>
-      <div className="bg-slate-800 md:flex justify-around py-16 dark:text-white">
+      <div className="bg-slate-800 grid text-center  grid-cols-2 place-items-center lg:flex items-center justify-around py-16 dark:text-white">
         <div>
-          <img className="hidden lg:block h-10 ml-5 mt-[-5px] w-auto" src="/frostbite.svg" alt="Workflow" />
+          <img className="block h-10 ml-5 mt-[-5px] w-auto" src="/frostbite.svg" alt="Workflow" />
           <div className='ml-5 text-slate-100 w-40'>Lorem ipsum dolor sit amet, consectetur </div>
           <div className='ml-2 mt-5 text-white flex space-x-1'>
             <a href="#!" type="button" className="rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 mt-1">
@@ -128,7 +128,7 @@ const Footer = () => {
           <p className='mb-2 text-slate-100'>IIIT Lucknow</p>
           <p className='my-2 text-slate-400'>Chak Ganjaria</p>
           <p className='my-2 text-slate-400'>Lucknow - 226002</p>
-          <Link href="contact@iiitl.ac.in"><p className="underline dark:text-white dark:hover:text-gray-300 text-blue-800 cursor-pointer ">contact@iiitl.ac.in</p></Link>
+          <Link href="contact@iiitl.ac.in"><p className="underline dark:text-white hover:text-gray-100 text-blue-400 cursor-pointer ">contact@iiitl.ac.in</p></Link>
         </div>
         <div className='rounded-lg overflow-hidden'><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3561.2279701453244!2d81.02184131504255!3d26.800868883175877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399be37eb0826741%3A0x34d9dd79cdeac7d8!2sIndian%20Institute%20of%20Information%20Technology%2C%20Lucknow!5e0!3m2!1sen!2sin!4v1656853892123!5m2!1sen!2sin" width="250" height="250" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe></div>
         <div>
