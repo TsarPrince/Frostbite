@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import Card from './Card'
-import { client } from '../lib/client';
 
-
-export const Section = ({ name, members, fontSize }) => {
+export const Section = ({ name, members }) => {
   const getColor = (name) => {
     if (name == 'axios') return '#ef233c';
     if (name == 'gsoc') return '#f8edeb';
@@ -12,9 +10,13 @@ export const Section = ({ name, members, fontSize }) => {
     if (name == 'icpc') return '#ef233c';
   }
   return (
-    <div className={'px-8 pt-24 pb-60 z-0 relative'} style={{backgroundColor: getColor(name)}}>
-      <div className='absolute -z-10 -bottom-24 right-0'>
-        <p className={`text-outline-dark select-none text-transparent uppercase font-extrabold text-[${fontSize}px]`}>
+    <div className={'px-8 py-32 z-0 relative shadow-inner'}
+      style={{
+        backgroundColor: getColor(name),
+        boxShadow: `${(getColor(name) == '#ef233c') ? 'inset 0 0 5px 5px #00000033' : ''}`
+      }}>
+      <div className='absolute -z-10 -bottom-8 right-8'>
+        <p className={`text-outline-dark select-none text-transparent uppercase font-extrabold text-[200px]`}>
           {name}
         </p>
       </div>
