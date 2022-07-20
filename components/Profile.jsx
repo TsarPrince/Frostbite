@@ -30,7 +30,7 @@ const Profile = (props) => {
   
   const allTags = props.tags? props.tags.map((prev) => {
     return(
-        <span className="text-lg text-slate-600 inline ml-2" key={prev}>{prev} </span>
+        <span className="text-lg text-slate-600 inline px-2" key={prev}>{prev} </span>
     )
   }) : ['No tag available']
 

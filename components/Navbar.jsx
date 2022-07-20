@@ -97,7 +97,7 @@ export default function Navbar() {
                       <div onClick={toggleUserMenu}>
                         <button type="button" className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" aria-expanded="false" aria-haspopup="true">
                           <span className="sr-only">Open user menu</span>
-                          <img id='profile-avatar' className="h-8 w-8 rounded-full" src={urlFor(JSON.parse(localStorage.getItem('user')).image[0])} alt="profile avatar" />
+                          <img id='profile-avatar' className="h-8 w-8 object-cover rounded-full" src={urlFor(JSON.parse(localStorage.getItem('user')).image[0])} alt="profile avatar" />
                         </button>
                       </div>
                       {/* User Menu */}
