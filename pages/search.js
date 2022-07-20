@@ -28,7 +28,7 @@ export default function Search() {
       <InstantSearch indexName="name" searchClient={searchClient}>
         <div className="left-panel">
           <RefinementList attribute="name" />
-          <Configure hitsPerPage={8} />
+          <Configure hitsPerPage={9} />
         </div>
         <div className="right-panel grid-cols-4">
           <div className='flex flex-col'>

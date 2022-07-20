@@ -177,13 +177,23 @@
 
 .ais-Hits-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(3, minmax(400px, 1fr));
   grid-column-gap: 20px;
   grid-row-gap: 20px;
   justify-content: space-around;
   justify-content: center;
   align-items: center;
 }
+@media only screen and (max-width: 1552px) {
+  .ais-Hits-list {
+    grid-template-columns: repeat(2, minmax(400px, 1fr));
+  }
+} 
+@media only screen and (max-width: 1000px) {
+  .ais-Hits-list {
+    grid-template-columns: repeat(1, minmax(400px, 1fr));
+  }
+} 
 .ais-Breadcrumb-list,
 .ais-CurrentRefinements-list,
 .ais-HierarchicalMenu-list,
