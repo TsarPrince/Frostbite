@@ -5,6 +5,7 @@ import NextNProgress from 'nextjs-progressbar'
 import Footer from '../components/Footer'
 
 import '../styles/chat.css'
+import '../styles/landingPage.css'
 
 function MyApp({ Component, pageProps }) {
   return (
