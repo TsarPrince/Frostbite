@@ -1,13 +1,12 @@
 import React from 'react'
-import Image from 'next/image';
 import Link from 'next/link'
 import { urlFor } from '../lib/client';
-const Card = ({ props: { slug, image, name, gender, description, tags, rollno } }) => {
+const Card = ({ props: { image, name, gender, description, tags, rollno } }) => {
   let linkURL
   if (rollno)
     linkURL = "/profile/" + rollno.toLowerCase()
   return (
-    <div className='max-w-sm rounded-xl shadow-md m-4 overflow-hidden shrink-0 md:flex md:max-w-lg'>
+    <div className='max-w-sm bg-white rounded-xl shadow-md m-4 overflow-hidden shrink-0 md:flex md:max-w-lg'>
       {
         image && <Link href={linkURL || '/'}>
           <div className='md:shrink-0'>
@@ -15,7 +14,7 @@ const Card = ({ props: { slug, image, name, gender, description, tags, rollno } 
           </div>
         </Link>
       }
-      <div className='p-6 space-y-4'>
+      <div className='bg-white p-6 space-y-4'>
         <div>
           {name && <Link href={linkURL || '/'}>
             <p className='text-xl font-semibold decoration-dashed hover:text-indigo-500 hover:cursor-pointer hover:underline'>{name}</p>
