@@ -328,11 +328,11 @@ const Hero = () => {
         </div>
       </div>
 
-      <Section name="axios" members={[data.abhinay, data.vinamr]} fontSize='400' />
-      <Section name="gsoc" members={[data.gaurav, data.sameep, data.abhinay]} fontSize='400' />
-      <Section name="estrella" members={[data.ashleysha, data.prince]} fontSize='280' />
-      <Section name="zephyr" members={[data.vinamr, data.sameep, data.gaurav]} fontSize='300' />
-      <Section name="icpc" members={[data.sameep, data.ashleysha]} fontSize='400' />
+      <Section name="axios" members={[data.abhinay, data.vinamr]} />
+      <Section name="gsoc" members={[data.gaurav, data.sameep, data.abhinay]} />
+      <Section name="estrella" members={[data.ashleysha, data.prince]} />
+      <Section name="zephyr" members={[data.vinamr, data.sameep, data.gaurav]} />
+      <Section name="icpc" members={[data.sameep, data.ashleysha]} />
 
       <div className="h-full">
         <div className="w-full container mx-auto">
