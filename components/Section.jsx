@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import Card from './Card'
+import { PaySection } from './PaySection';
 function loadScript(src){
   return new Promise(resolve => {
       const script = document.createElement('script')
@@ -15,56 +16,15 @@ function loadScript(src){
 }
 export const Section = ({ name, members }) => {
   const getColor = (name) => {
-    if (name == 'axios') return '#ef233c';
+    if (name == 'axios') return '#5271ff';
     if (name == 'gsoc') return '#f8edeb';
-    if (name == 'estrella') return '#ef233c';
+    if (name == 'estrella') return '#5271ff';
     if (name == 'zephyr') return '#f8edeb';
-    if (name == 'icpc') return '#ef233c';
+    if (name == 'icpc') return '#5271ff';
   }
-  async function displayRazorpay(){
-
-    const res = await loadScript('https://checkout.razorpay.com/v1/checkout.js')
-
-    if(!res){
-        alert('Network Error!')
-        return
-    }
-
-    const data = await fetch('./api/razorpay', { method: 'POST' }).then((t) => 
-        t.json()
-    )
-    console.log(data)
-    var options = {
-        "key": "rzp_test_vQi5k24ZgUEONx", 
-        "amount": "50000", 
-        "currency": "INR",
-        "name": "Frostbite",
-        "description": "Donate to your favorite clubs",
-        "image": "https://frostbite-two.vercel.app/favicon.ico",
-        "handler": function (response){
-            alert(response.razorpay_payment_id);
-            alert(response.razorpay_order_id);
-            alert(response.razorpay_signature)
-        },
-    };
-    var rzp1 = new Razorpay(options);
-    rzp1.on('payment.failed', function (response){
-        alert(response.error.code);
-        alert(response.error.description);
-        alert(response.error.source);
-        alert(response.error.step);
-        alert(response.error.reason);
-        alert(response.error.metadata.order_id);
-        alert(response.error.metadata.payment_id);
-    });
-    document.getElementById('rzp-button1').onclick = function(e){
-        rzp1.open();
-        e.preventDefault();
-    }
-    const paymentObject = new window.Razorpay(options)
-    paymentObject.open()
-  }
-  const col = (getColor(name)==='#ef233c')?'#f8edeb':'#ef233c'
+  
+  const col = (getColor(name)==='#5271ff')?'#f8edeb':'#5271ff'
+  console.log(getColor(name), col)
   // COROUSEL ----------------------------------------------------------------------------------------------------------------------------
   // const maxScrollWidth = useRef(0);
   // const [currentIndex, setCurrentIndex] = useState(0);
@@ -118,16 +78,7 @@ export const Section = ({ name, members }) => {
         boxShadow: `${(getColor(name) == '#ef233c') ? 'inset 0 0 5px 5px #00000033' : ''}`
       }}>
       <div className='absolute -z-10 -bottom-8 right-8 flex flex-row justify-center items-center w-full'>
-        <div className='btn cursor-pointer mr-auto ml-32'>
-          <a className='App-link bg-blue-500 p-5 text-white rounded-md shadow-2xl' onClick={displayRazorpay} target="_blank" rel='noopener noreferrer' id='rzp-button1'
-              style={{
-                backgroundColor: `${col}`,
-                color: `${getColor(name)}`
-              }}
-          >
-            Donate 500rs
-          </a>
-        </div>
+        <PaySection bgcolor={col} color={getColor(name)} />
         <p className={`text-outline-dark inline select-none text-transparent uppercase font-extrabold text-[200px]`}>
           {name}
         </p>

@@ -33,7 +33,8 @@ const Profile = (props) => {
       <span className="text-lg text-slate-600 inline px-2" key={prev}>{prev} </span>
     )
   }) : ['No tag available']
-
+  
+  // console.log({ data })
   const allDescription = props.description ? props.description.map((prev) => {
     return (
       <div className='space-y-2 md:flex md:justify-between md:items-center' key={prev}>

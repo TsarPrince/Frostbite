@@ -34,6 +34,7 @@
     "react-icons": "^4.3.1",
     "react-instantsearch-dom": "^6.29.0",
     "react-router-dom": "^6.3.0",
+    "react-use-downloader": "^1.1.7",
     "shortid": "^2.2.16",
     "socket.io": "^4.5.1",
     "socket.io-client": "^4.5.1",
