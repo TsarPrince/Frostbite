@@ -156,7 +156,7 @@ const SubmitInfo = () => {
 
     // CREATE DOCUMENT
     client
-      .create(student)
+      .createOrReplace(student)
       .then((res) => {
         console.log(`Student was created, document ID is ${res._id}`);
         notify();
