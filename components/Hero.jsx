@@ -279,12 +279,12 @@ const Hero = () => {
       <div className="pt-16 pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48 ">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:static">
           <div className="sm:max-w-lg flex-col-reverse md:flex-row flex items-center  w-full">
-            <div className='md:shrink-0 mt-20 text-center md:text-left md:mt-0 max-w-lg'>
-              <h1 className="text-4xl font font-extrabold tracking-tight text-gray-900 sm:text-6xl">
-                Your one stop shop for information needs.
+            <div className='md:shrink-0 mt-20 text-center md:text-left md:mt-0 max-w-xl'>
+              <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-6xl">
+                One stop solution for all your information needs.
               </h1>
               <p className="mt-4 text-xl text-gray-500">
-                Need to know who can help you with GSOC? Need to know who can help you become 5 ⭐ coder? Need to know who can help you become a full stack developer? Start here
+                Need to know who can help you with GSOC? Need to know who can help you become 5 star coder? Need to know who can help you become a full stack developer? Start here
               </p>
             </div>
             <img className="lg:block lg:ml-80" src="/frostbite-dark.svg" alt="Workflow" />
