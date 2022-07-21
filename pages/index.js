@@ -25,7 +25,7 @@ const index = ({ pets, students, faculties }) => {
   return (
     <div>
       <Hero />
-      <div className='flex flex-col items-center md:items-start 2xl:flex-row'>
+      {/* <div className='flex flex-col items-center md:items-start 2xl:flex-row'>
         <div>
           <div className='md:flex 2xl:flex-col flex-wrap'>
             {
@@ -47,7 +47,7 @@ const index = ({ pets, students, faculties }) => {
             }
           </div>
         </div>
-      </div>
+      </div> */}
       <Footer />
     </div>
 
@@ -55,21 +55,21 @@ const index = ({ pets, students, faculties }) => {
 }
 
 // useEffect in Reactjs = getServerSideProps in Nextjs
-export const getServerSideProps = async () => {
-  const petQuery = '*[_type == "pet"]';
-  const pets = await client.fetch(petQuery);
+// export const getServerSideProps = async () => {
+//   const petQuery = '*[_type == "pet"]';
+//   const pets = await client.fetch(petQuery);
 
-  const studentQuery = '*[_type == "student"]';
-  const students = await client.fetch(studentQuery);
+//   const studentQuery = '*[_type == "student"]';
+//   const students = await client.fetch(studentQuery);
 
-  // console.log(students)
+//   // console.log(students)
 
-  const facultyQuery = '*[_type == "faculty"]';
-  const faculties = await client.fetch(facultyQuery);
+//   const facultyQuery = '*[_type == "faculty"]';
+//   const faculties = await client.fetch(facultyQuery);
 
-  return {
-    props: { pets, students, faculties }
-  }
-}
+//   return {
+//     props: { pets, students, faculties }
+//   }
+// }
 
 export default index

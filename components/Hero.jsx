@@ -51,7 +51,7 @@ const Hero = () => {
       "year": 2020
     },
 
-    ashleysha : {
+    ashleysha: {
       "_createdAt": "2022-07-19T23:29:36Z",
       "_id": "J9rUovbD21y5kvyxiaomWA",
       "_rev": "Q7jP7SssQK7MeeKt8SfKbD",
@@ -275,18 +275,19 @@ const Hero = () => {
 
   return (
     <div className="relative bg-white overflow-hidden">
-      
+
       <div className="pt-16 pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48 ">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:static">
-          <div className="sm:max-w-lg">
-            <h1 className="text-4xl font font-extrabold tracking-tight text-gray-900 sm:text-6xl">
-              Summer styles are finally here
-            </h1>
-            <p className="mt-4 text-xl text-gray-500">
-              This year, our new summer collection will shelter you from the
-              harsh elements of a world that doesn&apos;t care if you live or
-              die.
-            </p>
+          <div className="sm:max-w-lg flex-col-reverse md:flex-row flex items-center  w-full">
+            <div className='md:shrink-0 mt-20 text-center md:text-left md:mt-0 max-w-lg'>
+              <h1 className="text-4xl font font-extrabold tracking-tight text-gray-900 sm:text-6xl">
+                Your one stop shop for information needs.
+              </h1>
+              <p className="mt-4 text-xl text-gray-500">
+                Need to know who can help you with GSOC? Need to know who can help you become 5 ⭐ coder? Need to know who can help you become a full stack developer? Start here
+              </p>
+            </div>
+            <img className="lg:block lg:ml-80" src="/frostbite-dark.svg" alt="Workflow" />
           </div>
           <div>
             <div className="mt-10">
@@ -296,7 +297,7 @@ const Hero = () => {
                 className="pointer-events-none lg:absolute lg:inset-y-0 lg:max-w-7xl lg:mx-auto lg:w-full"
               >
                 <div className="absolute transform sm:left-1/2 sm:top-0 sm:translate-x-8 lg:left-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-8">
-                  <div className="flex items-center space-x-6 lg:space-x-8">
+                  {/* <div className="flex items-center space-x-6 lg:space-x-8">
                     <div className="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
                       <div className="w-44 h-64 rounded-lg overflow-hidden sm:opacity-0 lg:opacity-100"></div>
                       <div className="w-44 h-64 rounded-lg overflow-hidden">
@@ -321,8 +322,8 @@ const Hero = () => {
                       <div className="w-44 h-64 rounded-lg overflow-hidden">
                         <img src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-07.jpg" alt="" className="w-full h-full object-center object-cover" />
                       </div>
-                    </div>
-                  </div>
+                    </div> 
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -336,7 +337,7 @@ const Hero = () => {
       <Section name="zephyr" members={[data.vinamr, data.sameep, data.gaurav, data.abhinay, data.ashleysha, data.prince]} />
       <Section name="icpc" members={[data.sameep, data.ashleysha]} />
 
-      <div className="h-full">
+      {/* <div className="h-full">
         <div className="w-full container mx-auto">
           <div className="w-full flex items-center justify-between">
             <div className="flex w-1/2 justify-end content-center ">
@@ -368,11 +369,11 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* <!--Main--> */}
+        
         <div className="custom_background grid justify-items-center">
           <div className="grid h-screen place-items-center ">
             <div className="container pt-24 md:pt-36 mx-auto flex flex-wrap flex-col md:flex-row items-center">
-              {/* <!--Left Col--> */}
+              
               <div className="grid justify-items-center">
                 <div className="flex flex-col w-full xl:w-2/5 justify-center lg:items-start overflow-y-hidden">
                   <h1 className="my-4 text-3xl md:text-5xl text-white opacity-75 font-bold leading-tight text-center md:text-center ">
@@ -500,14 +501,14 @@ const Hero = () => {
           </div>
 
           {/* <!--Footer--> */}
-          {/* <div className="w-full pt-16 pb-6 text-sm text-center md:text-left fade-in">
+      {/* <div className="w-full pt-16 pb-6 text-sm text-center md:text-left fade-in">
         <a className="text-gray-500 no-underline hover:no-underline" href="#">&copy; App 2020</a>
         - Template by
        
-      </div> */}
+      
         </div>
       </div>
-      {/* end */}
+      
       <div className="Clubs">
         <div className="Axios">
           <div className="Axios-text">
@@ -758,7 +759,7 @@ const Hero = () => {
             }}
           />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
