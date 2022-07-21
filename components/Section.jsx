@@ -35,12 +35,12 @@ export const Section = ({ name, members }) => {
     )
     console.log(data)
     var options = {
-        "key": "rzp_test_1xLFW3XMUr7klD", 
+        "key": "rzp_test_vQi5k24ZgUEONx", 
         "amount": "50000", 
         "currency": "INR",
         "name": "Frostbite",
         "description": "Donate to your favorite clubs",
-        "image": "https://frostbite-two.vercel.app/Snow.svg",
+        "image": "https://frostbite-two.vercel.app/favicon.ico",
         "handler": function (response){
             alert(response.razorpay_payment_id);
             alert(response.razorpay_order_id);

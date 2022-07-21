@@ -16,54 +16,54 @@ import { urlFor } from '../lib/client'
 const Profile = (props) => {
   // console.log(props.dob)
   const [firstName, lastName] = props.name.split(' ')
-  let branchSmo = props.rollno.slice(1,3)
+  let branchSmo = props.rollno.slice(1, 3)
   const branchSmol = branchSmo.toUpperCase();
-  let branch=""
-  if(branchSmol === "CI")
-  branch = "Computer Science with Artificial Intelligence"
-  else if(branchSmol === "CB")
-  branch = "Computer Science with Business"
-  else if(branchSmol === "CS")
-  branch = "Computer Science"
-  else if(branchSmol === "IT")
-  branch = "Information Technology"
-  
-  const allTags = props.tags? props.tags.map((prev) => {
-    return(
-        <span className="text-lg text-slate-600 inline px-2" key={prev}>{prev} </span>
+  let branch = ""
+  if (branchSmol === "CI")
+    branch = "Computer Science with Artificial Intelligence"
+  else if (branchSmol === "CB")
+    branch = "Computer Science with Business"
+  else if (branchSmol === "CS")
+    branch = "Computer Science"
+  else if (branchSmol === "IT")
+    branch = "Information Technology"
+
+  const allTags = props.tags ? props.tags.map((prev) => {
+    return (
+      <span className="text-lg text-slate-600 inline px-2" key={prev}>{prev} </span>
     )
   }) : ['No tag available']
 
-  const allDescription = props.description? props.description.map((prev) => {
-    return(
-        <div className='space-y-2 md:flex md:justify-between md:items-center' key={prev}>
-          <div className='flex items-center space-x-4'>
-            <div className='w-8 h-8 bg-indigo-500 text-white rounded-full'>
-              <svg viewBox="0 0 32 32" fill='currentColor'> <path d="M8.994 20.006a1 1 0 0 1-.707-1.707l4.5-4.5a1 1 0 0 1 1.414 0l3.293 3.293 4.793-4.793a1 1 0 1 1 1.414 1.414l-5.5 5.5a1 1 0 0 1-1.414 0l-3.293-3.293L9.7 19.713a1 1 0 0 1-.707.293Z"></path> </svg>
-            </div>
-            <div>
-              <p className='text-lg'>{prev}</p>
-              <p className='text-slate-500'>{props.name}</p>
-            </div>
+  const allDescription = props.description ? props.description.map((prev) => {
+    return (
+      <div className='space-y-2 md:flex md:justify-between md:items-center' key={prev}>
+        <div className='flex items-center space-x-4'>
+          <div className='w-8 h-8 bg-indigo-500 text-white rounded-full'>
+            <svg viewBox="0 0 32 32" fill='currentColor'> <path d="M8.994 20.006a1 1 0 0 1-.707-1.707l4.5-4.5a1 1 0 0 1 1.414 0l3.293 3.293 4.793-4.793a1 1 0 1 1 1.414 1.414l-5.5 5.5a1 1 0 0 1-1.414 0l-3.293-3.293L9.7 19.713a1 1 0 0 1-.707.293Z"></path> </svg>
+          </div>
+          <div>
+            <p className='text-lg'>{prev}</p>
+            <p className='text-slate-500'>{props.name}</p>
           </div>
         </div>
+      </div>
     )
   }) : ['No description available']
-  const allDescriptionPara = props.description? props.description.map((prev) => {
-    return(
-        <div className="text-slate-600 text-lg inline" key={prev}>{prev}. </div>
+  const allDescriptionPara = props.description ? props.description.map((prev) => {
+    return (
+      <div className="text-slate-600 text-lg inline" key={prev}>{prev}. </div>
     )
   }) : ['No description available']
-  const allCards = props.parDetails? props.parDetails.map((prevProps) => {
+  const allCards = props.parDetails ? props.parDetails.map((prevProps) => {
     // console.log(prevProps)
-    const allDescriptionParaTech = prevProps? prevProps.description.map((prev) => {
-      return(
-          <div className="text-slate-600 text-lg inline" key={prev}>{prev}. </div>
+    const allDescriptionParaTech = prevProps ? prevProps.description.map((prev) => {
+      return (
+        <div className="text-slate-600 text-lg inline" key={prev}>{prev}. </div>
       )
     }) : ['No description available']
 
-    return(
-      <div className='border rounded-md w-2/5 p-6 space-y-2' key={prevProps}>
+    return (
+      <div className='border rounded-md w-3/4 md:w-4/5 lg:w-2/5 p-6 space-y-2' key={prevProps}>
         <div className='flex items-center space-x-4'>
           <div className=' inline-block  rounded-full ring-2 ring-blue-600  ring-offset-2'>
             {/* <svg className='w-6 h-6' viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"> <defs> <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="icon2-b"> <stop stopColor="#BAE6FD" offset="0%" /> <stop stopColor="#38BDF8" offset="100%" /> </linearGradient> <linearGradient x1="50%" y1="25.718%" x2="50%" y2="100%" id="icon2-c"> <stop stopColor="#0284C7" offset="0%" /> <stop stopColor="#0284C7" stopOpacity="0" offset="100%" /> </linearGradient> <path id="icon2-a" d="M16 0l16 32-16-5-16 5z" /> </defs> <g transform="rotate(90 16 16)" fill="none" fillRule="evenodd"> <mask id="icon2-d" fill="#fff"> <use xlinkHref="#icon2-a" /> </mask> <use fill="url(#icon2-b)" xlinkHref="#icon2-a" /> <path fill="url(#icon2-c)" mask="url(#icon2-d)" d="M16-6h20v38H16z" /> </g> </svg> */}
@@ -76,7 +76,7 @@ const Profile = (props) => {
         </p>
         <div>
           <div className='flex justify-between items-center'>
-            
+
             <Link href={`/profile/${prevProps.rollno.toLowerCase()}`}><a className='text-indigo-500 text-lg font-semibold mt-auto ml-auto'>View &rarr;</a></Link>
           </div>
         </div>
@@ -105,10 +105,12 @@ const Profile = (props) => {
             </button>
           </Link>
           {/* 1.75 (line-height) + 0.5 (pt) + 0.5 (pb) = 2.75rem */}
-          <button className='flex items-center px-4 py-2 space-x-2 border border-transparent shadow-sm rounded-md bg-indigo-500 text-white text-lg font-semibold hover:bg-indigo-600 hover:shadow-md'>
-            <svg className="w-4 h-4" fill='currentColor' viewBox="0 0 11 8"> <path d="m.457 4.516.969-.99 2.516 2.481L9.266.702l.985.99-6.309 6.284z"></path> </svg>
-            <span>Verified</span>
-          </button>
+          <Link href={props.url}>
+            <button className='flex items-center px-4 py-2 space-x-2 border border-transparent shadow-sm rounded-md bg-indigo-500 text-white text-lg font-semibold hover:bg-indigo-600 hover:shadow-md'>
+              <svg height={20} fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M480 352h-133.5l-45.25 45.25C289.2 409.3 273.1 416 256 416s-33.16-6.656-45.25-18.75L165.5 352H32c-17.67 0-32 14.33-32 32v96c0 17.67 14.33 32 32 32h448c17.67 0 32-14.33 32-32v-96C512 366.3 497.7 352 480 352zM432 456c-13.2 0-24-10.8-24-24c0-13.2 10.8-24 24-24s24 10.8 24 24C456 445.2 445.2 456 432 456zM233.4 374.6C239.6 380.9 247.8 384 256 384s16.38-3.125 22.62-9.375l128-128c12.49-12.5 12.49-32.75 0-45.25c-12.5-12.5-32.76-12.5-45.25 0L288 274.8V32c0-17.67-14.33-32-32-32C238.3 0 224 14.33 224 32v242.8L150.6 201.4c-12.49-12.5-32.75-12.5-45.25 0c-12.49 12.5-12.49 32.75 0 45.25L233.4 374.6z" /></svg>
+              <span>Get JSON</span>
+            </button>
+          </Link>
         </div>
 
         <div className='space-y-3'>
@@ -175,25 +177,50 @@ const Profile = (props) => {
             </div>
 
             <div className='md:col-span-1 space-y-2 pl-2 pb-8'>
-              <div>
-                <p className='text-lg'>Roll Number</p>
-                <p className='text-slate-600'>{props.rollno.toUpperCase()}</p>
+              <div className='flex items-center'>
+                <div className="w-8 h-8 mr-4 bg-orange-400 text-white rounded-full">
+                  <svg fill='currentColor' viewBox="0 0 32 32"> <path d="M21 14a.75.75 0 0 1-.75-.75 1.5 1.5 0 0 0-1.5-1.5.75.75 0 1 1 0-1.5 1.5 1.5 0 0 0 1.5-1.5.75.75 0 1 1 1.5 0 1.5 1.5 0 0 0 1.5 1.5.75.75 0 1 1 0 1.5 1.5 1.5 0 0 0-1.5 1.5.75.75 0 0 1-.75.75Zm-7 10a1 1 0 0 1-1-1 4 4 0 0 0-4-4 1 1 0 0 1 0-2 4 4 0 0 0 4-4 1 1 0 0 1 2 0 4 4 0 0 0 4 4 1 1 0 0 1 0 2 4 4 0 0 0-4 4 1 1 0 0 1-1 1Z"></path> </svg>
+                </div>
+                <div>
+                  <p className='text-lg'>Roll Number</p>
+                  <p className='text-slate-600'>{props.rollno.toUpperCase()}</p>
+                </div>
               </div>
-              <div>
+              <div className='flex items-center'>
+                <div className="w-8 h-8 mr-4 bg-orange-400 text-white rounded-full">
+                  <svg fill='currentColor' viewBox="0 0 32 32"> <path d="M21 14a.75.75 0 0 1-.75-.75 1.5 1.5 0 0 0-1.5-1.5.75.75 0 1 1 0-1.5 1.5 1.5 0 0 0 1.5-1.5.75.75 0 1 1 1.5 0 1.5 1.5 0 0 0 1.5 1.5.75.75 0 1 1 0 1.5 1.5 1.5 0 0 0-1.5 1.5.75.75 0 0 1-.75.75Zm-7 10a1 1 0 0 1-1-1 4 4 0 0 0-4-4 1 1 0 0 1 0-2 4 4 0 0 0 4-4 1 1 0 0 1 2 0 4 4 0 0 0 4 4 1 1 0 0 1 0 2 4 4 0 0 0-4 4 1 1 0 0 1-1 1Z"></path> </svg>
+                </div>
+                <div>
                 <p className='text-lg'>Room Number</p>
-                <p className='text-slate-600'>{props.roomno||'NA'}</p>
+                <p className='text-slate-600'>{props.roomno || 'NA'}</p>
+                </div>
               </div>
-              <div>
-                <p className='text-lg'>Email</p>
-                <p className='text-slate-600'>{props.email||'NA'}</p>
+              <div className='flex items-center'>
+                <div className="w-8 h-8 mr-4 bg-orange-400 text-white rounded-full">
+                  <svg fill='currentColor' viewBox="0 0 32 32"> <path d="M21 14a.75.75 0 0 1-.75-.75 1.5 1.5 0 0 0-1.5-1.5.75.75 0 1 1 0-1.5 1.5 1.5 0 0 0 1.5-1.5.75.75 0 1 1 1.5 0 1.5 1.5 0 0 0 1.5 1.5.75.75 0 1 1 0 1.5 1.5 1.5 0 0 0-1.5 1.5.75.75 0 0 1-.75.75Zm-7 10a1 1 0 0 1-1-1 4 4 0 0 0-4-4 1 1 0 0 1 0-2 4 4 0 0 0 4-4 1 1 0 0 1 2 0 4 4 0 0 0 4 4 1 1 0 0 1 0 2 4 4 0 0 0-4 4 1 1 0 0 1-1 1Z"></path> </svg>
+                </div>
+                <div>
+                  <p className='text-lg'>Email</p>
+                  <p className='text-slate-600'>{props.email || 'NA'}</p>
+                </div>
               </div>
-              <div>
-                <p className='text-lg'>Birthdate</p>
-                <p className='text-slate-600'>{props.dob||'NA'}</p>
+              <div className='flex items-center'>
+                <div className="w-8 h-8 mr-4 bg-orange-400 text-white rounded-full">
+                  <svg fill='currentColor' viewBox="0 0 32 32"> <path d="M21 14a.75.75 0 0 1-.75-.75 1.5 1.5 0 0 0-1.5-1.5.75.75 0 1 1 0-1.5 1.5 1.5 0 0 0 1.5-1.5.75.75 0 1 1 1.5 0 1.5 1.5 0 0 0 1.5 1.5.75.75 0 1 1 0 1.5 1.5 1.5 0 0 0-1.5 1.5.75.75 0 0 1-.75.75Zm-7 10a1 1 0 0 1-1-1 4 4 0 0 0-4-4 1 1 0 0 1 0-2 4 4 0 0 0 4-4 1 1 0 0 1 2 0 4 4 0 0 0 4 4 1 1 0 0 1 0 2 4 4 0 0 0-4 4 1 1 0 0 1-1 1Z"></path> </svg>
+                </div>
+                <div>
+                  <p className='text-lg'>Birthdate</p>
+                  <p className='text-slate-600'>{props.dob || 'NA'}</p>
+                </div>
               </div>
-              <div>
-                <p className='text-lg'>Phone Number</p>
-                <p className='text-slate-600'>+91 {props.phoneno}</p>
+              <div className='flex items-center'>
+                <div className="w-8 h-8 mr-4 bg-orange-400 text-white rounded-full">
+                  <svg fill='currentColor' viewBox="0 0 32 32"> <path d="M21 14a.75.75 0 0 1-.75-.75 1.5 1.5 0 0 0-1.5-1.5.75.75 0 1 1 0-1.5 1.5 1.5 0 0 0 1.5-1.5.75.75 0 1 1 1.5 0 1.5 1.5 0 0 0 1.5 1.5.75.75 0 1 1 0 1.5 1.5 1.5 0 0 0-1.5 1.5.75.75 0 0 1-.75.75Zm-7 10a1 1 0 0 1-1-1 4 4 0 0 0-4-4 1 1 0 0 1 0-2 4 4 0 0 0 4-4 1 1 0 0 1 2 0 4 4 0 0 0 4 4 1 1 0 0 1 0 2 4 4 0 0 0-4 4 1 1 0 0 1-1 1Z"></path> </svg>
+                </div>
+                <div>
+                  <p className='text-lg'>Phone Number</p>
+                  <p className='text-slate-600'>+91 {props.phoneno}</p>
+                </div>
               </div>
             </div>
           </div>

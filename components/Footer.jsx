@@ -14,7 +14,7 @@ const Footer = () => {
       <div className="grid grid-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 gap-1 max-w-full overflow-hidden bg-slate-800  justify-around dark:text-white p-12 sm:py-10">
         <div className='mx-5 lg:m-0 md:mx-0 sm:mb-5'>
           <div className='md:shrink-0'><img className="md:h-full md:w-48 lg:block h-10 w-auto" src="/frostbite.svg" alt="Workflow" /></div>
-          <div className='flex text-slate-100 w-60'>Lorem ipsum dolor sit amet, consectetur </div>
+          <div className='flex text-slate-100 w-60'>Team Frostbite™ is in no way responsible for any misuse of data provided to us.</div>
           <div className='text-white flex space-x-1'>
             <a href="#!" type="button" className="rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 mt-1">
               <svg aria-hidden="true"
