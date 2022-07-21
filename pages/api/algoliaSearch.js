@@ -35,16 +35,16 @@ export default function fetchDataFromDatabase(req,res1){
         data.objectID = data.slug.current;
       });
 
-      // console.log(fetchedData) 
+      console.log(fetchedData) 
       
       
       index.saveObjects(fetchedData, { autoGenerateObjectIDIfNotExist: true });
-      // console.log("helluu")
+      console.log("helluu")
       }
     )
     .catch((err) => console.error(err));
     console.log("Successfully updated the search database")
-    res1.redirect('/search')
-    // res1.status(200).json({ Result: "Successfully updated the search database" })
+    // res1.redirect('/search')
+    res1.status(200).json({ Result: "Successfully updated the search database" })
 }
 // fetchDataFromDatabase()
