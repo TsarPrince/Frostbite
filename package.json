@@ -38,7 +38,8 @@
     "shortid": "^2.2.16",
     "socket.io": "^4.5.1",
     "socket.io-client": "^4.5.1",
-    "stripe": "^8.209.0"
+    "stripe": "^8.209.0",
+    "util": "^0.12.4"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.2",
