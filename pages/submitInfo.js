@@ -135,6 +135,7 @@ const SubmitInfo = () => {
 
     const student = {
       _type: 'student',
+      _id: `${rollno}`,
       image, name, rollno, slug, phone_number, room_no, description, tags, email, gender, linkedinProfile, branch, year, dob
     };
     console.log(student)
