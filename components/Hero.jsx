@@ -270,6 +270,213 @@ const Hero = () => {
         "Information Security (Infosec)",
         "Artificial Intelligence"
       ]
+    },
+    AyushJain: {
+          "_createdAt": "2022-07-21T12:34:06Z",
+          "_id": "9WAwYFhPvfmpe6wxCeEZDx",
+          "_rev": "9WAwYFhPvfmpe6wxCeEZAU",
+          "_type": "student",
+          "_updatedAt": "2022-07-21T12:34:06Z",
+          "branch": "Computer Science",
+          "description": [
+            "GSOC'22",
+            "Oppia Foundation",
+            "Computer Science",
+            "3rd year",
+            "Web Developer",
+            "Axios",
+            "Google Developer Student Club (GDSC)",
+            "Open Source",
+            "Interned at GetVu"
+          ],
+          "dob": "",
+          "email": "lcs2020014@iiitl.ac.in",
+          "gender": "Male",
+          "image": [
+            {
+              "_key": "image-2a8aecca3f1720f58eabf68b9451ccde188b7216-800x800-jpg",
+              "_type": "image",
+              "asset": {
+                "_ref": "image-2a8aecca3f1720f58eabf68b9451ccde188b7216-800x800-jpg",
+                "_type": "reference"
+              }
+            }
+          ],
+          "linkedinProfile": "ayushjaink8",
+          "name": "Ayush Jain",
+          "phone_number": 8295448838,
+          "rollno": "LCS2020014",
+          "room_no": null,
+          "slug": {
+            "_type": "slug",
+            "current": "lcs2020014"
+          },
+          "tags": [
+            "Web Development",
+            "GSOC'22",
+            "Open Source"
+          ],
+          "year": 2020
+    },
+    KarishmaV:{
+      "_createdAt": "2022-07-21T12:39:13Z",
+      "_id": "Q7jP7SssQK7MeeKt8Vbf8V",
+      "_rev": "Q7jP7SssQK7MeeKt8Vbf6Z",
+      "_type": "student",
+      "_updatedAt": "2022-07-21T12:39:13Z",
+      "branch": "Computer Science",
+      "description": [
+        "GSOC'22 @ Pulic Lab",
+        "Google Developer Student Club (GDSC) lead",
+        "Harvard WECode Scholar",
+        "Mentee @ Codess Cafe",
+        "Web Developer",
+        "Open Source Developer",
+        "Axios Member @Software Development wing"
+      ],
+      "dob": "",
+      "email": "lcs2020029@iiitl.ac.in",
+      "gender": "Female",
+      "image": [
+        {
+          "_key": "image-69486096ab0bbd688b7910eee4e6647129bb8c34-800x800-jpg",
+          "_type": "image",
+          "asset": {
+            "_ref": "image-69486096ab0bbd688b7910eee4e6647129bb8c34-800x800-jpg",
+            "_type": "reference"
+          }
+        }
+      ],
+      "linkedinProfile": "karishma-vanwari-a1a025204",
+      "name": "Karishma Vanwari",
+      "phone_number": 9403031950,
+      "rollno": "LCS2020029",
+      "room_no": 312,
+      "slug": {
+        "_type": "slug",
+        "current": "lcs2020029"
+      },
+      "tags": [
+        "GSOC'22",
+        "WECode",
+        "GDSC Lead",
+        "Axios",
+        "Web Development"
+      ],
+      "year": 2020
+    },
+    NehalSharma: {
+      "_createdAt": "2022-07-21T20:08:47Z",
+      "_id": "9WAwYFhPvfmpe6wxCfbH0W",
+      "_rev": "J9rUovbD21y5kvyxidh8du",
+      "_type": "student",
+      "_updatedAt": "2022-07-21T22:48:41Z",
+      "branch": "Computer Science",
+      "description": [
+        "GSOC'22 @ Zulip",
+        "Intern @ Microsoft",
+        "Generation Google Scholar'22 ",
+        "Ex-Intern @ Felvin ",
+        "Full stack (MERN) Web Developer",
+        "Graphic Designer"
+      ],
+      "dob": "",
+      "email": "lcs2020001@iiitl.ac.in",
+      "gender": "Female",
+      "linkedinProfile": "",
+      "name": "Nehal Sharma",
+      "phone_number": 6387056480,
+      "rollno": "LCS2020001",
+      "room_no": null,
+      "slug": {
+        "_type": "slug",
+        "current": "lcs2020001"
+      },
+      "tags": [
+        "Author",
+        "'Open Sourcerer'",
+        "GSOC'22",
+        "FOSS wing lead"
+      ],
+      "year": 2020
+    },
+    PrerakM:{
+      "_createdAt": "2022-07-21T12:43:52Z",
+      "_id": "Q7jP7SssQK7MeeKt8Vc1pb",
+      "_rev": "Q7jP7SssQK7MeeKt8Vc1nf",
+      "_type": "student",
+      "_updatedAt": "2022-07-21T12:43:52Z",
+      "branch": "Information Technology",
+      "description": [
+        "Google Summer of Code '22 @ ScoreLabs",
+        "Core Member at Google's DSC",
+        "Senior Member at Axios, FOSS"
+      ],
+      "dob": "",
+      "email": "lit2020009@iiitl.ac.in",
+      "gender": "Male",
+      "image": [
+        {
+          "_key": "image-f06bce73635bbd25fdaf3cb4d456ad5f4dc6a261-800x800-jpg",
+          "_type": "image",
+          "asset": {
+            "_ref": "image-f06bce73635bbd25fdaf3cb4d456ad5f4dc6a261-800x800-jpg",
+            "_type": "reference"
+          }
+        }
+      ],
+      "linkedinProfile": "prerak-mathur-b8a14b15a",
+      "name": "Prerak Mathur",
+      "phone_number": 9672614863,
+      "rollno": "LIT2020009",
+      "room_no": null,
+      "slug": {
+        "_type": "slug",
+        "current": "lit2020009"
+      },
+      "tags": [
+        "GSOC'22",
+        "Scorelabs",
+        "Axios"
+      ],
+      "year": 2020
+    },
+    YashV:{
+      "_createdAt": "2022-07-21T22:15:25Z",
+      "_id": "LIT2020066",
+      "_rev": "9WAwYFhPvfmpe6wxCfwDtt",
+      "_type": "student",
+      "_updatedAt": "2022-07-21T22:17:46Z",
+      "branch": "Information Technology",
+      "description": [
+        "GSOC'22 @ Oppia"
+      ],
+      "dob": "",
+      "email": "lit2020066@iiitl.ac.in",
+      "gender": "Male",
+      "image": [
+        {
+          "_key": "image-85d2876fdf4acad7360867bcc2263ecd8702543f-800x800-jpg",
+          "_type": "image",
+          "asset": {
+            "_ref": "image-85d2876fdf4acad7360867bcc2263ecd8702543f-800x800-jpg",
+            "_type": "reference"
+          }
+        }
+      ],
+      "linkedinProfile": "",
+      "name": "Yash Verma",
+      "phone_number": 8957557113,
+      "rollno": "LIT2020066",
+      "room_no": null,
+      "slug": {
+        "_type": "slug",
+        "current": "lit2020066"
+      },
+      "tags": [
+        "-"
+      ],
+      "year": 2020
     }
   }
 
@@ -332,7 +539,7 @@ const Hero = () => {
       </div>
 
       <Section name="axios" members={[data.abhinay, data.vinamr]} />
-      <Section name="gsoc" members={[data.gaurav, data.sameep, data.abhinay]} />
+      <Section name="gsoc" members={[data.AyushJain,data.KarishmaV,data.NehalSharma,data.PrerakM,data.YashV]} />
       <Section name="estrella" members={[data.ashleysha, data.prince]} />
       <Section name="zephyr" members={[data.vinamr, data.sameep, data.gaurav, data.abhinay, data.ashleysha, data.prince]} />
       <Section name="icpc" members={[data.sameep, data.ashleysha]} />

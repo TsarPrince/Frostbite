@@ -7,13 +7,11 @@ const Card = ({ props: { image, name, gender, description, tags, rollno } }) => 
     linkURL = "/profile/" + rollno.toLowerCase()
   return (
     <div className='max-w-sm bg-white rounded-xl shadow-md m-4 overflow-hidden shrink-0 md:flex md:max-w-lg'>
-      {
-        image && <Link href={linkURL || '/'}>
+        <Link href={linkURL || '/'}>
           <div className='md:shrink-0'>
-            <img key={image[0]._key} src={urlFor(image[0])} className='h-52 w-full md:w-52 md:h-full object-cover cursor-pointer transition-all origin-[100%_50%] hover:opacity-80 hover:scale-110' alt={name}></img>
+            {image? <img key={image[0]._key} src={urlFor(image[0])} className='h-52 w-full md:w-52 md:h-full object-cover cursor-pointer transition-all origin-[100%_50%] hover:opacity-80 hover:scale-110' alt={name}></img>: <img src='/Default.png' className='h-52 w-full md:w-52 md:h-full object-cover cursor-pointer transition-all origin-[100%_50%] hover:opacity-80 hover:scale-110'  alt={name}></img>}
           </div>
         </Link>
-      }
       <div className='bg-white p-6 space-y-4'>
         <div>
           {name && <Link href={linkURL || '/'}>

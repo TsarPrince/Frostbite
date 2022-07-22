@@ -15,7 +15,6 @@ import { urlFor } from '../lib/client'
 // {allDescription}
 const Profile = (props) => {
   // console.log(props.dob)
-  const [firstName, lastName] = props.name.split(' ')
   let branchSmo = props.rollno.slice(1, 3)
   const branchSmol = branchSmo.toUpperCase();
   let branch = ""
@@ -69,7 +68,7 @@ const Profile = (props) => {
         <div className='flex items-center space-x-4'>
           <div className=' inline-block  rounded-full ring-2 ring-blue-600  ring-offset-2'>
             {/* <svg className='w-6 h-6' viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"> <defs> <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="icon2-b"> <stop stopColor="#BAE6FD" offset="0%" /> <stop stopColor="#38BDF8" offset="100%" /> </linearGradient> <linearGradient x1="50%" y1="25.718%" x2="50%" y2="100%" id="icon2-c"> <stop stopColor="#0284C7" offset="0%" /> <stop stopColor="#0284C7" stopOpacity="0" offset="100%" /> </linearGradient> <path id="icon2-a" d="M16 0l16 32-16-5-16 5z" /> </defs> <g transform="rotate(90 16 16)" fill="none" fillRule="evenodd"> <mask id="icon2-d" fill="#fff"> <use xlinkHref="#icon2-a" /> </mask> <use fill="url(#icon2-b)" xlinkHref="#icon2-a" /> <path fill="url(#icon2-c)" mask="url(#icon2-d)" d="M16-6h20v38H16z" /> </g> </svg> */}
-            <img key={prevProps.image[0]._key} src={urlFor(prevProps.image[0])} width="40" height="40" alt="" className='object-cover rounded-full' />
+            {prevProps.image? <img key={prevProps.image[0]._key} src={urlFor(prevProps.image[0])} width="40" height="40" alt="" className='object-cover rounded-full' />: <img src='/Default.png' className='rounded-full w-32 h-32 md:w-40 md:h-40 object-cover border-4 border-white'  alt={props.name}></img>}
           </div>
           <p className='text-lg font-semibold text-slate-600'>{prevProps.name}</p>
         </div>
