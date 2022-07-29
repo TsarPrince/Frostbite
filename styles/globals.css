@@ -1227,7 +1227,9 @@
   box-shadow: 0 1px 0 0 rgba(35, 38, 59, 0.05);
   outline: 0;
 }
-
+.ais-VoiceSearch-status {
+  display: none !important;
+}
 .ais-RangeInput-separator {
   margin: 0 0.5rem;
 }

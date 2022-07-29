@@ -13,17 +13,38 @@ import {
   RefinementList,
   Configure,
   PoweredBy,
-  VoiceSearch
+  VoiceSearch,
+  MenuSelect
 } from 'react-instantsearch-dom';
 import Link from 'next/link';
 import Footer from '../components/Footer';
+import { useState } from 'react';
 
 export default function Search() {
   const searchClient = algoliasearch(
     'JQL15WD72T',
     '5af633b8fe05e08d22f181ade7aee679'
   );
- 
+  if(typeof window!== "undefined" &&  screen.width>768) 
+  var showFilters=false 
+  else 
+  var showFilters=true
+  // const showFilters = false;
+  const [seeMore, setSeeMore] = useState(showFilters);
+  let styles
+  if (seeMore) {
+    styles = {
+      display: 'flex'
+    }
+  }
+  else {
+    styles = { display: 'none' }
+  }
+  const setDisplay = () => {
+    setSeeMore(prev => !prev)
+
+  }
+  const logic = (typeof window !== "undefined" && screen.width>768)? {display: 'none'} : {display: 'flex'}
   return (
     <div className="ais-InstantSearch">
       <InstantSearch indexName="name" searchClient={searchClient}>
@@ -36,7 +57,7 @@ export default function Search() {
             <div className="flex searchbarDiv">
               <SearchBox />
               <div className="mr-auto mt-3 ml-3">
-                <VoiceSearch searchAsYouSpeak={true}/>
+                <VoiceSearch searchAsYouSpeak={true} />
               </div>
             </div>
             <div className="ml-auto mr-auto">
@@ -55,6 +76,31 @@ export default function Search() {
               </svg>
             </div>
           </Link>
+          <div className="seeFilters hidden md:hidden" style={logic} onClick={setDisplay}>
+            <p className='md:hidden text-white bg-blue-600 p-3 rounded-full shadow-lg hover:bg-blue-800 cursor-pointer mx-auto'>See Filters</p>
+          </div>
+          <div className="menuSelect flex flex-col md:flex-row mx-auto justify-around" style={styles}>
+            <div className="menu w-3/4 mx-auto mt-2 md:mt-0 md:w-1/6">
+              <p>Branch</p>
+              <MenuSelect className='' attribute='branch' />
+            </div>
+            <div className="menu w-3/4 mx-auto mt-2 md:mt-0 md:w-1/6">
+              <p>Gender</p>
+              <MenuSelect className='' attribute='gender' />
+            </div>
+            <div className="menu w-3/4 mx-auto mt-2 md:mt-0 md:w-1/6">
+              <p>Tags</p>
+              <MenuSelect className='' attribute='tags' />
+            </div>
+            <div className="menu w-3/4 mx-auto mt-2 md:mt-0 md:w-1/6">
+              <p>Description</p>
+              <MenuSelect className='' attribute='description' />
+            </div>
+            <div className="menu w-3/4 mx-auto mt-2 md:mt-0 md:w-1/6">
+              <p>Year</p>
+              <MenuSelect className='' attribute='year' />
+            </div>
+          </div>
           <Hits hitComponent={Hit} />
           <Pagination />
           <div className="mb-5"></div>
