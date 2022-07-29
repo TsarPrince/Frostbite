@@ -3,10 +3,9 @@ import Link from 'next/link'
 import { urlFor } from '../lib/client';
 const Card = ({ props: { image, name, gender, description, tags, rollno } }) => {
   let linkURL
-  if (rollno)
-    linkURL = "/profile/" + rollno.toLowerCase()
+  if (rollno) linkURL = "/profile/" + rollno.toLowerCase()
   return (
-    <div className='max-w-sm bg-white rounded-xl shadow-md m-4 overflow-hidden shrink-0 md:flex md:max-w-lg'>
+    <div className='max-w-sm snap-start snap-always bg-white rounded-xl shadow-md m-4 overflow-hidden shrink-0 md:flex md:max-w-lg'>
         <Link href={linkURL || '/'}>
           <div className='md:shrink-0'>
             {image? <img key={image[0]._key} src={urlFor(image[0])} className='h-52 w-full md:w-52 md:h-full object-cover cursor-pointer transition-all origin-[100%_50%] hover:opacity-80 hover:scale-110' alt={name}></img>: <img src='/Default.png' className='h-52 w-full md:w-52 md:h-full object-cover cursor-pointer transition-all origin-[100%_50%] hover:opacity-80 hover:scale-110'  alt={name}></img>}

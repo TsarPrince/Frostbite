@@ -3,7 +3,7 @@ import React from 'react'
 import { client, urlFor } from '../lib/client';
 
 import Card from '../components/Card';
-import Hero from '../components/Hero';
+import Hero from '../components/Hero/Hero';
 import Footer from '../components/Footer';
 
 

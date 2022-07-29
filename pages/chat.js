@@ -6,6 +6,7 @@ export default function Chat () {
   useEffect(() => {
     window.$ = window.jQuery = require('jquery')
       const socket = io("https://frostbite-iiitl.herokuapp.com/")
+      let prev = 'primce';
 
       $(function() {
         const FADE_TIME = 150; // ms
@@ -196,12 +197,17 @@ export default function Chat () {
         // Keyboard events
       
         $window.keydown(event => {
+          // FIX CROOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOW
+          // console.log(event.target.value == prev)
+          // console.log(event.target.value.charAt(event.target.selectionStart - 1).charCodeAt())
+          console.log(event)
+
           // Auto-focus the current input when a key is typed
           if (!(event.ctrlKey || event.metaKey || event.altKey)) {
             $currentInput.focus();
           }
           // When the client hits ENTER on their keyboard
-          if (event.which === 13 || event.keyCode === 13) {
+          if (event.which === 13 || event.keyCode === 13  ) {
             if (username) {
               sendMessage();
               socket.emit('stop typing');
@@ -210,6 +216,7 @@ export default function Chat () {
               setUsername();
             }
           }
+          prev = event.target.value;
         });
       
         $inputMessage.on('input', () => {
