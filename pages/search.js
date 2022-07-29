@@ -12,7 +12,8 @@ import {
   ClearRefinements,
   RefinementList,
   Configure,
-  PoweredBy
+  PoweredBy,
+  VoiceSearch
 } from 'react-instantsearch-dom';
 import Link from 'next/link';
 import Footer from '../components/Footer';
@@ -32,7 +33,12 @@ export default function Search() {
         </div>
         <div className="right-panel grid-cols-4">
           <div className='flex flex-col'>
-            <SearchBox />
+            <div className="flex searchbarDiv">
+              <SearchBox />
+              <div className="mr-auto mt-3 ml-3">
+                <VoiceSearch searchAsYouSpeak={true}/>
+              </div>
+            </div>
             <div className="ml-auto mr-auto">
               <PoweredBy />
 
