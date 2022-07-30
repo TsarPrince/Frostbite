@@ -12,6 +12,7 @@
     "@sanity/cli": "^2.30.2",
     "@sanity/client": "^3.2.0",
     "@sanity/image-url": "^1.0.1",
+    "@sendgrid/mail": "^7.7.0",
     "@stripe/stripe-js": "^1.25.0",
     "algoliasearch": "^4.13.1",
     "bcrypt": "^5.0.1",

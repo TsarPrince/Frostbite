@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import React from 'react'
+import React, { useState } from 'react'
 import { urlFor } from '../lib/client'
 // {props.type[0].toUpperCase() + props.type.substring(1)}
 // {props.rollno}
@@ -14,6 +14,10 @@ import { urlFor } from '../lib/client'
 // {allTags}
 // {allDescription}
 const Profile = (props) => {
+
+  const [activeTab, setActiveTab] = useState('general');
+
+
   // console.log(props.dob)
   let branchSmo = props.rollno.slice(1, 3)
   const branchSmol = branchSmo.toUpperCase();
@@ -27,13 +31,13 @@ const Profile = (props) => {
   else if (branchSmol === "IT")
     branch = "Information Technology"
 
-  const linkedinURL = props.linkedin? "https://www.linkedin.com/in/"+props.linkedin : "NA"
+  const linkedinURL = props.linkedin ? "https://www.linkedin.com/in/" + props.linkedin : "NA"
   const allTags = props.tags ? props.tags.map((prev) => {
     return (
-      <span className="text-lg text-slate-600 inline px-2" key={prev}>{prev} </span>
+      <span className="md:text-lg text-slate-600 inline px-2" key={prev}>{prev} </span>
     )
   }) : ['No tag available']
-  
+
   // console.log({ data })
   const allDescription = props.description ? props.description.map((prev) => {
     return (
@@ -56,7 +60,7 @@ const Profile = (props) => {
     )
   }) : ['No description available']
   const allCards = props.parDetails ? props.parDetails.map((prevProps) => {
-    // console.log(prevProps)
+    console.log(prevProps)
     const allDescriptionParaTech = prevProps ? prevProps.description.map((prev) => {
       return (
         <div className="text-slate-600 text-lg inline" key={prev}>{prev}. </div>
@@ -66,9 +70,8 @@ const Profile = (props) => {
     return (
       <div className='border rounded-md w-3/4 md:w-4/5 lg:w-2/5 p-6 space-y-2' key={prevProps}>
         <div className='flex items-center space-x-4'>
-          <div className=' inline-block  rounded-full ring-2 ring-blue-600  ring-offset-2'>
-            {/* <svg className='w-6 h-6' viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"> <defs> <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="icon2-b"> <stop stopColor="#BAE6FD" offset="0%" /> <stop stopColor="#38BDF8" offset="100%" /> </linearGradient> <linearGradient x1="50%" y1="25.718%" x2="50%" y2="100%" id="icon2-c"> <stop stopColor="#0284C7" offset="0%" /> <stop stopColor="#0284C7" stopOpacity="0" offset="100%" /> </linearGradient> <path id="icon2-a" d="M16 0l16 32-16-5-16 5z" /> </defs> <g transform="rotate(90 16 16)" fill="none" fillRule="evenodd"> <mask id="icon2-d" fill="#fff"> <use xlinkHref="#icon2-a" /> </mask> <use fill="url(#icon2-b)" xlinkHref="#icon2-a" /> <path fill="url(#icon2-c)" mask="url(#icon2-d)" d="M16-6h20v38H16z" /> </g> </svg> */}
-            {prevProps.image? <img key={prevProps.image[0]._key} src={urlFor(prevProps.image[0])} width="40" height="40" alt="" className='object-cover rounded-full' />: <img src='/Default.png' className='rounded-full w-32 h-32 md:w-40 md:h-40 object-cover border-4 border-white'  alt={props.name}></img>}
+          <div className='inline-block rounded-full ring-2 ring-blue-600  ring-offset-2'>
+            {prevProps.image ? <img key={prevProps.image[0]._key} src={urlFor(prevProps.image[0])} width="40" height="40" alt="" className='object-cover rounded-full' /> : <img src='/Default.png' className='rounded-full w-32 h-32 md:w-40 md:h-40 object-cover border-4 border-white' alt={props.name}></img>}
           </div>
           <p className='text-lg font-semibold text-slate-600'>{prevProps.name}</p>
         </div>
@@ -83,7 +86,7 @@ const Profile = (props) => {
         </div>
       </div>
     )
-  }) : "No Tech Relatives found"
+  }) : <span>No Tech Relatives found</span>
   return (
     <div>
       <div className='profile-background'>
@@ -91,8 +94,8 @@ const Profile = (props) => {
       </div>
       <div className='relative px-4 md:px-8 lg:px-16'>
         <div className='inline-block w-32 h-32 md:w-40 md:h-40 absolute -translate-y-1/2'>
-          
-          {props.images? <img key={props.images[0]._key} src={urlFor(props.images[0])} className='rounded-full w-32 h-32 md:w-40 md:h-40 object-cover border-4 border-white' alt={props.name}></img>: <img src='/Default.png' className='rounded-full w-32 h-32 md:w-40 md:h-40 object-cover border-4 border-white'  alt={props.name}></img>}
+
+          {props.images ? <img key={props.images[0]._key} src={urlFor(props.images[0])} className='rounded-full w-32 h-32 md:w-40 md:h-40 object-cover border-4 border-white' alt={props.name}></img> : <img src='/Default.png' className='rounded-full w-32 h-32 md:w-40 md:h-40 object-cover border-4 border-white' alt={props.name}></img>}
         </div>
 
         <div className='pt-24 pb-8 space-x-3 flex justify-start md:py-8 md:justify-end'>
@@ -108,7 +111,7 @@ const Profile = (props) => {
           </Link>
           {/* 1.75 (line-height) + 0.5 (pt) + 0.5 (pb) = 2.75rem */}
           <Link href={props.url}>
-            <button className='flex items-center px-4 py-2 space-x-2 border border-transparent shadow-sm rounded-md bg-indigo-500 text-white text-lg font-semibold hover:bg-indigo-600 hover:shadow-md'>
+            <button className='flex items-center px-4 py-2 space-x-2 border border-transparent shadow-sm rounded-md bg-indigo-500 text-white md:text-lg font-semibold hover:bg-indigo-600 hover:shadow-md'>
               <svg height={20} fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M480 352h-133.5l-45.25 45.25C289.2 409.3 273.1 416 256 416s-33.16-6.656-45.25-18.75L165.5 352H32c-17.67 0-32 14.33-32 32v96c0 17.67 14.33 32 32 32h448c17.67 0 32-14.33 32-32v-96C512 366.3 497.7 352 480 352zM432 456c-13.2 0-24-10.8-24-24c0-13.2 10.8-24 24-24s24 10.8 24 24C456 445.2 445.2 456 432 456zM233.4 374.6C239.6 380.9 247.8 384 256 384s16.38-3.125 22.62-9.375l128-128c12.49-12.5 12.49-32.75 0-45.25c-12.5-12.5-32.76-12.5-45.25 0L288 274.8V32c0-17.67-14.33-32-32-32C238.3 0 224 14.33 224 32v242.8L150.6 201.4c-12.49-12.5-32.75-12.5-45.25 0c-12.49 12.5-12.49 32.75 0 45.25L233.4 374.6z" /></svg>
               <span>Get JSON</span>
             </button>
@@ -121,26 +124,24 @@ const Profile = (props) => {
             <svg className="w-6 h-6 text-orange-400" viewBox="0 0 16 16" fill='currentColor'> <path d="M13 6a.75.75 0 0 1-.75-.75 1.5 1.5 0 0 0-1.5-1.5.75.75 0 1 1 0-1.5 1.5 1.5 0 0 0 1.5-1.5.75.75 0 1 1 1.5 0 1.5 1.5 0 0 0 1.5 1.5.75.75 0 1 1 0 1.5 1.5 1.5 0 0 0-1.5 1.5A.75.75 0 0 1 13 6ZM6 16a1 1 0 0 1-1-1 4 4 0 0 0-4-4 1 1 0 0 1 0-2 4 4 0 0 0 4-4 1 1 0 1 1 2 0 4 4 0 0 0 4 4 1 1 0 0 1 0 2 4 4 0 0 0-4 4 1 1 0 0 1-1 1Z"></path> </svg>
           </div>
           <div>
-            <p className='text-lg text-slate-600 divide-x-2 divide-slate-600 divide-opacity-70'>
+            <p className='md:text-lg text-slate-600 divide-x-2 divide-slate-600 divide-opacity-70'>
               {allTags}
             </p>
           </div>
-          <div className='flex flex-col md:flex-row space-x-4 text-lg text-slate-600'>
-            <div className="flex">
-              <div className='flex items-center space-x-2'>
-                <svg className="w-5 h-5 text-slate-500" fill='currentColor' viewBox="0 0 16 16"> <path d="M8 8.992a2 2 0 1 1-.002-3.998A2 2 0 0 1 8 8.992Zm-.7 6.694c-.1-.1-4.2-3.696-4.2-3.796C1.7 10.69 1 8.892 1 6.994 1 3.097 4.1 0 8 0s7 3.097 7 6.994c0 1.898-.7 3.697-2.1 4.996-.1.1-4.1 3.696-4.2 3.796-.4.3-1 .3-1.4-.1Zm-2.7-4.995L8 13.688l3.4-2.997c1-1 1.6-2.198 1.6-3.597 0-2.798-2.2-4.996-5-4.996S3 4.196 3 6.994c0 1.399.6 2.698 1.6 3.697 0-.1 0-.1 0 0Z"></path> </svg>
-                <span>{branch}</span>
-              </div>
-              <Link href={`mailto:${props.email}`}>
-                <div className='flex items-center space-x-2 cursor-pointer hover:underline'>
-                  <svg className="w-5 h-5 text-slate-500" fill='currentColor' viewBox="0 0 16 16"> <path d="M11 0c1.3 0 2.6.5 3.5 1.5 1 .9 1.5 2.2 1.5 3.5 0 1.3-.5 2.6-1.4 3.5l-1.2 1.2c-.2.2-.5.3-.7.3-.2 0-.5-.1-.7-.3-.4-.4-.4-1 0-1.4l1.1-1.2c.6-.5.9-1.3.9-2.1s-.3-1.6-.9-2.2C12 1.7 10 1.7 8.9 2.8L7.7 4c-.4.4-1 .4-1.4 0-.4-.4-.4-1 0-1.4l1.2-1.1C8.4.5 9.7 0 11 0ZM8.3 12c.4-.4 1-.5 1.4-.1.4.4.4 1 0 1.4l-1.2 1.2C7.6 15.5 6.3 16 5 16c-1.3 0-2.6-.5-3.5-1.5C.5 13.6 0 12.3 0 11c0-1.3.5-2.6 1.5-3.5l1.1-1.2c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4L2.9 8.9c-.6.5-.9 1.3-.9 2.1s.3 1.6.9 2.2c1.1 1.1 3.1 1.1 4.2 0L8.3 12Zm1.1-6.8c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4l-4.2 4.2c-.2.2-.5.3-.7.3-.2 0-.5-.1-.7-.3-.4-.4-.4-1 0-1.4l4.2-4.2Z"></path> </svg>
-                  <span className='text-indigo-500'>{props.email}</span>
-                </div>
-              </Link>
+          <div className='flex flex-col space-y-2 md:space-y-0 md:flex-row md:space-x-4 md:text-lg text-slate-600'>
+            <div className='flex items-center space-x-2'>
+              <svg className="w-5 h-5 text-slate-500" fill='currentColor' viewBox="0 0 16 16"> <path d="M8 8.992a2 2 0 1 1-.002-3.998A2 2 0 0 1 8 8.992Zm-.7 6.694c-.1-.1-4.2-3.696-4.2-3.796C1.7 10.69 1 8.892 1 6.994 1 3.097 4.1 0 8 0s7 3.097 7 6.994c0 1.898-.7 3.697-2.1 4.996-.1.1-4.1 3.696-4.2 3.796-.4.3-1 .3-1.4-.1Zm-2.7-4.995L8 13.688l3.4-2.997c1-1 1.6-2.198 1.6-3.597 0-2.798-2.2-4.996-5-4.996S3 4.196 3 6.994c0 1.399.6 2.698 1.6 3.697 0-.1 0-.1 0 0Z"></path> </svg>
+              <span>{branch}</span>
             </div>
+            <Link href={`mailto:${props.email}`}>
+              <div className='flex items-center space-x-2 cursor-pointer hover:underline'>
+                <svg className="w-5 h-5 text-slate-500" fill='currentColor' viewBox="0 0 16 16"> <path d="M11 0c1.3 0 2.6.5 3.5 1.5 1 .9 1.5 2.2 1.5 3.5 0 1.3-.5 2.6-1.4 3.5l-1.2 1.2c-.2.2-.5.3-.7.3-.2 0-.5-.1-.7-.3-.4-.4-.4-1 0-1.4l1.1-1.2c.6-.5.9-1.3.9-2.1s-.3-1.6-.9-2.2C12 1.7 10 1.7 8.9 2.8L7.7 4c-.4.4-1 .4-1.4 0-.4-.4-.4-1 0-1.4l1.2-1.1C8.4.5 9.7 0 11 0ZM8.3 12c.4-.4 1-.5 1.4-.1.4.4.4 1 0 1.4l-1.2 1.2C7.6 15.5 6.3 16 5 16c-1.3 0-2.6-.5-3.5-1.5C.5 13.6 0 12.3 0 11c0-1.3.5-2.6 1.5-3.5l1.1-1.2c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4L2.9 8.9c-.6.5-.9 1.3-.9 2.1s.3 1.6.9 2.2c1.1 1.1 3.1 1.1 4.2 0L8.3 12Zm1.1-6.8c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4l-4.2 4.2c-.2.2-.5.3-.7.3-.2 0-.5-.1-.7-.3-.4-.4-.4-1 0-1.4l4.2-4.2Z"></path> </svg>
+                <span className='text-indigo-500'>{props.email}</span>
+              </div>
+            </Link>
             <Link href={linkedinURL}>
               <div className='flex items-center space-x-2 cursor-pointer hover:underline'>
-              <svg className="w-5 h-5 text-slate-500" fill='currentColor' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+                <svg className="w-5 h-5 text-slate-500" fill='currentColor' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z" /></svg>
                 <span className='text-indigo-500'>{linkedinURL}</span>
               </div>
             </Link>
@@ -148,93 +149,99 @@ const Profile = (props) => {
         </div>
 
         <div>
-
           <div className='mt-8 space-x-2 md:space-x-4 border-b-2 flex overflow-scroll md:overflow-hidden'>
-            <button className='p-2 text-lg text-indigo-500 border-b-2 border-indigo-500 translate-y-[2px] font-semibold hover:text-indigo-600 hover:border-indigo-600'>General</button>
-            <button className='p-2 text-lg text-slate-600 font-semibold hover:text-slate-500'>Connections</button>
-            <button className='p-2 text-lg text-slate-600 font-semibold hover:text-slate-500'>Contributions</button>
+            <button className={`p-2 md:text-lg font-semibold ${(activeTab == 'general') ? 'text-indigo-500 border-b-2 border-indigo-500 font-semibold hover:text-indigo-600 hover:border-indigo-600' : 'text-slate-600 hover:text-slate-500'}`} onClick={() => { setActiveTab('general') }}>General</button>
+            <button className={`p-2 md:text-lg font-semibold ${(activeTab == 'gallery') ? 'text-indigo-500 border-b-2 border-indigo-500 font-semibold hover:text-indigo-600 hover:border-indigo-600' : 'text-slate-600 hover:text-slate-500'}`} onClick={() => { setActiveTab('gallery') }}>Photo Gallery</button>
           </div>
 
-          <div className='md:grid md:grid-cols-3 md:gap-x-24 lg:gap-x-48 mt-8'>
+          {(activeTab == 'general')
+            ? <div className='md:grid md:grid-cols-3 md:gap-x-24 lg:gap-x-48 mt-8'>
 
-            <div className='md:col-span-2 space-y-12'>
-              {/* About me */}
-              <div className='max-w-3xl space-y-2'>
-                <p className='text-slate-800 text-xl font-semibold'>About Me</p>
-                <p className='text-slate-600 text-lg'>
-                  {allDescriptionPara}
-                </p>
+                <div className='md:col-span-2 space-y-12'>
+                  {/* About me */}
+                  <div className='max-w-3xl space-y-2'>
+                    <p className='text-slate-800 text-xl font-semibold'>About Me</p>
+                    <p className='text-slate-600 text-lg'>
+                      {allDescriptionPara}
+                    </p>
+                  </div>
+
+                  {/* Tech Relatives */}
+                  <div className='space-y-2'>
+                    <p className='text-slate-800 text-xl font-semibold'>Tech Relatives</p>
+                    {/* Card container */}
+                    <div className='space-y-4 md:space-y-0 md:flex md:space-x-4'>
+                      {allCards}
+                    </div>
+                  </div>
+
+                  {/* Description */}
+                  <div className='max-w-3xl space-y-2'>
+                    <p className='text-slate-800 text-xl font-semibold'>Experience</p>
+                    <div className='border max-w-md rounded-md p-4 md:py-6 md:px-8 space-y-8'>
+                      {allDescription}
+                    </div>
+
+                    <div className='p-8'></div>
+                  </div>
+                </div>
+
+                <div className='md:col-span-1 space-y-2 pl-2 pb-8'>
+                  <div className='flex items-center'>
+                    <div className="w-8 h-8 mr-4 bg-orange-400 text-white rounded-full">
+                      <svg fill='currentColor' viewBox="0 0 32 32"> <path d="M21 14a.75.75 0 0 1-.75-.75 1.5 1.5 0 0 0-1.5-1.5.75.75 0 1 1 0-1.5 1.5 1.5 0 0 0 1.5-1.5.75.75 0 1 1 1.5 0 1.5 1.5 0 0 0 1.5 1.5.75.75 0 1 1 0 1.5 1.5 1.5 0 0 0-1.5 1.5.75.75 0 0 1-.75.75Zm-7 10a1 1 0 0 1-1-1 4 4 0 0 0-4-4 1 1 0 0 1 0-2 4 4 0 0 0 4-4 1 1 0 0 1 2 0 4 4 0 0 0 4 4 1 1 0 0 1 0 2 4 4 0 0 0-4 4 1 1 0 0 1-1 1Z"></path> </svg>
+                    </div>
+                    <div>
+                      <p className='text-lg'>Roll Number</p>
+                      <p className='text-slate-600'>{props.rollno.toUpperCase()}</p>
+                    </div>
+                  </div>
+                  <div className='flex items-center'>
+                    <div className="w-8 h-8 mr-4 bg-orange-400 text-white rounded-full">
+                      <svg fill='currentColor' viewBox="0 0 32 32"> <path d="M21 14a.75.75 0 0 1-.75-.75 1.5 1.5 0 0 0-1.5-1.5.75.75 0 1 1 0-1.5 1.5 1.5 0 0 0 1.5-1.5.75.75 0 1 1 1.5 0 1.5 1.5 0 0 0 1.5 1.5.75.75 0 1 1 0 1.5 1.5 1.5 0 0 0-1.5 1.5.75.75 0 0 1-.75.75Zm-7 10a1 1 0 0 1-1-1 4 4 0 0 0-4-4 1 1 0 0 1 0-2 4 4 0 0 0 4-4 1 1 0 0 1 2 0 4 4 0 0 0 4 4 1 1 0 0 1 0 2 4 4 0 0 0-4 4 1 1 0 0 1-1 1Z"></path> </svg>
+                    </div>
+                    <div>
+                      <p className='text-lg'>Room Number</p>
+                      <p className='text-slate-600'>{props.roomno || 'NA'}</p>
+                    </div>
+                  </div>
+                  <div className='flex items-center'>
+                    <div className="w-8 h-8 mr-4 bg-orange-400 text-white rounded-full">
+                      <svg fill='currentColor' viewBox="0 0 32 32"> <path d="M21 14a.75.75 0 0 1-.75-.75 1.5 1.5 0 0 0-1.5-1.5.75.75 0 1 1 0-1.5 1.5 1.5 0 0 0 1.5-1.5.75.75 0 1 1 1.5 0 1.5 1.5 0 0 0 1.5 1.5.75.75 0 1 1 0 1.5 1.5 1.5 0 0 0-1.5 1.5.75.75 0 0 1-.75.75Zm-7 10a1 1 0 0 1-1-1 4 4 0 0 0-4-4 1 1 0 0 1 0-2 4 4 0 0 0 4-4 1 1 0 0 1 2 0 4 4 0 0 0 4 4 1 1 0 0 1 0 2 4 4 0 0 0-4 4 1 1 0 0 1-1 1Z"></path> </svg>
+                    </div>
+                    <div>
+                      <p className='text-lg'>Email</p>
+                      <p className='text-slate-600'>{props.email || 'NA'}</p>
+                    </div>
+                  </div>
+                  <div className='flex items-center'>
+                    <div className="w-8 h-8 mr-4 bg-orange-400 text-white rounded-full">
+                      <svg fill='currentColor' viewBox="0 0 32 32"> <path d="M21 14a.75.75 0 0 1-.75-.75 1.5 1.5 0 0 0-1.5-1.5.75.75 0 1 1 0-1.5 1.5 1.5 0 0 0 1.5-1.5.75.75 0 1 1 1.5 0 1.5 1.5 0 0 0 1.5 1.5.75.75 0 1 1 0 1.5 1.5 1.5 0 0 0-1.5 1.5.75.75 0 0 1-.75.75Zm-7 10a1 1 0 0 1-1-1 4 4 0 0 0-4-4 1 1 0 0 1 0-2 4 4 0 0 0 4-4 1 1 0 0 1 2 0 4 4 0 0 0 4 4 1 1 0 0 1 0 2 4 4 0 0 0-4 4 1 1 0 0 1-1 1Z"></path> </svg>
+                    </div>
+                    <div>
+                      <p className='text-lg'>Birthdate</p>
+                      <p className='text-slate-600'>{props.dob || 'NA'}</p>
+                    </div>
+                  </div>
+                  <div className='flex items-center'>
+                    <div className="w-8 h-8 mr-4 bg-orange-400 text-white rounded-full">
+                      <svg fill='currentColor' viewBox="0 0 32 32"> <path d="M21 14a.75.75 0 0 1-.75-.75 1.5 1.5 0 0 0-1.5-1.5.75.75 0 1 1 0-1.5 1.5 1.5 0 0 0 1.5-1.5.75.75 0 1 1 1.5 0 1.5 1.5 0 0 0 1.5 1.5.75.75 0 1 1 0 1.5 1.5 1.5 0 0 0-1.5 1.5.75.75 0 0 1-.75.75Zm-7 10a1 1 0 0 1-1-1 4 4 0 0 0-4-4 1 1 0 0 1 0-2 4 4 0 0 0 4-4 1 1 0 0 1 2 0 4 4 0 0 0 4 4 1 1 0 0 1 0 2 4 4 0 0 0-4 4 1 1 0 0 1-1 1Z"></path> </svg>
+                    </div>
+                    <div>
+                      <p className='text-lg'>Phone Number</p>
+                      <p className='text-slate-600'>+91 {props.phoneno || 'NA'}</p>
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              {/* Tech Relatives */}
-              <div className='space-y-2'>
-                <p className='text-slate-800 text-xl font-semibold'>Tech Relatives</p>
-                {/* Card container */}
-                <div className='space-y-4 md:space-y-0 md:flex md:space-x-4'>
-                  {allCards}
-                </div>
+            : <div className='py-12'>
+              <div className='border p-4 flex flex-wrap'>
+                {props.images.map(image => (
+                  <img key={image._key} src={urlFor(image)} className='max-h-40 md:max-h-52 rounded-lg m-2' alt={image.name}></img>
+                ))}
               </div>
-
-              {/* Description */}
-              <div className='max-w-3xl space-y-2'>
-                <p className='text-slate-800 text-xl font-semibold'>Experience</p>
-                <div className='border max-w-md rounded-md p-4 md:py-6 md:px-8 space-y-8'>
-                  {allDescription}
-                </div>
-
-                <div className='p-8'></div>
-              </div>
-            </div>
-
-            <div className='md:col-span-1 space-y-2 pl-2 pb-8'>
-              <div className='flex items-center'>
-                <div className="w-8 h-8 mr-4 bg-orange-400 text-white rounded-full">
-                  <svg fill='currentColor' viewBox="0 0 32 32"> <path d="M21 14a.75.75 0 0 1-.75-.75 1.5 1.5 0 0 0-1.5-1.5.75.75 0 1 1 0-1.5 1.5 1.5 0 0 0 1.5-1.5.75.75 0 1 1 1.5 0 1.5 1.5 0 0 0 1.5 1.5.75.75 0 1 1 0 1.5 1.5 1.5 0 0 0-1.5 1.5.75.75 0 0 1-.75.75Zm-7 10a1 1 0 0 1-1-1 4 4 0 0 0-4-4 1 1 0 0 1 0-2 4 4 0 0 0 4-4 1 1 0 0 1 2 0 4 4 0 0 0 4 4 1 1 0 0 1 0 2 4 4 0 0 0-4 4 1 1 0 0 1-1 1Z"></path> </svg>
-                </div>
-                <div>
-                  <p className='text-lg'>Roll Number</p>
-                  <p className='text-slate-600'>{props.rollno.toUpperCase()}</p>
-                </div>
-              </div>
-              <div className='flex items-center'>
-                <div className="w-8 h-8 mr-4 bg-orange-400 text-white rounded-full">
-                  <svg fill='currentColor' viewBox="0 0 32 32"> <path d="M21 14a.75.75 0 0 1-.75-.75 1.5 1.5 0 0 0-1.5-1.5.75.75 0 1 1 0-1.5 1.5 1.5 0 0 0 1.5-1.5.75.75 0 1 1 1.5 0 1.5 1.5 0 0 0 1.5 1.5.75.75 0 1 1 0 1.5 1.5 1.5 0 0 0-1.5 1.5.75.75 0 0 1-.75.75Zm-7 10a1 1 0 0 1-1-1 4 4 0 0 0-4-4 1 1 0 0 1 0-2 4 4 0 0 0 4-4 1 1 0 0 1 2 0 4 4 0 0 0 4 4 1 1 0 0 1 0 2 4 4 0 0 0-4 4 1 1 0 0 1-1 1Z"></path> </svg>
-                </div>
-                <div>
-                <p className='text-lg'>Room Number</p>
-                <p className='text-slate-600'>{props.roomno || 'NA'}</p>
-                </div>
-              </div>
-              <div className='flex items-center'>
-                <div className="w-8 h-8 mr-4 bg-orange-400 text-white rounded-full">
-                  <svg fill='currentColor' viewBox="0 0 32 32"> <path d="M21 14a.75.75 0 0 1-.75-.75 1.5 1.5 0 0 0-1.5-1.5.75.75 0 1 1 0-1.5 1.5 1.5 0 0 0 1.5-1.5.75.75 0 1 1 1.5 0 1.5 1.5 0 0 0 1.5 1.5.75.75 0 1 1 0 1.5 1.5 1.5 0 0 0-1.5 1.5.75.75 0 0 1-.75.75Zm-7 10a1 1 0 0 1-1-1 4 4 0 0 0-4-4 1 1 0 0 1 0-2 4 4 0 0 0 4-4 1 1 0 0 1 2 0 4 4 0 0 0 4 4 1 1 0 0 1 0 2 4 4 0 0 0-4 4 1 1 0 0 1-1 1Z"></path> </svg>
-                </div>
-                <div>
-                  <p className='text-lg'>Email</p>
-                  <p className='text-slate-600'>{props.email || 'NA'}</p>
-                </div>
-              </div>
-              <div className='flex items-center'>
-                <div className="w-8 h-8 mr-4 bg-orange-400 text-white rounded-full">
-                  <svg fill='currentColor' viewBox="0 0 32 32"> <path d="M21 14a.75.75 0 0 1-.75-.75 1.5 1.5 0 0 0-1.5-1.5.75.75 0 1 1 0-1.5 1.5 1.5 0 0 0 1.5-1.5.75.75 0 1 1 1.5 0 1.5 1.5 0 0 0 1.5 1.5.75.75 0 1 1 0 1.5 1.5 1.5 0 0 0-1.5 1.5.75.75 0 0 1-.75.75Zm-7 10a1 1 0 0 1-1-1 4 4 0 0 0-4-4 1 1 0 0 1 0-2 4 4 0 0 0 4-4 1 1 0 0 1 2 0 4 4 0 0 0 4 4 1 1 0 0 1 0 2 4 4 0 0 0-4 4 1 1 0 0 1-1 1Z"></path> </svg>
-                </div>
-                <div>
-                  <p className='text-lg'>Birthdate</p>
-                  <p className='text-slate-600'>{props.dob || 'NA'}</p>
-                </div>
-              </div>
-              <div className='flex items-center'>
-                <div className="w-8 h-8 mr-4 bg-orange-400 text-white rounded-full">
-                  <svg fill='currentColor' viewBox="0 0 32 32"> <path d="M21 14a.75.75 0 0 1-.75-.75 1.5 1.5 0 0 0-1.5-1.5.75.75 0 1 1 0-1.5 1.5 1.5 0 0 0 1.5-1.5.75.75 0 1 1 1.5 0 1.5 1.5 0 0 0 1.5 1.5.75.75 0 1 1 0 1.5 1.5 1.5 0 0 0-1.5 1.5.75.75 0 0 1-.75.75Zm-7 10a1 1 0 0 1-1-1 4 4 0 0 0-4-4 1 1 0 0 1 0-2 4 4 0 0 0 4-4 1 1 0 0 1 2 0 4 4 0 0 0 4 4 1 1 0 0 1 0 2 4 4 0 0 0-4 4 1 1 0 0 1-1 1Z"></path> </svg>
-                </div>
-                <div>
-                  <p className='text-lg'>Phone Number</p>
-                  <p className='text-slate-600'>+91 {props.phoneno || 'NA'}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
+            </div>}
 
         </div>
       </div>
