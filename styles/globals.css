@@ -620,6 +620,7 @@
   font: inherit;
   max-width: 100%;
   padding-left: 2.5rem;
+  height: 48px;
 }
 
 .ais-SearchBox-input::-webkit-input-placeholder {
