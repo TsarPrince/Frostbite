@@ -25,10 +25,7 @@ export default function Search() {
     'JQL15WD72T',
     '5af633b8fe05e08d22f181ade7aee679'
   );
-  if(typeof window!== "undefined" &&  screen.width>768) 
-  var showFilters=false 
-  else 
-  var showFilters=true
+  const showFilters = true;
   // const showFilters = false;
   const [seeMore, setSeeMore] = useState(showFilters);
   let styles
@@ -54,9 +51,11 @@ export default function Search() {
         </div>
         <div className="right-panel grid-cols-4">
           <div className='flex flex-col'>
-            <div className="flex searchbarDiv">
-              <SearchBox />
-              <div className="mr-auto mt-3 ml-3">
+            <div className="flex searchbarDiv py-4 w-3/4 mx-auto">
+              <div className="ml-auto w-1/2">
+                <SearchBox />
+              </div>
+              <div className="mr-auto ml-3">
                 <VoiceSearch searchAsYouSpeak={true} />
               </div>
             </div>
