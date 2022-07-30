@@ -38,7 +38,7 @@ export default async function handler(req, res) {
   if (req.method === 'POST') {
     const { name, rollno, password } = req.body;
     const user = await User.findOne({ rollno });
-    // if (user) return res.status(400).json({ error: `User already exits` });
+    if (user) return res.status(400).json({ error: `User already exits` });
 
     const hashedPassword = await bcrypt.hash(password, 12);
     const newUser = new User({ name, rollno, password: hashedPassword });

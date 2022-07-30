@@ -38,7 +38,7 @@ export default async function handler(req, res) {
   if (req.method === 'POST') {
     const { name, rollno, password } = req.body;
     const user = await User.findOne({ rollno });
-    // if (user) return res.status(400).json({ error: `User already exits` });
+    if (user) return res.status(400).json({ error: `User already exits` });
 
     let otp = '';
     for (let i = 0; i < 6; i++) {
