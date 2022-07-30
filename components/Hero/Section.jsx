@@ -1,4 +1,3 @@
-import { useState, useRef, useEffect } from 'react';
 import Card from '../Card'
 import { PaySection } from '../PaySection';
 function loadScript(src) {
@@ -15,35 +14,25 @@ function loadScript(src) {
   })
 }
 export const Section = ({ name, members }) => {
-  const getColor = (name) => {
-    if (name == 'axios') return '#5271ff';
-    if (name == 'gsoc') return '#f8edeb';
-    if (name == 'estrella') return '#5271ff';
-    if (name == 'zephyr') return '#f8edeb';
-    if (name == 'icpc') return '#5271ff';
-  }
-
-  const col = (getColor(name) === '#5271ff') ? '#f8edeb' : '#5271ff'
   return (
-    <div className={'px-8 py-32 z-0 relative shadow-inner'}
-      style={{
-        backgroundColor: getColor(name),
-        boxShadow: `${(getColor(name) == '#ef233c') ? 'inset 0 0 5px 5px #000' : ''}`
-      }}>
-      <div className='absolute -z-10 -bottom-8 right-8 flex flex-row justify-center items-center w-full'>
-        <PaySection bgcolor={col} color={getColor(name)} />
-        <p className={`text-outline-dark inline select-none text-transparent uppercase font-extrabold text-[180px]`}>
+    <div className='odd:bg-blue-500 even:bg-orange-50 odd:text-white odd:shadow-[inset_0_0_15px_#2d66c3] px-8 py-32 z-0 relative shadow-inner'>
+      {/* decorative svg */}
+      <div className='absolute top-8 right-1/3 md:right-2/3 z-[-1]'>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 872 264" width="872" height="264"><defs><pattern id="p" width="32" height="32" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="4" fill="rgba(0, 0, 0, 0.05)" /></pattern></defs><rect fill="url(#p)" width="872" height="264" /></svg>
+      </div>
+
+      <div className='md:absolute -z-10 md:right-8 lg:right-32 w-full flex flex-row md:justify-end'>
+        {/* <PaySection bgcolor={col} color={getColor(name)} /> */}
+        <p className={`text-outline-dark text-3xl uppercase border-t-4 border-t-pink-400 inline font-bold md:border-0 md:font-extrabold md:select-none md:text-transparent md:text-[180px]`}>
           {name}
         </p>
       </div>
       <div className='flex justify-center'>
-        <div className="carousel my-12 mx-auto">
-          <div className="relative overflow-hidden">
+          <div className="relative my-12 overflow-hidden">
             <div className="relative flex gap-1 overflow-auto scroll-smooth snap-x snap-mandatory z-0" >
               {
                 members.map(member => <Card key={member.rollno} props={member} />)
               }
-            </div>
           </div>
         </div>
       </div>

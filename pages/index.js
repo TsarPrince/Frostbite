@@ -21,33 +21,10 @@ function loadScript(src){
       document.body.appendChild(script)
   })
 }
-const index = ({ pets, students, faculties }) => {
+const index = () => {
   return (
     <div>
       <Hero />
-      {/* <div className='flex flex-col items-center md:items-start 2xl:flex-row'>
-        <div>
-          <div className='md:flex 2xl:flex-col flex-wrap'>
-            {
-              pets.map(pet => <Card props={pet} key={pet.slug.current} />)
-            }
-          </div>
-        </div>
-        <div>
-          <div className='md:flex 2xl:flex-col flex-wrap'>
-            {
-              students.map(student => <Card props={student} key={student.slug.current} />)
-            }
-          </div>
-        </div>
-        <div>
-          <div className='md:flex 2xl:flex-col flex-wrap'>
-            {
-              faculties.map(faculty => <Card props={faculty} key={faculty.slug.current} />)
-            }
-          </div>
-        </div>
-      </div> */}
       <Footer />
     </div>
 

@@ -1,8 +1,6 @@
-.text-outline-dark {
-  -webkit-text-stroke-width: 4px;
-  -webkit-text-stroke-color: #00000025;
-}
-.text-outline-light {
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: #00000025;
+@media screen and (min-width: 768px) {
+  .text-outline-dark {
+    -webkit-text-stroke-width: 4px;
+    -webkit-text-stroke-color: #00000025;
+  }
 }
