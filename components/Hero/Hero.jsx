@@ -5,6 +5,7 @@ import Link from 'next/link'
 
 import { Section } from "./Section";
 import { data_json } from './data';
+import { PaySection } from '../PaySection';
 
 const Hero = () => {
 
@@ -63,8 +64,10 @@ const Hero = () => {
                     </div>
                   </div>
                 </div>
-
-                <Link href='/search'><a className="inline-block text-center bg-indigo-600 border border-transparent rounded-md py-3 px-8 font-medium text-white hover:bg-indigo-700">Visit all profiles</a></Link>
+                <div className="flex items-center">
+                  <Link href='/search'><a className="inline-block mr-5 text-center bg-indigo-600 border border-transparent rounded-md py-3 px-8 font-medium text-white hover:bg-indigo-700">Visit all profiles</a></Link>
+                  <PaySection bgcolor={'#e0e7ff'} color={'#4f46e5'} />
+                </div>
               </div>
             </div>
           </div>
