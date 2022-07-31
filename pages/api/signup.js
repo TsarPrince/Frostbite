@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const sgMail = require('@sendgrid/mail')
-sgMail.setApiKey('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');
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 const User = mongoose.models.User || new mongoose.model("User", new mongoose.Schema({
   name: {
