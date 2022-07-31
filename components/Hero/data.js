@@ -433,41 +433,49 @@ export const data_json = {
     "year": 2020
   },
   "YashV": {
-    "_createdAt": "2022-07-21T22:15:25Z",
-    "_id": "LIT2020066",
-    "_rev": "9WAwYFhPvfmpe6wxCfwDtt",
-    "_type": "student",
-    "_updatedAt": "2022-07-21T22:17:46Z",
-    "branch": "Information Technology",
-    "description": [
-      "GSOC'22 @ Oppia"
-    ],
-    "dob": "",
-    "email": "lit2020066@iiitl.ac.in",
-    "gender": "Male",
-    "image": [
-      {
-        "_key": "image-85d2876fdf4acad7360867bcc2263ecd8702543f-800x800-jpg",
-        "_type": "image",
-        "asset": {
-          "_ref": "image-85d2876fdf4acad7360867bcc2263ecd8702543f-800x800-jpg",
-          "_type": "reference"
+    "_createdAt": "2022-07-31T11:13:37Z",
+      "_id": "SJCLQXBfTcbJ2GgZQN68M6",
+      "_rev": "SJCLQXBfTcbJ2GgZQN68LI",
+      "_type": "student",
+      "_updatedAt": "2022-07-31T11:13:37Z",
+      "branch": "Information Technology",
+      "description": [
+        "GSOC'22 @Oppia",
+        "Remote Android Engineer",
+        "Open source contributor",
+        "Intern at 0chain",
+        "Senior member at Axios"
+      ],
+      "dob": "",
+      "email": "lit2020066@iiitl.ac.in",
+      "gender": "Male",
+      "image": [
+        {
+          "_key": "image-c6eca04fb1fe4838f7342b2fe02f01237c84addc-547x719-jpg",
+          "_type": "image",
+          "asset": {
+            "_ref": "image-c6eca04fb1fe4838f7342b2fe02f01237c84addc-547x719-jpg",
+            "_type": "reference"
+          }
         }
-      }
-    ],
-    "linkedinProfile": "",
-    "name": "Yash Verma",
-    "phone_number": 8957557113,
-    "rollno": "LIT2020066",
-    "room_no": null,
-    "slug": {
-      "_type": "slug",
-      "current": "lit2020066"
-    },
-    "tags": [
-      "-"
-    ],
-    "year": 2020
+      ],
+      "linkedinProfile": "yash10019coder",
+      "name": "Yash Verma",
+      "phone_number": 8957557113,
+      "rollno": "lit2020066",
+      "room_no": null,
+      "slug": {
+        "_type": "slug",
+        "current": "lit2020066"
+      },
+      "tags": [
+        "App dev wing",
+        "Axios",
+        "GSOC'22",
+        "Oppia",
+        "0chain"
+      ],
+      "year": 2020
   },
   "AdityaAg": {
     "_createdAt": "2022-07-31T11:06:15Z",
