@@ -58,8 +58,8 @@ export const PaySection = ({bgcolor, color}) => {
         paymentObject.open()
       }
     return(
-        <div className='btn cursor-pointer mr-auto ml-32'>
-          <a className='App-link bg-blue-500 p-5 text-white rounded-md shadow-2xl' onClick={displayRazorpay} target="_blank" rel='noopener noreferrer' id='rzp-button1'
+        <div className='btn cursor-pointer'>
+          <a className='inline-block mr-5 text-center bg-indigo-600 border border-transparent rounded-md py-3 px-8 font-medium text-white hover:bg-indigo-700' onClick={displayRazorpay} target="_blank" rel='noopener noreferrer' id='rzp-button1'
               style={{
                 backgroundColor: `${bgcolor}`,
                 color: `${color}`
