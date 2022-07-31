@@ -15,7 +15,7 @@ import Link from 'next/link';
 import { urlFor } from '../lib/client';
 
 export default function Hit(props) {
-  console.log(props.hit.description)
+  // console.log(props.hit.description)
   let linkURL
   if (props.hit.rollno)
     linkURL = "/profile/" + props.hit.rollno.toLowerCase()

@@ -1,6 +1,6 @@
 export default {
-    name: 'pet',
-    title: 'Furry companion',
+    name: 'Workers',
+    title: 'Workers',
     type: 'document',
     fields: [
         {
