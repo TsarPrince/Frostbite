@@ -76,13 +76,12 @@ const Hero = () => {
 
 
       <div>
-        <Section name="axios" members={[data.abhinay, data.vinamr]} />
+        <Section name="axios" members={[data.abhinay, data.vinamr, data.AyushJain, data.KarishmaV, data.NehalSharma,data.PrerakM, data.YashV, data.ashleysha]} />
         <Section name="gsoc" members={[data.AyushJain, data.KarishmaV, data.NehalSharma, data.PrerakM, data.YashV]} />
-        <Section name="estrella" members={[data.ashleysha, data.prince]} />
+        <Section name="estrella" members={[data.ashleysha, data.AdityaAg, data.ShivamCh, data.sameep, data.VidishaAg]} />
         <Section name="zephyr" members={[data.vinamr, data.sameep, data.gaurav, data.abhinay, data.ashleysha, data.prince]} />
-        <Section name="icpc" members={[data.sameep, data.ashleysha, data.vinamr, data.vinamr]} />
+        <Section name="icpc" members={[data.SambhavG, data.TejasT, data.AbhinavArora, data.AdityaAg, data.AnkitCh]} />
       </div>
-
     </div>
 
   );

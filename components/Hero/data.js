@@ -224,43 +224,43 @@ export const data_json = {
   },
   "gaurav": {
     "DOB": "2004-01-23",
-    "_createdAt": "2022-06-20T10:04:37Z",
-    "_id": "dfbcf0e6-17d4-4ac3-b1dc-b67b80969c83",
-    "_rev": "Op3jZcLzAyXLeLJzdS8Nx7",
-    "_type": "student",
-    "_updatedAt": "2022-07-04T06:58:01Z",
-    "description": [
-      "4 ⭐ codechef",
-      "Pupil code"
-    ],
-    "email": "gauravkab07@gmail.com",
-    "gender": "Male",
-    "image": [
-      {
-        "_key": "55d754059f9f",
-        "_type": "image",
-        "asset": {
-          "_ref": "image-6675d5db5ba1dcd34d78b04191390c20b17ec048-900x900-jpg",
-          "_type": "reference"
+      "_createdAt": "2022-06-20T10:04:37Z",
+      "_id": "dfbcf0e6-17d4-4ac3-b1dc-b67b80969c83",
+      "_rev": "Lk3qYs3q2T3NYdNgQYVWLE",
+      "_type": "student",
+      "_updatedAt": "2022-07-31T16:26:30Z",
+      "description": [
+        "4 ⭐ codechef",
+        "Pupil code"
+      ],
+      "email": "gauravkab07@gmail.com",
+      "gender": "Male",
+      "image": [
+        {
+          "_key": "21254c387388",
+          "_type": "image",
+          "asset": {
+            "_ref": "image-470f5736b79b450177b8f37cb543d0a0926bf5ab-620x1280-jpg",
+            "_type": "reference"
+          }
         }
-      }
-    ],
-    "name": "Gaurav Kabra",
-    "phone_number": 9849006516,
-    "rollno": "LCI2021009",
-    "room_no": 406,
-    "slug": {
-      "_type": "slug",
-      "current": "lci2021009"
-    },
-    "tags": [
-      "Machine Learning(ML)",
-      "4 Star Coder at Codechef",
-      "Pupil at Codeforces",
-      "Competitive Programmer",
-      "Information Security (Infosec)",
-      "Artificial Intelligence"
-    ]
+      ],
+      "name": "Gaurav Kabra",
+      "phone_number": 9849006516,
+      "rollno": "LCI2021009",
+      "room_no": 406,
+      "slug": {
+        "_type": "slug",
+        "current": "lci2021009"
+      },
+      "tags": [
+        "Machine Learning(ML)",
+        "4 Star Coder at Codechef",
+        "Pupil at Codeforces",
+        "Competitive Programmer",
+        "Information Security (Infosec)",
+        "Artificial Intelligence"
+      ]
   },
   "AyushJain": {
     "_createdAt": "2022-07-21T12:34:06Z",
@@ -468,5 +468,297 @@ export const data_json = {
       "-"
     ],
     "year": 2020
+  },
+  "AdityaAg": {
+    "_createdAt": "2022-07-31T11:06:15Z",
+      "_id": "LIT2020023",
+      "_rev": "amCv1OtI5CrL5JCR8sAz6P",
+      "_type": "student",
+      "_updatedAt": "2022-07-31T11:29:12Z",
+      "branch": "Information Technology",
+      "description": [
+        "Coordinator of CP Wing @Axios, IIITL",
+        "Amazon MLSS'22",
+        "Expert @Codeforces ",
+        "5-star @Codechef "
+      ],
+      "dob": "",
+      "email": "lit2020023@iiitl.ac.in",
+      "gender": "Male",
+      "image": [
+        {
+          "_key": "33762cba0b2a",
+          "_type": "image",
+          "asset": {
+            "_ref": "image-7da0f14b875adc78b972425f0898697691f50a7f-800x800-jpg",
+            "_type": "reference"
+          }
+        }
+      ],
+      "linkedinProfile": "aditya-agrawal-87ab6a200",
+      "name": "Aditya Agarwal ",
+      "phone_number": 9661427909,
+      "rollno": "LIT2020023",
+      "room_no": 410,
+      "slug": {
+        "_type": "slug",
+        "current": "lit2020023"
+      },
+      "tags": [
+        "Competitve programmer"
+      ],
+      "year": 2020
+  },
+  "ShivamCh": {
+
+    "_createdAt": "2022-07-31T15:54:51Z",
+    "_id": "LIT2020064",
+    "_rev": "amCv1OtI5CrL5JCR8sXq5E",
+    "_type": "student",
+    "_updatedAt": "2022-07-31T15:54:51Z",
+    "branch": "Information Technology",
+    "description": [
+      "Google Cloud - Cloud Engineering and Machine Learning Track",
+      "Estrella Senior Member"
+    ],
+    "dob": "",
+    "email": "lit2020064@iiitl.ac.ni",
+    "gender": "Male",
+    "image": [
+      {
+        "_key": "image-8339ca1cd5db83ae910d2c641e150f671dd2fb73-800x800-jpg",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-8339ca1cd5db83ae910d2c641e150f671dd2fb73-800x800-jpg",
+          "_type": "reference"
+        }
+      }
+    ],
+    "linkedinProfile": "shivam-chandra-55291a1b9",
+    "name": "Shivam Chandra",
+    "phone_number": 8417840747,
+    "rollno": "LIT2020064",
+    "room_no": null,
+    "slug": {
+      "_type": "slug",
+      "current": "lit2020064"
+    },
+    "tags": [
+      "Estrella",
+      "Senior Member",
+      "Google cloud"
+    ],
+    "year": 2020
+  },
+  "SambhavG":{
+    "_createdAt": "2022-07-31T16:09:07Z",
+      "_id": "LCS2019058",
+      "_rev": "Lk3qYs3q2T3NYdNgQYUgWj",
+      "_type": "student",
+      "_updatedAt": "2022-07-31T16:09:07Z",
+      "branch": "Computer Science",
+      "description": [
+        "Competitive coder",
+        "5 star at codechef",
+        "Candidate Master at Codeforces",
+        "Coordinator CP wing Axios 2021",
+        "Interned at Uber",
+        "ICPC Regionalist"
+      ],
+      "dob": "",
+      "email": "lcs2019058@iiitl.ac.in",
+      "gender": "Male",
+      "image": [
+        {
+          "_key": "image-6c718468b8972fd66c167cc8ae0f999ebb6df670-592x592-jpg",
+          "_type": "image",
+          "asset": {
+            "_ref": "image-6c718468b8972fd66c167cc8ae0f999ebb6df670-592x592-jpg",
+            "_type": "reference"
+          }
+        }
+      ],
+      "linkedinProfile": "sambhav-jain-59b955189",
+      "name": "Sambhav Jain",
+      "phone_number": 8266031231,
+      "rollno": "LCS2019058",
+      "room_no": 404,
+      "slug": {
+        "_type": "slug",
+        "current": "lcs2019058"
+      },
+      "tags": [
+        "MR_POssiBLE",
+        "Competitive Programmer",
+        "Coordinator",
+        "CP wing",
+        "Axios"
+      ],
+      "year": 2019
+  },
+  "TejasT":{
+    "_createdAt": "2022-07-31T12:30:11Z",
+      "_id": "LIT2020025",
+      "_rev": "wz0fvi41oXGKYcjgQpojM1",
+      "_type": "student",
+      "_updatedAt": "2022-07-31T12:30:11Z",
+      "branch": "Information Technology",
+      "description": [
+        "Overall coordinator @Axios, IIITL",
+        "Competitive Coder - 6⭐ @Codechef(2285) ",
+        "Master @Codeforces(2184)"
+      ],
+      "dob": "",
+      "email": "LIT2020025@iiitl.ac.in",
+      "gender": "Male",
+      "image": [
+        {
+          "_key": "image-1429ac6d8ced4a34ead13646c1235264ab5fb6e7-560x560-jpg",
+          "_type": "image",
+          "asset": {
+            "_ref": "image-1429ac6d8ced4a34ead13646c1235264ab5fb6e7-560x560-jpg",
+            "_type": "reference"
+          }
+        }
+      ],
+      "linkedinProfile": "tejas-taneja-292967200",
+      "name": "Tejas Taneja",
+      "phone_number": 8708054981,
+      "rollno": "LIT2020025",
+      "room_no": 410,
+      "slug": {
+        "_type": "slug",
+        "current": "lit2020025"
+      },
+      "tags": [
+        "Competitive programmer"
+      ],
+      "year": 2020
+  },
+  "AbhinavArora": {
+    "_createdAt": "2022-07-31T10:44:51Z",
+      "_id": "LCI2020008",
+      "_rev": "wz0fvi41oXGKYcjgQpipEV",
+      "_type": "student",
+      "_updatedAt": "2022-07-31T11:33:33Z",
+      "branch": "Computer Science & Artificial Intelligence",
+      "description": [
+        "Senior Member at CP wing@ Axios IIITL",
+        "5 ⭐️ at codechef",
+        "expert at codeforces"
+      ],
+      "dob": "",
+      "email": "LCI2020008@iiitl.ac.in",
+      "gender": "Male",
+      "image": [
+        {
+          "_key": "86302dbe8517",
+          "_type": "image",
+          "asset": {
+            "_ref": "image-5278f6da1234eeb059aba4dfd2d1500da0d9c8af-640x640-jpg",
+            "_type": "reference"
+          }
+        }
+      ],
+      "linkedinProfile": "abhinav-arora-bb7469205",
+      "name": "Abhinav Arora",
+      "phone_number": 7889276343,
+      "rollno": "LCI2020008",
+      "room_no": 513,
+      "slug": {
+        "_type": "slug",
+        "current": "lci2020008"
+      },
+      "tags": [
+        "competitive programmer"
+      ],
+      "year": 2020
+  },
+  "AnkitCh": {
+    "_createdAt": "2022-07-31T12:17:59Z",
+    "_id": "LIT2020034",
+    "_rev": "wz0fvi41oXGKYcjgQpo7oD",
+    "_type": "student",
+    "_updatedAt": "2022-07-31T12:17:59Z",
+    "branch": "Information Technology",
+    "description": [
+      "Senior Member of CP Wing @Axios",
+      "5⭐ @CodeChef",
+      "Sophomore at IIIT LUCKNOW"
+    ],
+    "dob": "",
+    "email": "LIT2020034@iiitl.ac.in",
+    "gender": "Male",
+    "image": [
+      {
+        "_key": "image-ac56e179d83c1d1869f751db364159545d63eeb4-810x919-png",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-ac56e179d83c1d1869f751db364159545d63eeb4-810x919-png",
+          "_type": "reference"
+        }
+      }
+    ],
+    "linkedinProfile": "ankit-chaudhary1",
+    "name": "Ankit Chaudhary",
+    "phone_number": 9315531864,
+    "rollno": "LIT2020034",
+    "room_no": 412,
+    "slug": {
+      "_type": "slug",
+      "current": "lit2020034"
+    },
+    "tags": [
+      "Competitive programmer"
+    ],
+    "year": 2020
+  },
+  "VidishaAg": {
+    "_createdAt": "2022-07-21T10:52:44Z",
+      "_id": "9WAwYFhPvfmpe6wxCdzNxK",
+      "_rev": "9WAwYFhPvfmpe6wxCdzNtr",
+      "_type": "student",
+      "_updatedAt": "2022-07-21T10:52:44Z",
+      "branch": "Computer Science & Artificial Intelligence",
+      "description": [
+        "Estrella Member",
+        "Competitive Programmer",
+        "Google's Women Engineer (WE) Talentsprint",
+        "Mentee @ Codess Cafe",
+        "Android Developer",
+        "Frontend Web Developer",
+        "3 ⭐ CodeChef"
+      ],
+      "dob": "2003-03-10",
+      "email": "lci2021018@iiitl.ac.in",
+      "gender": "Female",
+      "image": [
+        {
+          "_key": "image-8a0e4a183a30c3dd31c078d022e06bf94d3168f7-800x800-jpg",
+          "_type": "image",
+          "asset": {
+            "_ref": "image-8a0e4a183a30c3dd31c078d022e06bf94d3168f7-800x800-jpg",
+            "_type": "reference"
+          }
+        }
+      ],
+      "linkedinProfile": "vidisha99",
+      "name": "Vidisha Agarwal",
+      "phone_number": 7061040501,
+      "rollno": "LCI2021018",
+      "room_no": 409,
+      "slug": {
+        "_type": "slug",
+        "current": "lci2021018"
+      },
+      "tags": [
+        "vidishaagarwal2003",
+        "vidisha99",
+        "vidishaAG",
+        "Kotlin",
+        "C++",
+        "Python"
+      ],
+      "year": 2021
   }
 }
