@@ -196,11 +196,7 @@ export default function Chat () {
       
         // Keyboard events
       
-        $window.keydown(event => {
-          // FIX CROOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOW
-          // console.log(event.target.value == prev)
-          // console.log(event.target.value.charAt(event.target.selectionStart - 1).charCodeAt())
-          console.log(event)
+        $window.on('keydown', function (event) {
 
           // Auto-focus the current input when a key is typed
           if (!(event.ctrlKey || event.metaKey || event.altKey)) {
@@ -217,7 +213,30 @@ export default function Chat () {
             }
           }
           prev = event.target.value;
-        });
+        })
+
+        // $window.keydown(event => {
+        //   // FIX CROOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOW
+        //   // console.log(event.target.value == prev)
+        //   // console.log(event.target.value.charAt(event.target.selectionStart - 1).charCodeAt())
+        //   console.log(event)
+
+        //   // Auto-focus the current input when a key is typed
+        //   if (!(event.ctrlKey || event.metaKey || event.altKey)) {
+        //     $currentInput.focus();
+        //   }
+        //   // When the client hits ENTER on their keyboard
+        //   if (event.which === 13 || event.keyCode === 13  ) {
+        //     if (username) {
+        //       sendMessage();
+        //       socket.emit('stop typing');
+        //       typing = false;
+        //     } else {
+        //       setUsername();
+        //     }
+        //   }
+        //   prev = event.target.value;
+        // });
       
         $inputMessage.on('input', () => {
           updateTyping();

@@ -35,21 +35,21 @@ const Hero = () => {
                     <div className="flex items-center space-x-6 lg:space-x-8">
                       <div className="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
                         <div className="w-44 h-64 rounded-lg overflow-hidden sm:opacity-0 lg:opacity-100">
-                          <img src="/grid/iiitl_admin.jpg" alt="" className="w-full h-full object-center object-cover" />
+                          <img src="/grid/iiitl_building.jpg" alt="" className="w-full h-full object-center object-cover" />
                         </div>
                         <div className="w-44 h-64 rounded-lg overflow-hidden">
-                          <img src="/grid/iiitl_grass.jpg" alt="" className="w-full h-full object-center object-cover" />
+                          <img src="/grid/iiitl_board.jpg" alt="" className="w-full h-full object-center object-cover" />
                         </div>
                       </div>
                       <div className="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
                         <div className="w-44 h-64 rounded-lg overflow-hidden">
-                          <img src="/grid/iiitl_ground.jpg" alt="" className="w-full h-full object-center object-cover" />
+                          <img src="/grid/iiitl_admin.jpg" alt="" className="w-full h-full object-center object-cover" />
                         </div>
                         <div className="w-44 h-64 rounded-lg overflow-hidden">
                           <img src="/grid/iiitl_cloud.jpg" alt="" className="w-full h-full object-center object-cover" />
                         </div>
                         <div className="w-44 h-64 rounded-lg overflow-hidden">
-                          <img src="/grid/iiitl_equinox.jpg" alt="" className="w-full h-full object-center object-cover" />
+                          <img src="/grid/iiitl_building2.jpg" alt="" className="w-full h-full object-center object-cover" />
                         </div>
                       </div>
                       <div className="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
@@ -57,7 +57,7 @@ const Hero = () => {
                           <img src="/grid/iiitl_side.jpg" alt="" className="w-full h-full object-center object-cover" />
                         </div>
                         <div className="w-44 h-64 rounded-lg overflow-hidden">
-                          <img src="/grid/iiitl_rainy.jpg" alt="" className="w-full h-full object-center object-cover" />
+                          <img src="/grid/iiitl_admin2.jpg" alt="" className="w-full h-full object-center object-cover" />
                         </div>
                       </div>
                     </div>
