@@ -358,38 +358,48 @@ export const data_json = {
   },
   "NehalSharma": {
     "_createdAt": "2022-07-21T20:08:47Z",
-    "_id": "9WAwYFhPvfmpe6wxCfbH0W",
-    "_rev": "J9rUovbD21y5kvyxidh8du",
-    "_type": "student",
-    "_updatedAt": "2022-07-21T22:48:41Z",
-    "branch": "Computer Science",
-    "description": [
-      "GSOC'22 @ Zulip",
-      "Intern @ Microsoft",
-      "Generation Google Scholar'22 ",
-      "Ex-Intern @ Felvin ",
-      "Full stack (MERN) Web Developer",
-      "Graphic Designer"
-    ],
-    "dob": "",
-    "email": "lcs2020001@iiitl.ac.in",
-    "gender": "Female",
-    "linkedinProfile": "",
-    "name": "Nehal Sharma",
-    "phone_number": 6387056480,
-    "rollno": "LCS2020001",
-    "room_no": null,
-    "slug": {
-      "_type": "slug",
-      "current": "lcs2020001"
-    },
-    "tags": [
-      "Author",
-      "'Open Sourcerer'",
-      "GSOC'22",
-      "FOSS wing lead"
-    ],
-    "year": 2020
+      "_id": "9WAwYFhPvfmpe6wxCfbH0W",
+      "_rev": "wz0fvi41oXGKYcjgQldXNQ",
+      "_type": "student",
+      "_updatedAt": "2022-07-29T17:53:37Z",
+      "branch": "Computer Science",
+      "description": [
+        "GSOC'22 @ Zulip",
+        "Intern @ Microsoft",
+        "Generation Google Scholar'22 ",
+        "Ex-Intern @ Felvin ",
+        "Full stack (MERN) Web Developer",
+        "Graphic Designer"
+      ],
+      "dob": "",
+      "email": "lcs2020001@iiitl.ac.in",
+      "gender": "Female",
+      "image": [
+        {
+          "_key": "d9d8b7afeb7d",
+          "_type": "image",
+          "asset": {
+            "_ref": "image-dff538c2ca49d873c87c3c88cb7300a182b4c7e7-348x533-jpg",
+            "_type": "reference"
+          }
+        }
+      ],
+      "linkedinProfile": "",
+      "name": "Nehal Sharma",
+      "phone_number": 6387056480,
+      "rollno": "LCS2020001",
+      "room_no": null,
+      "slug": {
+        "_type": "slug",
+        "current": "lcs2020001"
+      },
+      "tags": [
+        "Author",
+        "'Open Sourcerer'",
+        "GSOC'22",
+        "FOSS wing lead"
+      ],
+      "year": 2020
   },
   "PrerakM": {
     "_createdAt": "2022-07-21T12:43:52Z",
@@ -768,5 +778,92 @@ export const data_json = {
         "Python"
       ],
       "year": 2021
+  },
+  "Pranav": {
+    "_createdAt": "2022-07-31T16:52:16Z",
+      "_id": "LCI2020010",
+      "_rev": "amCv1OtI5CrL5JCR8seDsk",
+      "_type": "student",
+      "_updatedAt": "2022-07-31T17:10:50Z",
+      "branch": "Computer Science & Artificial Intelligence",
+      "description": [
+        "Studying CS&AI @ IIIT Lucknow ",
+        "GCI '18 Winner ",
+        "GSoC '21 Mentor @ KDE",
+        "FOSS Senior member"
+      ],
+      "dob": "",
+      "email": "lci2020010@iiitl.ac.in",
+      "gender": "Male",
+      "image": [
+        {
+          "_key": "image-99e29f563ab79e0c0d7cabd0002d6d46741e2fb3-458x525-png",
+          "_type": "image",
+          "asset": {
+            "_ref": "image-99e29f563ab79e0c0d7cabd0002d6d46741e2fb3-458x525-png",
+            "_type": "reference"
+          }
+        }
+      ],
+      "linkedinProfile": "pranav-gade",
+      "name": "Pranav Gade",
+      "phone_number": 9527769594,
+      "rollno": "LCI2020010",
+      "room_no": 513,
+      "slug": {
+        "_type": "slug",
+        "current": "lci2020010"
+      },
+      "tags": [
+        "Networking protocols",
+        "Gsocer",
+        "GCI winner"
+      ],
+      "year": 2020
+  },
+  "ManishR": {
+    "_createdAt": "2022-07-31T13:05:09Z",
+      "_id": "LIT2020035",
+      "_rev": "wz0fvi41oXGKYcjgQqI0N5",
+      "_type": "student",
+      "_updatedAt": "2022-07-31T17:26:08Z",
+      "branch": "Computer Science & Artificial Intelligence",
+      "description": [
+        "MERN developer ",
+        "Intern@Evo",
+        "4⭐ Code chef",
+        "6⭐ Hacker rank",
+        "Member @ GSDC",
+        "Axios Software wing of IIITL ",
+        "Technical Lead @Hackofiesta"
+      ],
+      "dob": "",
+      "email": "LIT2020035@iiitl.ac.in",
+      "gender": "Male",
+      "image": [
+        {
+          "_key": "image-6bd55315b33cb75915ae229e38dab71526db170d-800x800-jpg",
+          "_type": "image",
+          "asset": {
+            "_ref": "image-6bd55315b33cb75915ae229e38dab71526db170d-800x800-jpg",
+            "_type": "reference"
+          }
+        }
+      ],
+      "linkedinProfile": "manish-reddy-048500202",
+      "name": "Manish Reddy",
+      "phone_number": 6305621865,
+      "rollno": "LIT2020035",
+      "room_no": 412,
+      "slug": {
+        "_type": "slug",
+        "current": "lit2020035"
+      },
+      "tags": [
+        "Web developer",
+        "Competitive programmer",
+        "C++"
+      ],
+      "year": 2020
   }
 }
