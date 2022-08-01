@@ -38,8 +38,10 @@ const Login = () => {
     if (response.status == 400) {
       toast.error('Some error occurred.');
     } else if (response.status == 200) {
-      localStorage.setItem('OTP', json.otp);
-      toast.success('Mail sent successfully.');
+      // localStorage.setItem('OTP', json.otp);
+      // toast.success('Mail sent successfully.');
+      toast.success('User created successfully. Please Login.');
+      router.push('/login');
     }
     setProcessing(false);
   }
@@ -138,7 +140,7 @@ const Login = () => {
           </form>
           
           
-          <form className="mt-8 space-y-6" onSubmit={verifyOTP}>
+          {/* <form className="mt-8 space-y-6" onSubmit={verifyOTP}>
             <input type="hidden" name="remember" value="true" />
             <div className="rounded-md shadow-sm -space-y-px">
               <div>
@@ -165,7 +167,7 @@ const Login = () => {
                 Verify OTP
               </button>}
             </div>
-          </form>
+          </form> */}
         </div>
       </div>
       <Footer />

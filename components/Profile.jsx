@@ -72,7 +72,7 @@ const Profile = (props) => {
       <div className='border rounded-md w-3/4 md:w-4/5 lg:w-2/5 p-6 space-y-2' key={prevProps}>
         <div className='flex items-center space-x-4'>
           <div className='inline-block rounded-full ring-2 ring-blue-600  ring-offset-2'>
-            {prevProps.image ? <img key={prevProps.image[0]._key} src={urlFor(prevProps.image[0])} width="40" height="40" alt="" className='object-cover rounded-full' /> : <img src='/Default.png' className='rounded-full w-32 h-32 md:w-40 md:h-40 object-cover border-4 border-white' alt={props.name}></img>}
+            {prevProps.image ? <img key={prevProps.image[0]._key} src={urlFor(prevProps.image[0])} width="40" height="40" alt="" className='object-cover w-10 h-10 rounded-full' /> : <img src='/Default.png' className='rounded-full w-10 h-10 object-cover border-4 border-white' alt={props.name}></img>}
           </div>
           <p className='text-lg font-semibold text-slate-600'>{prevProps.name}</p>
         </div>
@@ -237,7 +237,7 @@ const Profile = (props) => {
             </div>
 
             : <div className='py-12'>
-              <div className='border p-4 flex flex-wrap'>
+              <div className='border p-4 flex flex-wrap transition-all'>
                 {props.images.map(image => (
                   <img key={image._key} src={urlFor(image)} className='max-h-40 md:max-h-52 rounded-lg m-2' alt={image.name}></img>
                 ))}
