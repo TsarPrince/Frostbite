@@ -14,7 +14,8 @@ import {
   Configure,
   PoweredBy,
   VoiceSearch,
-  MenuSelect
+  MenuSelect,
+  connectStateResults
 } from 'react-instantsearch-dom';
 import Link from 'next/link';
 import Footer from '../components/Footer';
@@ -41,7 +42,8 @@ export default function Search() {
     setSeeMore(prev => !prev)
 
   }
-  const logic = (typeof window !== "undefined" && screen.width>768)? {display: 'none'} : {display: 'flex'}
+  // console.log(Hit)
+  const logic = (typeof window !== "undefined" && screen.width > 768) ? { display: 'none' } : { display: 'flex' }
   return (
     <div className="ais-InstantSearch">
       <InstantSearch indexName="name" searchClient={searchClient}>
@@ -100,7 +102,9 @@ export default function Search() {
               <MenuSelect className='' attribute='year' />
             </div>
           </div>
-          <Hits hitComponent={Hit} />
+          <Results>
+            <Hits hitComponent={Hit} />
+          </Results>
           <Pagination />
           <div className="mb-5"></div>
         </div>
@@ -110,3 +114,12 @@ export default function Search() {
 
   )
 }
+
+const Results = connectStateResults(
+  ({ searchState, searchResults, children }) =>
+    searchResults && searchResults.nbHits !== 0 ? (
+      children
+    ) : (
+      <div className='flex justify-center py-52 px-5'>No results have been found for  <div className='inline font-bold ml-1'>{searchState.query}</div>.</div>
+    )
+);

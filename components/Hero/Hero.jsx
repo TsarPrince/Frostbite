@@ -5,6 +5,7 @@ import Link from 'next/link'
 
 import { Section } from "./Section";
 import { data_json } from './data';
+import { PaySection } from '../PaySection';
 
 const Hero = () => {
 
@@ -63,8 +64,10 @@ const Hero = () => {
                     </div>
                   </div>
                 </div>
-
-                <Link href='/search'><a className="inline-block text-center bg-indigo-600 border border-transparent rounded-md py-3 px-8 font-medium text-white hover:bg-indigo-700">Visit all profiles</a></Link>
+                <div className="flex items-center">
+                  <Link href='/search'><a className="inline-block mr-5 text-center bg-indigo-600 border border-transparent rounded-md py-3 px-8 font-medium text-white hover:bg-indigo-700">Visit all profiles</a></Link>
+                  <PaySection bgcolor={'#e0e7ff'} color={'#4f46e5'} />
+                </div>
               </div>
             </div>
           </div>
@@ -73,13 +76,12 @@ const Hero = () => {
 
 
       <div>
-        <Section name="axios" members={[data.abhinay, data.vinamr]} />
-        <Section name="gsoc" members={[data.AyushJain, data.KarishmaV, data.NehalSharma, data.PrerakM, data.YashV]} />
-        <Section name="estrella" members={[data.ashleysha, data.prince]} />
-        <Section name="zephyr" members={[data.vinamr, data.sameep, data.gaurav, data.abhinay, data.ashleysha, data.prince]} />
-        <Section name="icpc" members={[data.sameep, data.ashleysha, data.vinamr, data.vinamr]} />
+        <Section name="axios" members={[data.abhinay, data.Pranav, data.KarishmaV, data.AdityaAg, data.NehalSharma,data.PrerakM, data.YashV]} />
+        <Section name="gsoc" members={[data.Pranav, data.KarishmaV, data.AyushJain, data.PrerakM, data.YashV]} />
+        <Section name="estrella" members={[data.ashleysha, data.AdityaAg, data.ShivamCh, data.sameep, data.VidishaAg]} />
+        <Section name="zephyr" members={[data.ManishR, data.sameep, data.TejasT, data.abhinay, data.ashleysha, data.prince]} />
+        <Section name="icpc" members={[data.SambhavG, data.TejasT, data.AbhinavArora, data.AdityaAg, data.AnkitCh]} />
       </div>
-
     </div>
 
   );
