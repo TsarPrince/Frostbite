@@ -16,6 +16,7 @@ const User = mongoose.models.User || new mongoose.model("User", new mongoose.Sch
   password: {
     type: String,
     required: true,
+    minLength: 8
   },
   timestamp: {
     type: Date,
@@ -40,23 +41,10 @@ export default async function handler(req, res) {
     const user = await User.findOne({ rollno });
     if (user) return res.status(400).json({ error: `User already exits` });
 
-    // let otp = '';
-    // for (let i = 0; i < 6; i++) {
-    //   otp += Math.floor(Math.random()*10);
-    // }
-    // const msg = {
-    //   to: `${rollno}@iiitl.ac.in`,
-    //   from: 'frostbite.iiitl@gmail.com',
-    //   templateId: 'd-8118a74f55424f499127c7c26c766e86',
-    //   dynamicTemplateData: {
-    //     OTP: otp
-    //   }
-    // }
-    // const response = await sgMail.send(msg);
-    // res.status(200).json({ otp });
 
     const hashedPassword = await bcrypt.hash(password, 12);
     const newUser = new User({ name, rollno, password: hashedPassword });
+
     newUser
       .save()
       .then(() => {

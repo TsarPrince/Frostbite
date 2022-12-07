@@ -38,53 +38,10 @@ const Login = () => {
     if (response.status == 400) {
       toast.error('Some error occurred.');
     } else if (response.status == 200) {
-      // localStorage.setItem('OTP', json.otp);
-      // toast.success('Mail sent successfully.');
       toast.success('User created successfully. Please Login.');
       router.push('/login');
     }
     setProcessing(false);
-  }
-  const verifyOTP = async (e) => {
-    e.preventDefault();
-    setVerifying(true);
-
-    let name = document.querySelector('#name').value;
-    let rollno = document.querySelector('#rollno').value.toLowerCase();
-    let password = document.querySelector('#password').value;
-    let otp = document.querySelector('#otp').value;
-
-
-    if (otp != localStorage.getItem('OTP')) {
-      toast.error('Wrong OTP. Please try again.');
-      setVerifying(false);
-      return;
-    }
-
-    const data = { name, rollno, password, otp }
-    const response = await fetch('/api/verifyOTP', {
-      method: 'POST',
-      mode: 'cors',
-      cache: 'no-cache',
-      credentials: 'same-origin',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      redirect: 'follow',
-      referrerPolicy: 'no-referrer',
-      body: JSON.stringify(data)
-    })
-      .catch(err => {
-        toast.error("Some error occured, Please try again.");
-      });
-    const json = await response.json();
-    if (response.status == 400) {
-      toast.error(json.error);
-    } else if (response.status == 200) {
-      toast.success('User created successfully. Please Login.');
-      router.push('/login');
-    }
-    setVerifying(false);
   }
 
   return (

@@ -5,7 +5,8 @@ export default function Chat () {
 
   useEffect(() => {
     window.$ = window.jQuery = require('jquery')
-      const socket = io("https://frostbite-iiitl.herokuapp.com/")
+      // const socket = io("https://frostbite-iiitl.herokuapp.com/")
+      const socket = io("https://motley-tiny-balloon.glitch.me/")
       let prev = 'primce';
 
       $(function() {

@@ -13,6 +13,7 @@ const User = mongoose.models.User || new mongoose.model("User", new mongoose.Sch
   password: {
     type: String,
     required: true,
+    minlength: 8
   },
   timestamp: {
     type: Date,
@@ -34,7 +35,9 @@ mongoose
 export default async function handler(req, res) {
   const { rollno, password } = req.body;
   const user = await User.findOne({ rollno });
+
   if (!user) return res.status(400).json({ error: `User doesn't exists. Please Sign up first.` });
+
   const doesPasswordMatch = await bcrypt.compare(password, user.password);
   if (!doesPasswordMatch) return res.status(400).json({ error: "Wrong password" });
   res.status(200).json(user);
